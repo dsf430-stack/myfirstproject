@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dsf430-stack.github.io/myfirstproject/sitemap.xml

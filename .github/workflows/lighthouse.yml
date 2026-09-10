@@ -1,0 +1,46 @@
+name: Lighthouse mobile audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/lighthouse.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run mobile Lighthouse
+        run: |
+          npx --yes lighthouse@12.8.2 https://dsf430-stack.github.io/myfirstproject/ \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=lighthouse-mobile.json \
+            --chrome-flags="--headless --no-sandbox"
+      - name: Print scores and enforce minimums
+        run: |
+          node - <<'NODE'
+          const report = require("./lighthouse-mobile.json");
+          const scores = Object.fromEntries(
+            Object.entries(report.categories).map(([key, value]) => [key, Math.round(value.score * 100)])
+          );
+          console.log("Lighthouse mobile scores:", scores);
+          const minimums = { performance: 85, accessibility: 90, "best-practices": 90, seo: 90 };
+          const failures = Object.entries(minimums).filter(([key, minimum]) => scores[key] < minimum);
+          if (failures.length) {
+            console.error("Below minimum:", failures.map(([key, minimum]) => `${key} ${scores[key]} < ${minimum}`).join(", "));
+            process.exit(1);
+          }
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-mobile-report
+          path: lighthouse-mobile.json
+          retention-days: 7

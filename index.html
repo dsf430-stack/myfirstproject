@@ -360,11 +360,18 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "LocalBusiness",
             "@id": "https://dsf430-stack.github.io/myfirstproject/#business",
             "name": "意嘉行",
             "url": "https://dsf430-stack.github.io/myfirstproject/",
             "image": "https://dsf430-stack.github.io/myfirstproject/hero-laundry.webp",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "鼎金後路14號",
+              "addressLocality": "三民區",
+              "addressRegion": "高雄市",
+              "addressCountry": "TW"
+            },
             "description": "意嘉行提供高雄、台南店家與機構大量洗毛巾、洗衣服、床單床巾送洗與烘乾相關服務",
             "areaServed": [
               { "@type": "City", "name": "高雄市" },

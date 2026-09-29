@@ -356,123 +356,173 @@
       }
     </style>
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "LocalBusiness",
-            "@id": "https://dsf430-stack.github.io/myfirstproject/#business",
-            "name": "意嘉行",
-            "url": "https://dsf430-stack.github.io/myfirstproject/",
-            "image": "https://dsf430-stack.github.io/myfirstproject/hero-laundry.webp",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "鼎金後路13號",
-              "addressLocality": "三民區",
-              "addressRegion": "高雄市",
-              "addressCountry": "TW"
-            },
-            "description": "意嘉行提供高雄、台南店家與機構大量洗毛巾、洗衣服、床單床巾送洗與烘乾相關服務",
-            "areaServed": [
-              { "@type": "City", "name": "高雄市" },
-              { "@type": "City", "name": "台南市" }
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "url": "https://line.me/ti/p/~gov1977",
-              "availableLanguage": "zh-Hant"
-            },
-            "knowsAbout": [
-              "洗毛巾",
-              "毛巾送洗",
-              "洗衣服",
-              "床單送洗",
-              "床巾送洗",
-              "診所毛巾送洗",
-              "醫美毛巾送洗",
-              "髮廊SPA毛巾送洗",
-              "高溫烘乾"
-            ]
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://dsf430-stack.github.io/myfirstproject/#website",
-            "url": "https://dsf430-stack.github.io/myfirstproject/",
-            "name": "意嘉行",
-            "inLanguage": "zh-Hant",
-            "publisher": {
-              "@id": "https://dsf430-stack.github.io/myfirstproject/#business"
-            }
-          },
-          {
-            "@type": "WebPage",
-            "@id": "https://dsf430-stack.github.io/myfirstproject/#webpage",
-            "url": "https://dsf430-stack.github.io/myfirstproject/",
-            "name": "意嘉行｜高雄・台南洗毛巾、洗衣服、床單床巾送洗",
-            "isPartOf": {
-              "@id": "https://dsf430-stack.github.io/myfirstproject/#website"
-            },
-            "about": {
-              "@id": "https://dsf430-stack.github.io/myfirstproject/#business"
-            },
-            "inLanguage": "zh-Hant"
-          },
-          {
-            "@type": "Service",
-            "@id": "https://dsf430-stack.github.io/myfirstproject/#service",
-            "name": "大量洗毛巾、洗衣服與床單床巾送洗服務",
-            "provider": {
-              "@id": "https://dsf430-stack.github.io/myfirstproject/#business"
-            },
-            "url": "https://dsf430-stack.github.io/myfirstproject/#service",
-            "areaServed": [
-              { "@type": "City", "name": "高雄市" },
-              { "@type": "City", "name": "台南市" }
-            ],
-            "serviceType": ["洗毛巾", "毛巾送洗", "洗衣服", "床單床巾送洗", "烘乾"]
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://dsf430-stack.github.io/myfirstproject/#faq-schema",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "意嘉行提供哪些商用洗衣服務？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "意嘉行提供商用洗衣、毛巾與布品清洗及烘乾相關服務，固定、大量或特殊布品需求可先提供品項、數量、地區與頻率詢問。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "高雄診所或醫美可以送洗毛巾與布品嗎？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "可以先詢問。診所、醫美、復健等機構可提供毛巾、床巾或其他可洗滌布品的種類、數量、頻率與所在地區，由意嘉行確認是否適合安排。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "服務範圍在哪裡？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "目前網站標示主要服務高雄市與台南市。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "大量毛巾可以固定週期送洗嗎？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "可以先提供每次約略數量、洗滌頻率、布品種類與所在地區詢問固定週期安排。"
-                }
-              }
-            ]
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://dsf430-stack.github.io/myfirstproject/#business",
+      "name": "意嘉行",
+      "url": "https://dsf430-stack.github.io/myfirstproject/",
+      "image": "https://dsf430-stack.github.io/myfirstproject/hero-laundry.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "鼎金後路13號",
+        "addressLocality": "三民區",
+        "addressRegion": "高雄市",
+        "addressCountry": "TW"
+      },
+      "description": "意嘉行提供高雄、台南店家與機構大量洗毛巾、洗衣服、床單床巾送洗與烘乾相關服務",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "高雄市"
+        },
+        {
+          "@type": "City",
+          "name": "台南市"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://line.me/ti/p/~gov1977",
+        "availableLanguage": "zh-Hant"
+      },
+      "knowsAbout": [
+        "洗毛巾",
+        "毛巾送洗",
+        "洗衣服",
+        "床單送洗",
+        "床巾送洗",
+        "診所毛巾送洗",
+        "醫美毛巾送洗",
+        "髮廊SPA毛巾送洗",
+        "高溫烘乾"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dsf430-stack.github.io/myfirstproject/#website",
+      "url": "https://dsf430-stack.github.io/myfirstproject/",
+      "name": "意嘉行",
+      "inLanguage": "zh-Hant",
+      "publisher": {
+        "@id": "https://dsf430-stack.github.io/myfirstproject/#business"
       }
-    </script>
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dsf430-stack.github.io/myfirstproject/#webpage",
+      "url": "https://dsf430-stack.github.io/myfirstproject/",
+      "name": "意嘉行｜高雄・台南洗毛巾、洗衣服、床單床巾送洗",
+      "isPartOf": {
+        "@id": "https://dsf430-stack.github.io/myfirstproject/#website"
+      },
+      "about": {
+        "@id": "https://dsf430-stack.github.io/myfirstproject/#business"
+      },
+      "inLanguage": "zh-Hant"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dsf430-stack.github.io/myfirstproject/#service",
+      "name": "大量洗毛巾、洗衣服與床單床巾送洗服務",
+      "provider": {
+        "@id": "https://dsf430-stack.github.io/myfirstproject/#business"
+      },
+      "url": "https://dsf430-stack.github.io/myfirstproject/#service",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "高雄市"
+        },
+        {
+          "@type": "City",
+          "name": "台南市"
+        }
+      ],
+      "serviceType": [
+        "洗毛巾",
+        "毛巾送洗",
+        "洗衣服",
+        "床單床巾送洗",
+        "烘乾"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dsf430-stack.github.io/myfirstproject/#faq-schema",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "意嘉行提供哪些商用洗衣服務？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "意嘉行提供商用洗衣、毛巾與布品清洗及烘乾相關服務，固定、大量或特殊布品需求可先提供品項、數量、地區與頻率詢問。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "高雄診所或醫美可以送洗毛巾與布品嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以先詢問。診所、醫美、復健等機構可提供毛巾、床巾或其他可洗滌布品的種類、數量、頻率與所在地區，由意嘉行確認是否適合安排。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "服務範圍在哪裡？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "目前網站標示主要服務高雄市與台南市。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "大量毛巾可以固定週期送洗嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以先提供每次約略數量、洗滌頻率、布品種類與所在地區詢問固定週期安排。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "所有布品都使用相同烘乾條件嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。不同材質可能需要不同條件，會依實際布品需求判斷。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一般洗衣要多久可以完成？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般約 1 至 3 天完成；特殊布品或數量較多時，請先透過 LINE 確認所需時間。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "意嘉行有提供收送服務嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "目前暫不提供收送服務，請自行送洗。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "意嘉行營業時間和地址在哪裡？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "服務時間為 08:00 至 18:00。地址是高雄市三民區鼎金後路13號；營業日請先透過 LINE 確認。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
   </head>
   <body>
     <div class="top">
@@ -702,6 +752,36 @@
         <div class="answer"><strong>床單、床巾可以一起送洗嗎？</strong><p>可以先把毛巾、床單、床巾與衣服分項整理數量，再提供材質與使用情況詢問。</p></div>
         <div class="answer"><strong>高雄、台南哪裡可以大量洗衣服？</strong><p>意嘉行主要處理店家與機構固定、大量洗衣需求；請提供所在地區、洗什麼、數量及多久洗一次。</p></div>
       </section>
+      <section class="section wrap" id="service-details">
+        <div class="head">
+          <h2>洗衣大約多久完成？需要自己送洗嗎？</h2>
+          <p>先看處理時間、送洗方式、服務時間和地址；若有特殊布品或大量需求，可先透過 LINE 確認。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="body">
+              <h3>一般處理時間</h3>
+              <p>一般約 1–3 天完成。特殊布品或數量較多，請先確認實際處理時間。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="body">
+              <h3>送洗方式</h3>
+              <p>目前暫不提供收送服務，請自行送洗。</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="body">
+              <h3>服務時間與地址</h3>
+              <p>服務時間為 08:00–18:00。地址：高雄市三民區鼎金後路13號；出發前可先以 LINE 確認營業日。</p>
+            </div>
+          </article>
+        </div>
+        <p class="actions">
+          <a class="btn line" href="https://line.me/ti/p/~gov1977" target="_blank" rel="noopener">LINE 詢問意嘉行</a>
+        </p>
+      </section>
+
       <section class="section wrap" id="faq">
         <div class="head">
           <h2>常見問題</h2>

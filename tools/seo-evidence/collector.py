@@ -25,10 +25,16 @@ from bs4 import BeautifulSoup
 DEFAULT_URL = "https://dsf430-stack.github.io/myfirstproject/"
 USER_AGENT = "YijiahangEvidenceBot/1.0 (+https://dsf430-stack.github.io/myfirstproject/)"
 SKIP_EXT = re.compile(r"\.(?:jpe?g|png|gif|webp|avif|svg|ico|pdf|zip|gz|mp4|mp3|webm|woff2?|ttf|css|js|xml|json|txt|md|docx?|xlsx?|pptx?)$", re.I)
+SAFE_RESPONSE_HEADERS = {"content-type", "content-language", "cache-control", "last-modified", "etag", "x-robots-tag"}
 
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def safe_response_headers(headers) -> dict[str, str]:
+    """Keep useful crawl metadata while excluding cookies and auth headers."""
+    return {str(k).lower(): str(v) for k, v in (headers or {}).items() if str(k).lower() in SAFE_RESPONSE_HEADERS}
 
 
 def normalized_url(url: str, origin: str, path_prefix: str) -> str | None:
@@ -183,6 +189,8 @@ async def collect(base_url: str, out_dir: Path, max_pages: int, max_depth: int, 
     base = urllib.parse.urlsplit(base_url)
     if base.scheme != "https" or not base.hostname:
         raise ValueError("Only an absolute HTTPS start URL is accepted")
+    if base.username or base.password:
+        raise ValueError("Credentials in crawl URLs are not accepted")
     if not public_host(base.hostname):
         raise ValueError("Refusing a private, local, or unresolved host")
     origin = f"https://{base.netloc}"
@@ -246,7 +254,7 @@ async def collect(base_url: str, out_dir: Path, max_pages: int, max_depth: int, 
                 "links": facts["links"], "images": facts["images"], "schema": facts["schema"],
                 "content_sha256": digest, "html_bytes": len(html.encode("utf-8", "replace")),
                 "markdown_chars": len(raw_md), "fit_markdown_chars": len(fit_md),
-                "response_headers": getattr(result, "response_headers", {}) or {},
+                "response_headers": safe_response_headers(getattr(result, "response_headers", {}) or {}),
                 "crawl_success": bool(getattr(result, "success", False)),
                 "error": getattr(result, "error_message", None),
             }

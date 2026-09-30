@@ -25,6 +25,20 @@ def page_text(page, root):
         except OSError: pass
     return value
 
+def observed_topics(content):
+    return [topic for topic, terms in TOPICS.items() if any(term.lower() in content.lower() for term in terms)]
+
+def evidence_status(page, content):
+    if not page or page.get("http_status") != 200:
+        return "FAILED"
+    title=(page.get("title") or "").strip().lower()
+    text=content.strip().lower()
+    challenge_titles={"one moment, please...", "just a moment...", "attention required! | cloudflare"}
+    challenge=title in challenge_titles or "please wait while your request is being verified" in text or "enable javascript and cookies to continue" in text
+    if challenge or len(text) < 120:
+        return "UNCERTAIN"
+    return "SUCCESS"
+
 def compare(first_party, first_root, config, external_root):
     own=[(p,page_text(p,first_root)) for p in first_party]
     topic_rows=[]
@@ -38,9 +52,9 @@ def compare(first_party, first_root, config, external_root):
             competitor_details.append({"name":slug,"url":competitor["url"],"status":"FAILED","reason":"Crawl4AI pages.json missing; no competitor content inferred"}); continue
         crawled=read_pages(path)
         page=next((p for p in crawled if p.get("url")==competitor["url"] or p.get("final_url")==competitor["url"]),crawled[0] if crawled else None)
-        status="SUCCESS" if page and page.get("http_status")==200 else "FAILED"
         content=page_text(page,folder) if page else ""
-        competitor_details.append({"name":slug,"url":competitor["url"],"status":status,"http_status":page.get("http_status") if page else None,"title":page.get("title") if page else None,"headings":(page.get("headings") or {}).get("h2",[]) if page else [],"observed_topics":competitor.get("observed_topics",[]) if status=="SUCCESS" else [],"content_sha256":page.get("content_sha256") if page else None})
+        status=evidence_status(page,content)
+        competitor_details.append({"name":slug,"url":competitor["url"],"status":status,"http_status":page.get("http_status") if page else None,"title":page.get("title") if page else None,"headings":(page.get("headings") or {}).get("h2",[]) if page else [],"observed_topics":observed_topics(content) if status=="SUCCESS" else [],"content_sha256":page.get("content_sha256") if page else None})
         if status!="SUCCESS": continue
         for topic,terms in TOPICS.items():
             if any(term.lower() in content.lower() for term in terms):
@@ -62,7 +76,8 @@ def compare(first_party, first_root, config, external_root):
         source_path=Path(external_root)/"citations"/(source.get("id") or "")/"pages.json"
         crawled=read_pages(source_path) if source_path.exists() else []
         source_page=next((p for p in crawled if p.get("url")==source["url"] or p.get("final_url")==source["url"]),crawled[0] if crawled else None)
-        source_status="SUCCESS" if source_page and source_page.get("http_status")==200 else "FAILED"
+        source_content=page_text(source_page,Path(external_root)/"citations"/(source.get("id") or "")) if source_page else ""
+        source_status=evidence_status(source_page,source_content)
         if source_status!="SUCCESS": source_failures.append(source["name"])
         source_rows.append({"name":source["name"],"url":source["url"],"topics":source.get("topics",[]),"crawl_status":source_status,"http_status":source_page.get("http_status") if source_page else None,"linked_by":linked,"action":"REVIEW" if source_status!="SUCCESS" else ("KEEP" if linked else "MODIFY")})
     failed=[x["name"] for x in competitor_details if x["status"]!="SUCCESS"]

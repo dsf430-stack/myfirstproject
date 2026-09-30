@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,6 +10,7 @@ def load(name,path):
     spec=importlib.util.spec_from_file_location(name,path); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); return module
 universe=load("universe",ROOT/"build_universe.py")
 page_audit=load("page_audit",ROOT/"page_content_audit.py")
+source_compare=load("source_compare",ROOT/"compare_public_sources.py")
 
 class YaoIntegrationTests(unittest.TestCase):
     def test_query_universe_is_deduplicated_and_covers_requested_topics(self):
@@ -45,5 +47,14 @@ class YaoIntegrationTests(unittest.TestCase):
         r=page_audit.audit(pages)
         check=next(c for c in r["pages"][0]["checks"] if c["code"]=="UNVERIFIED_SERVICE_CLAIM")
         self.assertEqual(check["decision"],"REVIEW")
+
+    def test_blocked_public_pages_are_uncertain_and_not_assigned_configured_topics(self):
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp); ext=base/"external"; comp=ext/"competitors"/"blocked"; comp.mkdir(parents=True)
+            (comp/"pages.json").write_text(json.dumps([{"url":"https://blocked.example/","http_status":200,"title":"One moment, please...","text":"Loader Please wait while your request is being verified..."}]),encoding="utf-8")
+            result=source_compare.compare([],base,{"competitors":[{"id":"blocked","name":"Blocked","url":"https://blocked.example/","observed_topics":["pickup and delivery"]}],"citation_sources":[]},ext)
+        self.assertEqual(result["status"],"UNCERTAIN")
+        self.assertEqual(result["competitors"][0]["status"],"UNCERTAIN")
+        self.assertEqual(result["competitors"][0]["observed_topics"],[])
 
 if __name__=="__main__": unittest.main()

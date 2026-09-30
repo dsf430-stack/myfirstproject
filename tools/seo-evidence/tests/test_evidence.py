@@ -19,6 +19,7 @@ def load(name, path):
 collector = load("collector", ROOT / "collector.py")
 coverage = load("coverage", ROOT / "analyze_coverage.py")
 action_engine = load("action_engine", ROOT / "action_engine.py")
+attach_jev_evidence = load("attach_jev_evidence", ROOT / "attach_jev_evidence.py")
 
 
 class CollectorTests(unittest.TestCase):
@@ -75,6 +76,17 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual([x["decision"] for x in result["question_actions"]], ["KEEP", "CREATE"])
         self.assertEqual(result["technical_actions"][0]["priority"], "P1")
         self.assertEqual(result["technical_actions"][0]["decision"], "REVIEW")
+
+
+class JevEvidenceTests(unittest.TestCase):
+    def test_attaches_crawl4ai_evidence_to_jev_pages_without_replacing_findings(self):
+        audit = {"pages": [{"url": "https://example.test/project/page/", "title": "Jev title"}], "actions": [{"id": "keep"}]}
+        pages = [{"url": "https://example.test/project/page", "final_url": "https://example.test/project/page/", "http_status": 200, "markdown": "markdown/1.md", "raw_html": "raw/1.html", "headings": {"h1": ["標題"]}, "content_sha256": "abc"}]
+        result = attach_jev_evidence.attach(audit, pages, {"pages_crawled": 1}, "crawl_manifest.json")
+        self.assertEqual(result["pages"][0]["title"], "Jev title")
+        self.assertEqual(result["pages"][0]["crawl4ai_evidence"]["content_sha256"], "abc")
+        self.assertEqual(result["actions"], [{"id": "keep"}])
+        self.assertEqual(result["crawl4ai_evidence"]["matched_jev_pages"], 1)
 
 
 if __name__ == "__main__":

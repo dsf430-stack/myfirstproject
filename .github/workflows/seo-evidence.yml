@@ -98,8 +98,9 @@ jobs:
           import json
           from pathlib import Path
           audit = json.loads(Path("seo/jev-seo-reports/first-run/audit.json").read_text())
-          url = "https://www.chciworld.com.tw/product/sodium_percarbonate/"
-          status = audit["site"].get("external_status", {}).get(url)
+          url = "https://www.chciworld.com.tw/product/sodium_percarbonate"
+          matches = [status for href, status in audit["site"].get("external_status", {}).items() if href.rstrip("/") == url]
+          status = matches[0] if matches else None
           if status != 200:
               raise SystemExit(f"Updated sodium percarbonate citation returned {status}, expected HTTP 200")
           print(f"Citation verification passed: {url} -> HTTP {status}")

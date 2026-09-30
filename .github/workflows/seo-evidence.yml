@@ -33,11 +33,34 @@ jobs:
           tools/crawl4ai/.venv/bin/crawl4ai-setup
           tools/crawl4ai/.venv/bin/crawl4ai-doctor
           tools/crawl4ai/.venv/bin/python -c "from importlib.metadata import version; import crawl4ai; print('Crawl4AI import OK:', version('Crawl4AI'))"
+      - name: Pin and validate selected Yao GEO Skills
+        run: |
+          git init .yao-geo-skills-source
+          git -C .yao-geo-skills-source remote add origin https://github.com/yaojingang/yao-geo-skills.git
+          git -C .yao-geo-skills-source fetch --depth 1 origin 0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f
+          git -C .yao-geo-skills-source checkout --detach FETCH_HEAD
+          test "$(git -C .yao-geo-skills-source rev-parse HEAD)" = "0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f"
+          python3 .yao-geo-skills-source/scripts/validate_repository.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          repo = Path(".yao-geo-skills-source")
+          profile = json.loads(Path("tools/seo-evidence/yao_geo/integration.json").read_text())
+          missing = []
+          for item in profile["selected_skills"]:
+              base = repo / "skills" / item["id"]
+              for rel in ("SKILL.md", "manifest.json", "templates/brief-template.md", "evals/trigger_cases.json", "evals/expected_artifacts.json"):
+                  if not (base / rel).is_file(): missing.append(f"{item['id']}/{rel}")
+          if missing: raise SystemExit("Yao skill contract files missing: " + ", ".join(missing))
+          print(json.dumps({"status":"SUCCESS","upstream_ref":"0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f","skills_validated":len(profile["selected_skills"])},ensure_ascii=False))
+          PY
       - name: Run Crawl4AI's upstream test suite
         working-directory: tools/crawl4ai/source
         run: ../.venv/bin/python -m pytest tests/unit/ -q
       - name: Test URL policy, extraction and decision contracts
         run: tools/crawl4ai/.venv/bin/python -m unittest discover -s tools/seo-evidence/tests -v
+      - name: Test Yao GEO question expansion, coverage guardrails, and page audit
+        run: tools/crawl4ai/.venv/bin/python -m unittest discover -s tools/seo-evidence/yao_geo -v
       - name: Smoke test Chromium and JavaScript rendering
         run: tools/crawl4ai/.venv/bin/python tools/seo-evidence/smoke_test.py
       - name: Crawl live pages and create Markdown evidence
@@ -65,11 +88,40 @@ jobs:
           assert all("?" not in u and "#" not in u for u in urls), "Query/fragment URL escaped deduplication"
           print(json.dumps({"pages": len(pages), "home_status": home["http_status"], "title": home["title"], "internal_links": len(home["links"]["internal"]), "markdown_chars": len(md), "errors": len(manifest["errors"])}, ensure_ascii=False))
           PY
-      - name: Measure GEO question coverage
+      - name: Expand Yao GEO intent and question universe, audit page extractability
         run: |
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/yao_geo/build_universe.py
           tools/crawl4ai/.venv/bin/python tools/seo-evidence/analyze_coverage.py \
             --pages seo/crawler/raw/first-run/pages.json \
+            --questions tools/seo-evidence/yao_geo/query_question_universe.json \
             --out seo/crawler/reports/first-run/geo-audit.json
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/yao_geo/page_content_audit.py \
+            --pages seo/crawler/raw/first-run/pages.json \
+            --out seo/yao-geo/first-run/page-content-audit.json
+      - name: Crawl public competitor and citation evidence
+        run: |
+          optional_crawl() {
+            set +e
+            tools/crawl4ai/.venv/bin/python tools/seo-evidence/collector.py "$@"
+            crawl_status=$?
+            set -e
+            if [ "$crawl_status" -ne 0 ]; then
+              echo "::warning::External source crawl returned $crawl_status; comparator will preserve FAILED/UNCERTAIN evidence instead of assuming success. URL: $2"
+            fi
+          }
+          optional_crawl --url https://www.superclean352.com.tw/about-us.html --out seo/crawler/external/competitors/kao-chieh --max-pages 1 --max-depth 1 --delay 0.5
+          optional_crawl --url https://4stw.com/services/ --out seo/crawler/external/competitors/four-seasons --max-pages 1 --max-depth 1 --delay 0.5
+          optional_crawl --url https://acewash.com.tw/about/ --out seo/crawler/external/competitors/ace-laundry --max-pages 1 --max-depth 1 --delay 0.5
+          optional_crawl --url https://www.cleaninginstitute.org/cleaning-tips/clothes/stain-removal-guide --out seo/crawler/external/citations/aci-stains --max-pages 1 --max-depth 1 --delay 0.5
+          optional_crawl --url https://www.cleaninginstitute.org/cleaning-tips/holiday-cleaning/holiday-stains --out seo/crawler/external/citations/aci-holiday-stains --max-pages 1 --max-depth 1 --delay 0.5
+          optional_crawl --url https://www.cleaninginstitute.org/cleaning-tips/clothes/laundry-basics --out seo/crawler/external/citations/aci-laundry-basics --max-pages 1 --max-depth 1 --delay 0.5
+          optional_crawl --url https://site.extension.uga.edu/textiles/care/stain-removal/remove-stains-from-blood/ --out seo/crawler/external/citations/uga-blood --max-pages 1 --max-depth 1 --delay 0.5
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/yao_geo/compare_public_sources.py \
+            --pages seo/crawler/raw/first-run/pages.json \
+            --first-root seo/crawler/raw/first-run \
+            --sources tools/seo-evidence/yao_geo/competitor_sources.json \
+            --external-root seo/crawler/external \
+            --out seo/yao-geo/first-run/public-source-comparison.json
       - name: Set up Jev SEO separately without paid API keys
         run: |
           git init .jev-seo-source
@@ -135,11 +187,13 @@ jobs:
           output.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
           print(json.dumps(record, ensure_ascii=False))
           PY
-      - name: Combine GEO coverage and Jev ranked findings
+      - name: Join Yao GEO, Jev findings, and public-source evidence in the existing Action Engine
         run: |
           tools/crawl4ai/.venv/bin/python tools/seo-evidence/action_engine.py \
             --coverage seo/crawler/reports/first-run/geo-audit.json \
             --jev-audit seo/jev-seo-reports/first-run/audit.json \
+            --yao-audit seo/yao-geo/first-run/page-content-audit.json \
+            --source-comparison seo/yao-geo/first-run/public-source-comparison.json \
             --out seo/action-engine/first-run.json
           tools/crawl4ai/.venv/bin/python - <<'PY'
           import json
@@ -163,6 +217,8 @@ jobs:
           path: |
             seo/crawler/raw/first-run/
             seo/crawler/reports/first-run/
+            seo/crawler/external/
+            seo/yao-geo/first-run/
             seo/jev-seo-reports/first-run/
             seo/action-engine/
           if-no-files-found: warn

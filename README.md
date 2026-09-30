@@ -25,3 +25,11 @@
 ## SEO / GEO 維護原則
 
 網站文字優先使用客戶實際會搜尋的「洗毛巾、洗衣服、洗床單、床巾送洗、大量送洗」等自然語言；保留「商用洗衣」作為產業同義詞，但不以官方術語取代生活化搜尋語句。所有結構化資料與頁面可見內容必須保持一致，不新增未經確認的價格、收送、設備、消毒或效果承諾。
+
+## SEO/GEO Evidence Pipeline
+
+Crawl4AI remains the public evidence collector; Jev SEO remains the technical audit/report layer; the existing SEO/GEO Action Engine remains the final decision point. The pinned Yao GEO Skills methods now provide deduplicated query/question expansion, intent labels, page/content/citation checks, source-bound brand facts, and effect-monitor inputs. They feed the same Action Engine and do not create another site or workflow.
+
+The integration profile, 44 Taiwan-local seed queries, generated question universe, competitor/source references, business-fact review boundary, and deterministic adapters live in `tools/seo-evidence/yao_geo/`. The workflow pins Yao GEO Skills commit `0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f`, runs its repository validator, checks selected skill contracts, and attaches Yao page/content and public-source findings to the existing Jev/Crawl4AI decision output. Baidu is supplemental Chinese-language evidence only; missing keyword suggestions are recorded as uncertain and never converted to Taiwan demand estimates.
+
+No DataForSEO, PageSpeed, LLM, or paid API is required. Unverified prices, service claims, turnaround guarantees, certifications, medical/laundry process claims, and special-garment service scope remain `REVIEW`.

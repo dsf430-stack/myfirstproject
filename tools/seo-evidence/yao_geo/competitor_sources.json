@@ -1,0 +1,107 @@
+{
+  "captured_at": "2026-09-30",
+  "method": "Public web search discovery; Crawl4AI evidence crawl is run separately from the first-party site crawl",
+  "competitors": [
+    {
+      "name": "高潔洗衣社",
+      "url": "https://www.superclean352.com.tw/about-us.html",
+      "market": "Tainan",
+      "observed_topics": [
+        "commercial laundry",
+        "towel/bath towel",
+        "sheets/duvet covers",
+        "pickup and delivery",
+        "business supplies"
+      ],
+      "evidence": "Public search result; not a claim about Yijiahang",
+      "id": "kao-chieh"
+    },
+    {
+      "name": "高雄四季毛巾專業洗滌",
+      "url": "https://4stw.com/services/",
+      "market": "Kaohsiung",
+      "observed_topics": [
+        "commercial towel washing",
+        "pickup and delivery",
+        "business clients"
+      ],
+      "evidence": "Public search result; not a claim about Yijiahang",
+      "id": "four-seasons"
+    },
+    {
+      "name": "ACE洗衣",
+      "url": "https://acewash.com.tw/about/",
+      "market": "Kaohsiung",
+      "observed_topics": [
+        "commercial linen",
+        "towels",
+        "uniforms",
+        "pickup and delivery"
+      ],
+      "evidence": "Public search result; not a claim about Yijiahang",
+      "id": "ace-laundry"
+    }
+  ],
+  "citation_sources": [
+    {
+      "name": "American Cleaning Institute stain removal guide",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/clothes/stain-removal-guide",
+      "topics": [
+        "blood",
+        "grease/oil",
+        "beverage stains",
+        "care labels"
+      ],
+      "id": "aci-stains"
+    },
+    {
+      "name": "American Cleaning Institute holiday stains",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/holiday-cleaning/holiday-stains",
+      "topics": [
+        "coffee",
+        "tea",
+        "wine",
+        "oil-based stains"
+      ],
+      "id": "aci-holiday-stains"
+    },
+    {
+      "name": "American Cleaning Institute laundry basics",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/clothes/laundry-basics",
+      "topics": [
+        "care labels",
+        "pre-treatment",
+        "laundry basics"
+      ],
+      "id": "aci-laundry-basics"
+    },
+    {
+      "name": "University of Georgia Cooperative Extension blood stain guide",
+      "url": "https://site.extension.uga.edu/textiles/care/stain-removal/remove-stains-from-blood/",
+      "topics": [
+        "blood stain care"
+      ],
+      "id": "uga-blood"
+    }
+  ],
+  "comparison_dimensions": [
+    "topic coverage",
+    "buyer questions",
+    "entity/service area clarity",
+    "page structure",
+    "source/citation coverage",
+    "schema",
+    "internal links"
+  ],
+  "copy_policy": "Do not reproduce competitor wording, pricing, service area details, or claims. Use observations only to identify coverage gaps and page structure opportunities.",
+  "baidu_supplemental_observation": {
+    "status": "UNCERTAIN",
+    "query": "高雄洗衣",
+    "captured_at": "2026-09-30",
+    "source_url": "https://www.baidu.com/",
+    "observation": "Current homepage exposed an AI/chat-style input with no autocomplete dropdown. On the results page, the bottom '相关搜索' block contained unrelated current hot-search topics, so it was excluded. Search-result snippets contained some relevant laundry businesses but are not Baidu related-keyword evidence.",
+    "screenshot_saved": false,
+    "reason": "Yao browser-capture skill requires visible suggestion/related-search screenshot evidence; the current UI did not expose a valid keyword block, and no unsupported capture was fabricated.",
+    "use": "Do not use this sample as Taiwanese search volume or as an expansion source; continue with Taiwan-local public search and first-party evidence."
+  }
+}

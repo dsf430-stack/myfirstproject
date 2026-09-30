@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "system": "existing-crawl4ai-jev-seo-action-engine",
+  "role": "Yao GEO Skills capability layer",
+  "upstream": {
+    "repository": "https://github.com/yaojingang/yao-geo-skills",
+    "ref": "0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f",
+    "validator": "python3 scripts/validate_repository.py",
+    "license": "MIT"
+  },
+  "selected_skills": [
+    {
+      "id": "yao-geo-intent-miner",
+      "version": "0.4.0",
+      "use": "query/question expansion, intent clusters, buyer and informational questions; no invented volume or platform samples",
+      "maturity": "unspecified"
+    },
+    {
+      "id": "yao-geo-baidu-keywords",
+      "version": "1.0.0",
+      "use": "optional supplemental Chinese query language only; browser evidence required; never infer Taiwan search volume from Baidu",
+      "execution_status": "UNCERTAIN: current Baidu UI showed no relevant suggestion block; see competitor_sources.json; no volume inference",
+      "maturity": "unspecified"
+    },
+    {
+      "id": "yao-geo-page-audit",
+      "version": "0.4.0",
+      "use": "public page structure, crawlability, extractability, source/citation and schema checks",
+      "maturity": "beta"
+    },
+    {
+      "id": "yao-geo-content-refiner",
+      "use": "evidence-bound content improvements; preserve facts and mark unverified claims REVIEW",
+      "version": "0.4.0",
+      "maturity": "beta"
+    },
+    {
+      "id": "yao-geo-title-optimizer",
+      "use": "title and metadata clarity using existing pages and intent; no keyword stuffing",
+      "version": "0.1.0",
+      "maturity": "beta"
+    },
+    {
+      "id": "yao-geo-page-blueprint",
+      "use": "prefer improving existing canonical pages; avoid doorway pages and duplicate content",
+      "version": "0.1.0",
+      "maturity": "beta"
+    },
+    {
+      "id": "yao-geo-brand-graph",
+      "use": "entity and service-area facts only when supported by site evidence",
+      "version": "0.1.4",
+      "maturity": "production"
+    },
+    {
+      "id": "yao-geo-knowledge-base-builder",
+      "use": "durable sourced facts, questions, exclusions and freshness",
+      "version": "0.3.0",
+      "maturity": "beta"
+    },
+    {
+      "id": "yao-geo-effect-monitor",
+      "use": "before/after crawl, citation-source and question-coverage evidence; no AI visibility claims without samples",
+      "version": "0.1.0",
+      "maturity": "incubating"
+    }
+  ],
+  "pipeline": [
+    "Crawl4AI",
+    "Evidence Collection",
+    "Yao GEO Research / Intent / Question Mining",
+    "Jev SEO",
+    "SEO/GEO Action Engine",
+    "Discover",
+    "Compare",
+    "Decide",
+    "Fix",
+    "Publish",
+    "Verify",
+    "Repeat"
+  ],
+  "data_policy": {
+    "search_volume": "NOT_AVAILABLE; no DataForSEO or paid API",
+    "ai_platform_answers": "NOT_SAMPLED; no citation-rate or ranking claims",
+    "baidu": "SUPPLEMENTAL_CHINESE_CORPUS_ONLY; not a Taiwan/KHH/TNN volume proxy",
+    "business_facts": "Publish only facts supported by current first-party site or explicit user confirmation; otherwise REVIEW; competitor pages identify questions, never prove this brand offers a service",
+    "competitor_content": "Compare topic/entity/question/schema/source coverage only; never copy wording"
+  },
+  "skill_mode": "Pinned upstream skill specifications + selected methods + deterministic adapters called by the existing SEO evidence workflow; SKILL.md prompts are not treated as an independent crawler or a second SEO system."
+}

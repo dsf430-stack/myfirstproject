@@ -24,4 +24,4 @@ Run question coverage on a collected page set:
 tools/crawl4ai/.venv/bin/python tools/seo-evidence/analyze_coverage.py --pages seo/crawler/raw/latest/pages.json --out seo/crawler/reports/latest/question_coverage.json
 ```
 
-Question matches are deterministic evidence for review; they do not claim that exact strings prove a complete answer. The recommendation maps `COVERED/PARTIAL/MISSING` to the existing `KEEP/MODIFY/CREATE` actions. Jev continues to own technical findings and report formats. First install/live-crawl validation is required before using the collector in production.
+Question matches are deterministic evidence for review; they do not claim that exact strings prove a complete answer. The recommendation maps `COVERED/PARTIAL/MISSING` to the existing `KEEP/MODIFY/CREATE` actions. Jev continues to own technical findings and report formats. Installation, browser rendering, live crawl, Jev evidence attachment and Action Engine validation passed on the GitHub Actions runner on 2026-09-30; repeat the workflow after crawler or website changes.

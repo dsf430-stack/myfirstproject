@@ -82,6 +82,14 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(result["questions"][0]["coverage"],"COVERED")
         self.assertEqual(result["questions"][0]["best_url"],"https://x/stain.html")
 
+    def test_local_question_prefers_matching_city_service_page(self):
+        pages = [
+            {"url":"https://x/","title":"高雄與台南到府收送洗衣","headings":{"h2":["高雄到府收送洗衣"]},"text":"高雄 到府 收送 洗衣 區域 數量 頻率"},
+            {"url":"https://x/kaohsiung-commercial-laundry.html","title":"高雄到府收送洗衣","headings":{"h1":["高雄洗衣收送"],"h2":["高雄到府收送洗衣"]},"text":"高雄 到府 收送 洗衣 區域 數量 頻率"},
+        ]
+        result = coverage.analyze(pages,[{"id":"khh","question":"高雄到府收送洗衣在哪裡？","query":"高雄到府收送洗衣","required_terms":["高雄","到府","收送","洗衣"]}])
+        self.assertEqual(result["questions"][0]["best_url"],"https://x/kaohsiung-commercial-laundry.html")
+
     def test_engine_preserves_jev_priority_and_uses_conservative_actions(self):
         coverage_result = {"summary": {"COVERED": 1, "PARTIAL": 0, "MISSING": 1}, "questions": [
             {"id": "covered", "question": "known", "coverage": "COVERED", "best_url": "https://x/a", "evidence_terms": ["known"]},

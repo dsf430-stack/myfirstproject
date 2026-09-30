@@ -83,7 +83,7 @@
     "search_volume": "NOT_AVAILABLE; no DataForSEO or paid API",
     "ai_platform_answers": "NOT_SAMPLED; no citation-rate or ranking claims",
     "baidu": "SUPPLEMENTAL_CHINESE_CORPUS_ONLY; not a Taiwan/KHH/TNN volume proxy",
-    "business_facts": "Publish only facts supported by current first-party site or explicit public sources; otherwise REVIEW",
+    "business_facts": "Publish only facts supported by current first-party site or explicit user confirmation; otherwise REVIEW; competitor pages identify questions, never prove this brand offers a service",
     "competitor_content": "Compare topic/entity/question/schema/source coverage only; never copy wording"
   },
   "skill_mode": "Pinned upstream skill specifications + selected methods + deterministic adapters called by the existing SEO evidence workflow; SKILL.md prompts are not treated as an independent crawler or a second SEO system."

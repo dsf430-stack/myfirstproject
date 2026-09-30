@@ -25,8 +25,11 @@ def analyze(pages: list[dict], questions: list[dict]) -> dict:
                 state = "PARTIAL"
             else:
                 state = "MISSING"
-            candidates.append({"url": page.get("url"), "status": state, "required_hits": hits_required, "supporting_hits": hits_support, "heading_hits": heading_hits, "keyword_occurrences": sum(text.count(term) for term in required)})
-        candidates.sort(key=lambda x: (x["status"] != "COVERED", x["status"] != "PARTIAL", -len(x["heading_hits"]), -x["keyword_occurrences"], -(len(x["required_hits"]) + len(x["supporting_hits"])), x["url"] or ""))
+            url = page.get("url") or ""
+            city = "tainan" if "台南" in (question.get("query", "") + question.get("question", "")) else "kaohsiung" if "高雄" in (question.get("query", "") + question.get("question", "")) else None
+            local_match = bool(city and city in url.lower())
+            candidates.append({"url": page.get("url"), "status": state, "required_hits": hits_required, "supporting_hits": hits_support, "heading_hits": heading_hits, "keyword_occurrences": sum(text.count(term) for term in required), "local_url_match": local_match})
+        candidates.sort(key=lambda x: (x["status"] != "COVERED", x["status"] != "PARTIAL", not x["local_url_match"], -len(x["heading_hits"]), -x["keyword_occurrences"], -(len(x["required_hits"]) + len(x["supporting_hits"])), x["url"] or ""))
         best = candidates[0] if candidates else {"url": None, "status": "MISSING", "required_hits": [], "supporting_hits": []}
         decision = "REVIEW" if question.get("business_fact_review") else {"COVERED": "KEEP", "PARTIAL": "MODIFY", "MISSING": "CREATE"}[best["status"]]
         rows.append({"id": question["id"], "seed_id": question.get("seed_id"), "topic": question.get("topic"), "question": question["question"], "query": question.get("query"), "intents": question.get("intent", []), "priority": question.get("priority", "P2"), "business_fact_review": question.get("business_fact_review", False), "coverage": best["status"], "best_url": best["url"], "action": decision, "evidence_terms": best["required_hits"] + best["supporting_hits"], "per_page": candidates, "heading_evidence": best.get("heading_hits", [])})

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "brand": "意嘉行",
+  "site": "https://dsf430-stack.github.io/myfirstproject/",
+  "as_of": "2026-09-30",
+  "acquisition_mode": "公開官網頁面（Crawl4AI；GitHub main 原始碼）；公開網頁搜尋用於競爭主題發現；未接入內部 CRM、價格表、搜尋量或 AI 平台樣本",
+  "facts": [
+    {"id":"F01","entity":"意嘉行","attribute":"主要服務區域","value":["高雄市","台南市"],"evidence_url":"https://dsf430-stack.github.io/myfirstproject/","confidence":"first_party_public_observed","use":"local intent / service-area context"},
+    {"id":"F02","entity":"意嘉行","attribute":"公開描述的核心服務","value":["商用洗衣","毛巾與布品清洗","衣物與床單床巾送洗","烘乾","高雄市與台南市到府收送"],"evidence_url":"https://dsf430-stack.github.io/myfirstproject/","confidence":"first_party_public_observed+user_confirmed","use":"business/entity descriptions; actual arrangement depends on area, items, quantity, frequency"},
+    {"id":"F06","entity":"意嘉行","attribute":"到府收送","value":"有提供；高雄市與台南市實際服務區域、品項、數量與頻率須再確認","evidence_url":"user_confirmation: 2026-09-30","confidence":"user_confirmed","use":"may state doorstep pickup/delivery is offered; do not imply every address or request is eligible"},
+    {"id":"F03","entity":"意嘉行","attribute":"公開列出的客群情境","value":["診所","醫美","洗腎中心","長照","髮廊","SPA","復健與物理治療","其他固定或大量布品需求商家/機構"],"evidence_url":"https://dsf430-stack.github.io/myfirstproject/","confidence":"first_party_public_observed","use":"buyer question and internal-link map; not a certification or clinical-process claim"},
+    {"id":"F04","entity":"意嘉行","attribute":"公開詢問資料","value":["所在地區","布品種類","約略數量","洗滌頻率","必要時材質/特殊處理需求"],"evidence_url":"https://dsf430-stack.github.io/myfirstproject/kaohsiung-commercial-laundry.html","confidence":"first_party_public_observed","use":"buyer FAQ and conversion prompts"},
+    {"id":"F05","entity":"意嘉行","attribute":"公開聯絡資訊","value":{"LINE ID":"gov1977","address":"高雄市三民區鼎金後路13號","service_hours":"08:00–18:00"},"evidence_url":"https://dsf430-stack.github.io/myfirstproject/","confidence":"first_party_public_observed","freshness":"confirm before operational use"}
+  ],
+  "entities": [
+    {"id":"E-BRAND","type":"Organization","name":"意嘉行","evidence":"F01,F02"},
+    {"id":"E-KHH","type":"AdministrativeArea","name":"高雄市","relation":"service_area","evidence":"F01"},
+    {"id":"E-TNN","type":"AdministrativeArea","name":"台南市","relation":"service_area","evidence":"F01"},
+    {"id":"E-LAUNDRY","type":"Service","name":"商用洗衣與布品洗滌/烘乾","relation":"offers","evidence":"F02"},
+    {"id":"E-PICKUP","type":"ServiceFeature","name":"到府收送","relation":"offered_in_Kaohsiung_and_Tainan_subject_to_route_confirmation","evidence":"F02,F04,F06"},
+    {"id":"E-BUYERS","type":"Audience","name":"固定或大量使用布品的商家及機構","relation":"serves","evidence":"F03"}
+  ],
+  "review_required": [
+    {"topic":"乾洗服務","reason":"官網只在洗標/特殊衣物提醒中提及乾洗，沒有確認意嘉行承作乾洗。","action":"REVIEW"},
+    {"topic":"鞋類清洗服務","reason":"未在第一方服務頁確認。","action":"REVIEW"},
+    {"topic":"羽絨衣、西裝、絲/羊毛、皮革/麂皮專項服務","reason":"文章僅提供洗標安全提醒，沒有確認受理品項、程序或材質能力。","action":"REVIEW"},
+    {"topic":"洗滌價格、最低量與固定合約條件","reason":"公開頁面未提供可核驗數字或條件。","action":"REVIEW"},
+    {"topic":"確切交件時程、醫療級清洗、消毒/感染控制、認證、設備、成效","reason":"沒有可核驗的第一方資料或標準文件；不得推測。","action":"REVIEW"}
+  ],
+  "prohibited_unverified_claims": ["最低價", "最快", "保證去漬", "醫療級", "感染控制", "專業消毒", "認證設備", "任何未核實收送範圍或特殊衣料受理承諾"],
+  "source_boundary": "競爭者頁面是市場主題/結構 evidence，不作為意嘉行商業事實來源。"
+}

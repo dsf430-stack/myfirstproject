@@ -1,0 +1,70 @@
+{
+  "status": "SUCCESS",
+  "evidence_type": "LIVE_PRE_CHANGE",
+  "captured_at": "2026-09-30T14:25:00Z",
+  "repository": "dsf430-stack/myfirstproject",
+  "commit": "9beb05407dd6b689bf2c77f62f7735ccb04bfb1f",
+  "workflow_run": "https://github.com/dsf430-stack/myfirstproject/actions/runs/36728426806",
+  "website_url": "https://dsf430-stack.github.io/myfirstproject/",
+  "crawl": {
+    "pages": 11,
+    "http_200": 11,
+    "errors": 0,
+    "robots": "previously verified HTTP 200",
+    "sitemap": "previously verified HTTP 200; 10 URLs"
+  },
+  "existing_pipeline": {
+    "jev_score": "60/C/partial",
+    "technical_actions": 11,
+    "preexisting_eight_geo_questions": {
+      "COVERED": 8,
+      "PARTIAL": 0,
+      "MISSING": 0
+    }
+  },
+  "yao_question_coverage": {
+    "question_count": 120,
+    "summary": {
+      "COVERED": 44,
+      "PARTIAL": 68,
+      "MISSING": 8
+    },
+    "action_summary": {
+      "KEEP": 44,
+      "MODIFY": 52,
+      "CREATE": 8,
+      "REVIEW": 16
+    },
+    "method": "deterministic content term evidence plus at least one required term in title/headings for COVERED; substring matching is not a claim of complete semantic response; business claims requiring confirmation are capped at PARTIAL and routed to REVIEW"
+  },
+  "yao_page_content_audit": {
+    "pages": 11,
+    "findings": 0,
+    "page_findings": 0
+  },
+  "changed_page_evidence": {
+    "url": "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html",
+    "title": "高雄台南洗衣、洗毛巾去漬指南｜醬油、口紅、血漬怎麼洗？｜意嘉行",
+    "meta_description": "衣服沾到醬油、口紅或血漬怎麼洗？查看一般可水洗衣物的去漬步驟、冷水處理提醒、洗標注意事項與資料來源。診所及長照機構布品請依機構流程處理；洗後確認污漬消失再烘乾。",
+    "canonical": "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html",
+    "h1": [
+      "衣服沾到醬油、口紅或血漬，怎麼洗？"
+    ],
+    "h2_count": 4,
+    "h3_count": 3,
+    "schema_types": [
+      "Article"
+    ],
+    "external_link_count": 4,
+    "content_sha256": "2f8b4a7857a57a5a61c0361d20ea190a3c35aa64a2cc77b413c642463a198c84",
+    "markdown_chars": 2093
+  },
+  "known_gap_ids": [
+    "S17",
+    "S18"
+  ],
+  "notes": [
+    "Existing C4AI/Jev/Action Engine success was not repeated; this checkpoint reuses its latest main artifact.",
+    "The expanded Yao question corpus applies heading-aware lexical evidence; it does not claim full semantic answers, search volume, rankings, or AI citations."
+  ]
+}

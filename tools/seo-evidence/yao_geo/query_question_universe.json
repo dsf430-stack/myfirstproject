@@ -1,0 +1,2659 @@
+{
+  "schema_version": "1.0",
+  "source_mode": "public web search + first-party website crawl + Yao GEO Intent Miner frameworks; no paid keyword metrics",
+  "count": 120,
+  "query_seeds": [
+    {
+      "id": "S01",
+      "topic": "local-service",
+      "query": "高雄洗衣",
+      "intent": [
+        "local",
+        "commercial"
+      ]
+    },
+    {
+      "id": "S02",
+      "topic": "local-service",
+      "query": "高雄乾洗",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "business_fact_review": true
+    },
+    {
+      "id": "S03",
+      "topic": "local-service",
+      "query": "高雄洗鞋",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "business_fact_review": true
+    },
+    {
+      "id": "S04",
+      "topic": "local-service",
+      "query": "高雄洗衣店",
+      "intent": [
+        "local",
+        "commercial"
+      ]
+    },
+    {
+      "id": "S05",
+      "topic": "local-service",
+      "query": "高雄到府收送洗衣",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "business_fact_review": false
+    },
+    {
+      "id": "S06",
+      "topic": "local-service",
+      "query": "台南收送洗衣",
+      "intent": [
+        "local",
+        "transactional"
+      ]
+    },
+    {
+      "id": "S07",
+      "topic": "buyer",
+      "query": "高雄商用洗衣",
+      "intent": [
+        "local",
+        "commercial",
+        "buyer_question"
+      ]
+    },
+    {
+      "id": "S08",
+      "topic": "buyer",
+      "query": "台南商用洗衣",
+      "intent": [
+        "local",
+        "commercial",
+        "buyer_question"
+      ]
+    },
+    {
+      "id": "S09",
+      "topic": "buyer",
+      "query": "大量毛巾送洗",
+      "intent": [
+        "commercial",
+        "transactional"
+      ]
+    },
+    {
+      "id": "S10",
+      "topic": "buyer",
+      "query": "床單床巾收送洗衣",
+      "intent": [
+        "commercial",
+        "transactional"
+      ]
+    },
+    {
+      "id": "S11",
+      "topic": "buyer",
+      "query": "診所毛巾床巾清洗",
+      "intent": [
+        "commercial",
+        "buyer_question"
+      ]
+    },
+    {
+      "id": "S12",
+      "topic": "buyer",
+      "query": "髮廊 SPA 毛巾送洗",
+      "intent": [
+        "commercial",
+        "buyer_question"
+      ]
+    },
+    {
+      "id": "S13",
+      "topic": "stain",
+      "query": "衣服污漬怎麼處理",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S14",
+      "topic": "stain",
+      "query": "醬油污漬怎麼洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S15",
+      "topic": "stain",
+      "query": "口紅污漬怎麼洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S16",
+      "topic": "stain",
+      "query": "血漬怎麼洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S17",
+      "topic": "stain",
+      "query": "油漬怎麼洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S18",
+      "topic": "stain",
+      "query": "汗漬怎麼處理",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S19",
+      "topic": "stain",
+      "query": "咖啡污漬怎麼洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S20",
+      "topic": "stain",
+      "query": "茶漬怎麼清洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S21",
+      "topic": "stain",
+      "query": "紅酒污漬怎麼洗",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S22",
+      "topic": "stain",
+      "query": "化妝品污漬清洗",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S23",
+      "topic": "fabric",
+      "query": "羽絨衣清洗方式",
+      "intent": [
+        "informational"
+      ],
+      "business_fact_review": false
+    },
+    {
+      "id": "S24",
+      "topic": "fabric",
+      "query": "西裝清洗方式",
+      "intent": [
+        "informational"
+      ],
+      "business_fact_review": false
+    },
+    {
+      "id": "S25",
+      "topic": "fabric",
+      "query": "襯衫洗滌方式",
+      "intent": [
+        "informational",
+        "commercial"
+      ]
+    },
+    {
+      "id": "S26",
+      "topic": "fabric",
+      "query": "特殊材質衣物洗滌",
+      "intent": [
+        "informational"
+      ],
+      "business_fact_review": false
+    },
+    {
+      "id": "S27",
+      "topic": "fabric",
+      "query": "絲質羊毛衣物洗滌標示",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S28",
+      "topic": "fabric",
+      "query": "皮革麂皮衣物清潔",
+      "intent": [
+        "informational"
+      ],
+      "business_fact_review": false
+    },
+    {
+      "id": "S29",
+      "topic": "footwear",
+      "query": "鞋類清洗服務",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "business_fact_review": true
+    },
+    {
+      "id": "S30",
+      "topic": "bedding",
+      "query": "寢具床單被套清洗",
+      "intent": [
+        "commercial",
+        "transactional"
+      ]
+    },
+    {
+      "id": "S31",
+      "topic": "washing",
+      "query": "衣物洗滌方式",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S32",
+      "topic": "washing",
+      "query": "衣服洗完有污漬可以烘乾嗎",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S33",
+      "topic": "washing",
+      "query": "不同布料可以用相同洗滌方式嗎",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S34",
+      "topic": "washing",
+      "query": "衣服洗標怎麼看",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S35",
+      "topic": "washing",
+      "query": "洗衣前污漬要先處理嗎",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S36",
+      "topic": "washing",
+      "query": "毛巾床單固定洗滌頻率",
+      "intent": [
+        "commercial",
+        "informational"
+      ]
+    },
+    {
+      "id": "S37",
+      "topic": "chemistry",
+      "query": "洗衣精化學原料有哪些",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S38",
+      "topic": "chemistry",
+      "query": "界面活性劑洗衣用途",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S39",
+      "topic": "chemistry",
+      "query": "洗衣酵素用途",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S40",
+      "topic": "chemistry",
+      "query": "洗衣漂白成分種類",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S41",
+      "topic": "chemistry",
+      "query": "過碳酸鈉洗衣用途",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S42",
+      "topic": "chemistry",
+      "query": "洗衣助洗劑功能",
+      "intent": [
+        "informational"
+      ]
+    },
+    {
+      "id": "S43",
+      "topic": "chemistry",
+      "query": "洗衣清潔劑可以混用嗎",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ]
+    },
+    {
+      "id": "S44",
+      "topic": "chemistry",
+      "query": "清潔劑標示與衣料安全",
+      "intent": [
+        "informational"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "S01-Q",
+      "seed_id": "S01",
+      "topic": "local-service",
+      "query": "高雄洗衣",
+      "question": "在高雄找洗衣服務要確認哪些事項？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S01-Q1",
+      "seed_id": "S01",
+      "topic": "local-service",
+      "query": "高雄洗衣",
+      "question": "高雄哪裡可以找洗衣？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S01-Q2",
+      "seed_id": "S01",
+      "topic": "local-service",
+      "query": "高雄洗衣",
+      "question": "高雄洗衣是否提供收送？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S01-Q3",
+      "seed_id": "S01",
+      "topic": "local-service",
+      "query": "高雄洗衣",
+      "question": "詢問高雄洗衣前要準備什麼？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S02-Q",
+      "seed_id": "S02",
+      "topic": "local-service",
+      "query": "高雄乾洗",
+      "question": "在高雄找乾洗服務要確認哪些事項？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "乾洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S02-Q1",
+      "seed_id": "S02",
+      "topic": "local-service",
+      "query": "高雄乾洗",
+      "question": "高雄哪裡可以找乾洗？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "乾洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S02-Q2",
+      "seed_id": "S02",
+      "topic": "local-service",
+      "query": "高雄乾洗",
+      "question": "高雄乾洗是否提供收送？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "乾洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S02-Q3",
+      "seed_id": "S02",
+      "topic": "local-service",
+      "query": "高雄乾洗",
+      "question": "詢問高雄乾洗前要準備什麼？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "乾洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S03-Q",
+      "seed_id": "S03",
+      "topic": "local-service",
+      "query": "高雄洗鞋",
+      "question": "在高雄找洗鞋服務要確認哪些事項？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗鞋"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S03-Q1",
+      "seed_id": "S03",
+      "topic": "local-service",
+      "query": "高雄洗鞋",
+      "question": "高雄哪裡可以找洗鞋？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗鞋"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S03-Q2",
+      "seed_id": "S03",
+      "topic": "local-service",
+      "query": "高雄洗鞋",
+      "question": "高雄洗鞋是否提供收送？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗鞋"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S03-Q3",
+      "seed_id": "S03",
+      "topic": "local-service",
+      "query": "高雄洗鞋",
+      "question": "詢問高雄洗鞋前要準備什麼？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗鞋"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S04-Q",
+      "seed_id": "S04",
+      "topic": "local-service",
+      "query": "高雄洗衣店",
+      "question": "在高雄找洗衣店服務要確認哪些事項？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣店"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S04-Q1",
+      "seed_id": "S04",
+      "topic": "local-service",
+      "query": "高雄洗衣店",
+      "question": "高雄哪裡可以找洗衣店？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣店"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S04-Q2",
+      "seed_id": "S04",
+      "topic": "local-service",
+      "query": "高雄洗衣店",
+      "question": "高雄洗衣店是否提供收送？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣店"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S04-Q3",
+      "seed_id": "S04",
+      "topic": "local-service",
+      "query": "高雄洗衣店",
+      "question": "詢問高雄洗衣店前要準備什麼？",
+      "intent": [
+        "local",
+        "commercial"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "洗衣店"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S05-Q",
+      "seed_id": "S05",
+      "topic": "local-service",
+      "query": "高雄到府收送洗衣",
+      "question": "在高雄找到府收送洗衣服務要確認哪些事項？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S05-Q1",
+      "seed_id": "S05",
+      "topic": "local-service",
+      "query": "高雄到府收送洗衣",
+      "question": "高雄哪裡可以找到府收送洗衣？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S05-Q2",
+      "seed_id": "S05",
+      "topic": "local-service",
+      "query": "高雄到府收送洗衣",
+      "question": "高雄到府收送洗衣是否提供收送？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S05-Q3",
+      "seed_id": "S05",
+      "topic": "local-service",
+      "query": "高雄到府收送洗衣",
+      "question": "詢問高雄到府收送洗衣前要準備什麼？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S06-Q",
+      "seed_id": "S06",
+      "topic": "local-service",
+      "query": "台南收送洗衣",
+      "question": "在台南找收送洗衣服務要確認哪些事項？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "台南",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S06-Q1",
+      "seed_id": "S06",
+      "topic": "local-service",
+      "query": "台南收送洗衣",
+      "question": "台南哪裡可以找收送洗衣？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "台南",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S06-Q2",
+      "seed_id": "S06",
+      "topic": "local-service",
+      "query": "台南收送洗衣",
+      "question": "台南收送洗衣是否提供收送？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "台南",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S06-Q3",
+      "seed_id": "S06",
+      "topic": "local-service",
+      "query": "台南收送洗衣",
+      "question": "詢問台南收送洗衣前要準備什麼？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "台南",
+        "收送",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S07-Q",
+      "seed_id": "S07",
+      "topic": "buyer",
+      "query": "高雄商用洗衣",
+      "question": "店家或機構詢問固定大量洗滌，要怎麼評估需求？",
+      "intent": [
+        "local",
+        "commercial",
+        "buyer_question"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "商用洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S07-Q1",
+      "seed_id": "S07",
+      "topic": "buyer",
+      "query": "高雄商用洗衣",
+      "question": "大量毛巾、床巾或其他布品送洗怎麼估算每週需求？",
+      "intent": [
+        "local",
+        "commercial",
+        "buyer_question"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "商用洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S07-Q2",
+      "seed_id": "S07",
+      "topic": "buyer",
+      "query": "高雄商用洗衣",
+      "question": "詢問固定洗滌前要提供哪些品項、數量與頻率？",
+      "intent": [
+        "local",
+        "commercial",
+        "buyer_question"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "商用洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S07-Q3",
+      "seed_id": "S07",
+      "topic": "buyer",
+      "query": "高雄商用洗衣",
+      "question": "商用洗衣怎麼依地區和布品需求確認收送？",
+      "intent": [
+        "local",
+        "commercial",
+        "buyer_question"
+      ],
+      "priority": "P1",
+      "required_terms": [
+        "高雄",
+        "商用洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S13-Q",
+      "seed_id": "S13",
+      "topic": "stain",
+      "query": "衣服污漬怎麼處理",
+      "question": "衣物沾到時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "污漬",
+        "衣物"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S13-Q1",
+      "seed_id": "S13",
+      "topic": "stain",
+      "query": "衣服污漬怎麼處理",
+      "question": "沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "污漬",
+        "衣物"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S13-Q2",
+      "seed_id": "S13",
+      "topic": "stain",
+      "query": "衣服污漬怎麼處理",
+      "question": "處理前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "污漬",
+        "衣物"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S13-Q3",
+      "seed_id": "S13",
+      "topic": "stain",
+      "query": "衣服污漬怎麼處理",
+      "question": "清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "污漬",
+        "衣物"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S14-Q",
+      "seed_id": "S14",
+      "topic": "stain",
+      "query": "醬油污漬怎麼洗",
+      "question": "衣物沾到醬油時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "醬油",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S14-Q1",
+      "seed_id": "S14",
+      "topic": "stain",
+      "query": "醬油污漬怎麼洗",
+      "question": "醬油沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "醬油",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S14-Q2",
+      "seed_id": "S14",
+      "topic": "stain",
+      "query": "醬油污漬怎麼洗",
+      "question": "處理醬油前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "醬油",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S14-Q3",
+      "seed_id": "S14",
+      "topic": "stain",
+      "query": "醬油污漬怎麼洗",
+      "question": "醬油清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "醬油",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S15-Q",
+      "seed_id": "S15",
+      "topic": "stain",
+      "query": "口紅污漬怎麼洗",
+      "question": "衣物沾到口紅時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "口紅",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S15-Q1",
+      "seed_id": "S15",
+      "topic": "stain",
+      "query": "口紅污漬怎麼洗",
+      "question": "口紅沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "口紅",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S15-Q2",
+      "seed_id": "S15",
+      "topic": "stain",
+      "query": "口紅污漬怎麼洗",
+      "question": "處理口紅前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "口紅",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S15-Q3",
+      "seed_id": "S15",
+      "topic": "stain",
+      "query": "口紅污漬怎麼洗",
+      "question": "口紅清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "口紅",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S16-Q",
+      "seed_id": "S16",
+      "topic": "stain",
+      "query": "血漬怎麼洗",
+      "question": "衣物沾到血漬時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "血漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S16-Q1",
+      "seed_id": "S16",
+      "topic": "stain",
+      "query": "血漬怎麼洗",
+      "question": "血漬沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "血漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S16-Q2",
+      "seed_id": "S16",
+      "topic": "stain",
+      "query": "血漬怎麼洗",
+      "question": "處理血漬前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "血漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S16-Q3",
+      "seed_id": "S16",
+      "topic": "stain",
+      "query": "血漬怎麼洗",
+      "question": "血漬清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "血漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S17-Q",
+      "seed_id": "S17",
+      "topic": "stain",
+      "query": "油漬怎麼洗",
+      "question": "衣物沾到油漬時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "油漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S17-Q1",
+      "seed_id": "S17",
+      "topic": "stain",
+      "query": "油漬怎麼洗",
+      "question": "油漬沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "油漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S17-Q2",
+      "seed_id": "S17",
+      "topic": "stain",
+      "query": "油漬怎麼洗",
+      "question": "處理油漬前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "油漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S17-Q3",
+      "seed_id": "S17",
+      "topic": "stain",
+      "query": "油漬怎麼洗",
+      "question": "油漬清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "油漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S18-Q",
+      "seed_id": "S18",
+      "topic": "stain",
+      "query": "汗漬怎麼處理",
+      "question": "衣物沾到汗漬時該怎麼處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "汗漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S18-Q1",
+      "seed_id": "S18",
+      "topic": "stain",
+      "query": "汗漬怎麼處理",
+      "question": "汗漬沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "汗漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S18-Q2",
+      "seed_id": "S18",
+      "topic": "stain",
+      "query": "汗漬怎麼處理",
+      "question": "處理汗漬前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "汗漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S18-Q3",
+      "seed_id": "S18",
+      "topic": "stain",
+      "query": "汗漬怎麼處理",
+      "question": "汗漬清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "汗漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S19-Q",
+      "seed_id": "S19",
+      "topic": "stain",
+      "query": "咖啡污漬怎麼洗",
+      "question": "衣物沾到咖啡時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "咖啡",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S19-Q1",
+      "seed_id": "S19",
+      "topic": "stain",
+      "query": "咖啡污漬怎麼洗",
+      "question": "咖啡沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "咖啡",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S19-Q2",
+      "seed_id": "S19",
+      "topic": "stain",
+      "query": "咖啡污漬怎麼洗",
+      "question": "處理咖啡前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "咖啡",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S19-Q3",
+      "seed_id": "S19",
+      "topic": "stain",
+      "query": "咖啡污漬怎麼洗",
+      "question": "咖啡清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "咖啡",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S20-Q",
+      "seed_id": "S20",
+      "topic": "stain",
+      "query": "茶漬怎麼清洗",
+      "question": "衣物沾到茶漬怎麼時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "茶",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S20-Q1",
+      "seed_id": "S20",
+      "topic": "stain",
+      "query": "茶漬怎麼清洗",
+      "question": "茶漬怎麼沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "茶",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S20-Q2",
+      "seed_id": "S20",
+      "topic": "stain",
+      "query": "茶漬怎麼清洗",
+      "question": "處理茶漬怎麼前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "茶",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S20-Q3",
+      "seed_id": "S20",
+      "topic": "stain",
+      "query": "茶漬怎麼清洗",
+      "question": "茶漬怎麼清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "茶",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S21-Q",
+      "seed_id": "S21",
+      "topic": "stain",
+      "query": "紅酒污漬怎麼洗",
+      "question": "衣物沾到紅酒時該怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "紅酒",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S21-Q1",
+      "seed_id": "S21",
+      "topic": "stain",
+      "query": "紅酒污漬怎麼洗",
+      "question": "紅酒沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "紅酒",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S21-Q2",
+      "seed_id": "S21",
+      "topic": "stain",
+      "query": "紅酒污漬怎麼洗",
+      "question": "處理紅酒前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "紅酒",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S21-Q3",
+      "seed_id": "S21",
+      "topic": "stain",
+      "query": "紅酒污漬怎麼洗",
+      "question": "紅酒清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "紅酒",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S22-Q",
+      "seed_id": "S22",
+      "topic": "stain",
+      "query": "化妝品污漬清洗",
+      "question": "衣物沾到化妝品時該怎麼處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "化妝品",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S22-Q1",
+      "seed_id": "S22",
+      "topic": "stain",
+      "query": "化妝品污漬清洗",
+      "question": "化妝品沾到一般可水洗衣物怎麼處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "化妝品",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S22-Q2",
+      "seed_id": "S22",
+      "topic": "stain",
+      "query": "化妝品污漬清洗",
+      "question": "處理化妝品前要先查看哪些洗標和清潔劑資訊？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "化妝品",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S22-Q3",
+      "seed_id": "S22",
+      "topic": "stain",
+      "query": "化妝品污漬清洗",
+      "question": "化妝品清洗後還有痕跡可以直接烘乾嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "化妝品",
+        "污漬"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S23-Q",
+      "seed_id": "S23",
+      "topic": "fabric",
+      "query": "羽絨衣清洗方式",
+      "question": "羽絨衣清洗方式前要注意哪些事？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "羽絨衣",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S23-Q1",
+      "seed_id": "S23",
+      "topic": "fabric",
+      "query": "羽絨衣清洗方式",
+      "question": "羽絨衣清洗前應看哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "羽絨衣",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S23-Q2",
+      "seed_id": "S23",
+      "topic": "fabric",
+      "query": "羽絨衣清洗方式",
+      "question": "羽絨衣可以直接用一般水洗方式嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "羽絨衣",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S23-Q3",
+      "seed_id": "S23",
+      "topic": "fabric",
+      "query": "羽絨衣清洗方式",
+      "question": "羽絨衣材質不確定時該如何處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "羽絨衣",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S24-Q",
+      "seed_id": "S24",
+      "topic": "fabric",
+      "query": "西裝清洗方式",
+      "question": "西裝清洗方式前要注意哪些事？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "西裝",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S24-Q1",
+      "seed_id": "S24",
+      "topic": "fabric",
+      "query": "西裝清洗方式",
+      "question": "西裝清洗前應看哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "西裝",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S24-Q2",
+      "seed_id": "S24",
+      "topic": "fabric",
+      "query": "西裝清洗方式",
+      "question": "西裝可以直接用一般水洗方式嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "西裝",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S24-Q3",
+      "seed_id": "S24",
+      "topic": "fabric",
+      "query": "西裝清洗方式",
+      "question": "西裝材質不確定時該如何處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "西裝",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S25-Q",
+      "seed_id": "S25",
+      "topic": "fabric",
+      "query": "襯衫洗滌方式",
+      "question": "襯衫洗滌方式前要注意哪些事？",
+      "intent": [
+        "informational",
+        "commercial"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "襯衫",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S25-Q1",
+      "seed_id": "S25",
+      "topic": "fabric",
+      "query": "襯衫洗滌方式",
+      "question": "襯衫清洗前應看哪些洗滌標示？",
+      "intent": [
+        "informational",
+        "commercial"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "襯衫",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S25-Q2",
+      "seed_id": "S25",
+      "topic": "fabric",
+      "query": "襯衫洗滌方式",
+      "question": "襯衫可以直接用一般水洗方式嗎？",
+      "intent": [
+        "informational",
+        "commercial"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "襯衫",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S25-Q3",
+      "seed_id": "S25",
+      "topic": "fabric",
+      "query": "襯衫洗滌方式",
+      "question": "襯衫材質不確定時該如何處理？",
+      "intent": [
+        "informational",
+        "commercial"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "襯衫",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S26-Q",
+      "seed_id": "S26",
+      "topic": "fabric",
+      "query": "特殊材質衣物洗滌",
+      "question": "特殊材質衣物洗滌前要注意哪些事？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "特殊材質",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S26-Q1",
+      "seed_id": "S26",
+      "topic": "fabric",
+      "query": "特殊材質衣物洗滌",
+      "question": "特殊材質衣物清洗前應看哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "特殊材質",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S26-Q2",
+      "seed_id": "S26",
+      "topic": "fabric",
+      "query": "特殊材質衣物洗滌",
+      "question": "特殊材質衣物可以直接用一般水洗方式嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "特殊材質",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S26-Q3",
+      "seed_id": "S26",
+      "topic": "fabric",
+      "query": "特殊材質衣物洗滌",
+      "question": "特殊材質衣物材質不確定時該如何處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "特殊材質",
+        "洗滌"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S27-Q",
+      "seed_id": "S27",
+      "topic": "fabric",
+      "query": "絲質羊毛衣物洗滌標示",
+      "question": "絲質羊毛衣物洗標前要注意哪些事？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "絲",
+        "羊毛",
+        "洗滌標示"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S27-Q1",
+      "seed_id": "S27",
+      "topic": "fabric",
+      "query": "絲質羊毛衣物洗滌標示",
+      "question": "絲質羊毛衣物清洗前應看哪些洗滌標示？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "絲",
+        "羊毛",
+        "洗滌標示"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S27-Q2",
+      "seed_id": "S27",
+      "topic": "fabric",
+      "query": "絲質羊毛衣物洗滌標示",
+      "question": "絲質羊毛衣物可以直接用一般水洗方式嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "絲",
+        "羊毛",
+        "洗滌標示"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S27-Q3",
+      "seed_id": "S27",
+      "topic": "fabric",
+      "query": "絲質羊毛衣物洗滌標示",
+      "question": "絲質羊毛衣物材質不確定時該如何處理？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "絲",
+        "羊毛",
+        "洗滌標示"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S28-Q",
+      "seed_id": "S28",
+      "topic": "fabric",
+      "query": "皮革麂皮衣物清潔",
+      "question": "皮革麂皮衣物清潔前要注意哪些事？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "皮革",
+        "麂皮",
+        "清潔"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S28-Q1",
+      "seed_id": "S28",
+      "topic": "fabric",
+      "query": "皮革麂皮衣物清潔",
+      "question": "皮革麂皮衣物清潔清洗前應看哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "皮革",
+        "麂皮",
+        "清潔"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S28-Q2",
+      "seed_id": "S28",
+      "topic": "fabric",
+      "query": "皮革麂皮衣物清潔",
+      "question": "皮革麂皮衣物清潔可以直接用一般水洗方式嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "皮革",
+        "麂皮",
+        "清潔"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S28-Q3",
+      "seed_id": "S28",
+      "topic": "fabric",
+      "query": "皮革麂皮衣物清潔",
+      "question": "皮革麂皮衣物清潔材質不確定時該如何處理？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "皮革",
+        "麂皮",
+        "清潔"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S29-Q",
+      "seed_id": "S29",
+      "topic": "footwear",
+      "query": "鞋類清洗服務",
+      "question": "鞋類清潔前要怎麼確認材質和洗護方式？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "鞋類",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S29-Q1",
+      "seed_id": "S29",
+      "topic": "footwear",
+      "query": "鞋類清洗服務",
+      "question": "鞋類可以水洗或浸泡嗎？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "鞋類",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S29-Q2",
+      "seed_id": "S29",
+      "topic": "footwear",
+      "query": "鞋類清洗服務",
+      "question": "鞋子清潔前要如何確認材質和洗護方式？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "鞋類",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S29-Q3",
+      "seed_id": "S29",
+      "topic": "footwear",
+      "query": "鞋類清洗服務",
+      "question": "意嘉行是否提供洗鞋服務？",
+      "intent": [
+        "local",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "鞋類",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": true,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S30-Q",
+      "seed_id": "S30",
+      "topic": "bedding",
+      "query": "寢具床單被套清洗",
+      "question": "大量寢具送洗前要準備哪些資料？",
+      "intent": [
+        "commercial",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "寢具",
+        "床單",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S30-Q1",
+      "seed_id": "S30",
+      "topic": "bedding",
+      "query": "寢具床單被套清洗",
+      "question": "床單、床巾與寢具送洗前要分別提供哪些資料？",
+      "intent": [
+        "commercial",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "寢具",
+        "床單",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S30-Q2",
+      "seed_id": "S30",
+      "topic": "bedding",
+      "query": "寢具床單被套清洗",
+      "question": "大量寢具清洗可以固定收送嗎？",
+      "intent": [
+        "commercial",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "寢具",
+        "床單",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S30-Q3",
+      "seed_id": "S30",
+      "topic": "bedding",
+      "query": "寢具床單被套清洗",
+      "question": "床單與其他布品可否一起詢問洗滌？",
+      "intent": [
+        "commercial",
+        "transactional"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "寢具",
+        "床單",
+        "清洗"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S31-Q",
+      "seed_id": "S31",
+      "topic": "washing",
+      "query": "衣物洗滌方式",
+      "question": "衣物洗滌方式時要先注意哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "衣物",
+        "洗滌方式"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S31-Q1",
+      "seed_id": "S31",
+      "topic": "washing",
+      "query": "衣物洗滌方式",
+      "question": "衣物清洗前要先看洗標嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "衣物",
+        "洗滌方式"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S31-Q2",
+      "seed_id": "S31",
+      "topic": "washing",
+      "query": "衣物洗滌方式",
+      "question": "不同材質的衣物可以用相同的洗滌條件嗎？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "衣物",
+        "洗滌方式"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S31-Q3",
+      "seed_id": "S31",
+      "topic": "washing",
+      "query": "衣物洗滌方式",
+      "question": "污漬清洗後還看得到時應該怎麼辦？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "衣物",
+        "洗滌方式"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S32-Q",
+      "seed_id": "S32",
+      "topic": "washing",
+      "query": "衣服洗完有污漬可以烘乾嗎",
+      "question": "衣服洗完有污漬可以烘乾嗎時要先注意哪些洗滌標示？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "污漬",
+        "烘乾"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S33-Q",
+      "seed_id": "S33",
+      "topic": "washing",
+      "query": "不同布料可以用相同洗滌方式嗎",
+      "question": "不同布料可以用相同洗滌方式嗎時要先注意哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "布料",
+        "洗滌方式"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S34-Q",
+      "seed_id": "S34",
+      "topic": "washing",
+      "query": "衣服洗標怎麼看",
+      "question": "衣服洗標怎麼看時要先注意哪些洗滌標示？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "洗標"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S35-Q",
+      "seed_id": "S35",
+      "topic": "washing",
+      "query": "洗衣前污漬要先處理嗎",
+      "question": "洗衣前污漬要先處理嗎時要先注意哪些洗滌標示？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "污漬",
+        "預處理"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S36-Q",
+      "seed_id": "S36",
+      "topic": "washing",
+      "query": "毛巾床單固定洗滌頻率",
+      "question": "毛巾床單固定洗滌頻率時要先注意哪些洗滌標示？",
+      "intent": [
+        "commercial",
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "毛巾",
+        "床單",
+        "洗滌頻率"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S37-Q",
+      "seed_id": "S37",
+      "topic": "chemistry",
+      "query": "洗衣精化學原料有哪些",
+      "question": "洗衣精化學原料有哪些各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "洗衣精",
+        "化學原料"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S37-Q1",
+      "seed_id": "S37",
+      "topic": "chemistry",
+      "query": "洗衣精化學原料有哪些",
+      "question": "洗衣成分的用途與安全資訊要去哪裡確認？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "洗衣精",
+        "化學原料"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S37-Q2",
+      "seed_id": "S37",
+      "topic": "chemistry",
+      "query": "洗衣精化學原料有哪些",
+      "question": "不同洗衣成分可以自行混合嗎？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "洗衣精",
+        "化學原料"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S37-Q3",
+      "seed_id": "S37",
+      "topic": "chemistry",
+      "query": "洗衣精化學原料有哪些",
+      "question": "選擇清潔劑前要看哪些產品標示？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "洗衣精",
+        "化學原料"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S38-Q",
+      "seed_id": "S38",
+      "topic": "chemistry",
+      "query": "界面活性劑洗衣用途",
+      "question": "界面活性劑洗衣用途各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "界面活性劑",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S39-Q",
+      "seed_id": "S39",
+      "topic": "chemistry",
+      "query": "洗衣酵素用途",
+      "question": "洗衣酵素用途各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "洗衣酵素",
+        "用途"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S40-Q",
+      "seed_id": "S40",
+      "topic": "chemistry",
+      "query": "洗衣漂白成分種類",
+      "question": "洗衣漂白成分種類各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "漂白成分",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S41-Q",
+      "seed_id": "S41",
+      "topic": "chemistry",
+      "query": "過碳酸鈉洗衣用途",
+      "question": "過碳酸鈉洗衣用途各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "過碳酸鈉",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S42-Q",
+      "seed_id": "S42",
+      "topic": "chemistry",
+      "query": "洗衣助洗劑功能",
+      "question": "洗衣助洗劑功能各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "助洗劑",
+        "洗衣"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S43-Q",
+      "seed_id": "S43",
+      "topic": "chemistry",
+      "query": "洗衣清潔劑可以混用嗎",
+      "question": "洗衣清潔劑可以混用嗎各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational",
+        "citation_worthy"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "清潔劑",
+        "混用"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    },
+    {
+      "id": "S44-Q",
+      "seed_id": "S44",
+      "topic": "chemistry",
+      "query": "清潔劑標示與衣料安全",
+      "question": "清潔劑標示與衣料安全各自有什麼用途和安全注意事項？",
+      "intent": [
+        "informational"
+      ],
+      "priority": "P2",
+      "required_terms": [
+        "清潔劑",
+        "標示"
+      ],
+      "supporting_terms": [],
+      "business_fact_review": false,
+      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
+    }
+  ],
+  "metrics_policy": "這是 Query/Question 覆蓋地圖，不是搜尋量或市場需求估算。百度聯想結果若採集，保留截圖來源且只作額外中文語料。"
+}

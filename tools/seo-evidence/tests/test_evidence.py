@@ -20,6 +20,7 @@ collector = load("collector", ROOT / "collector.py")
 coverage = load("coverage", ROOT / "analyze_coverage.py")
 action_engine = load("action_engine", ROOT / "action_engine.py")
 attach_jev_evidence = load("attach_jev_evidence", ROOT / "attach_jev_evidence.py")
+page_content_audit = load("page_content_audit", ROOT / "yao_geo" / "page_content_audit.py")
 
 
 class CollectorTests(unittest.TestCase):
@@ -57,7 +58,7 @@ class CollectorTests(unittest.TestCase):
 class CoverageTests(unittest.TestCase):
     def test_covered_partial_missing_and_recommendations(self):
         pages = [
-            {"url": "https://x/a", "title": "高雄台南毛巾收送", "text": "高雄 台南 毛巾 收送 品項 數量 地區"},
+            {"url": "https://x/a", "title": "高雄台南毛巾收送", "headings":{"h2":["高雄台南毛巾收送"]}, "text": "高雄 台南 毛巾 收送 品項 數量 地區"},
             {"url": "https://x/b", "title": "清洗", "text": "毛巾大量洗衣"},
         ]
         questions = [
@@ -69,6 +70,17 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual([row["coverage"] for row in result["questions"]], ["COVERED", "PARTIAL", "MISSING"])
         self.assertEqual([row["action"] for row in result["questions"]], ["KEEP", "MODIFY", "CREATE"])
         self.assertEqual(result["summary"], {"COVERED": 1, "PARTIAL": 1, "MISSING": 1})
+        guarded = coverage.analyze([], [{"id":"shoe","question":"shoe service","required_terms":["洗鞋"],"business_fact_review":True}])
+        self.assertEqual(guarded["questions"][0]["action"], "REVIEW")
+
+    def test_relevant_heading_beats_homepage_anchor_for_question_coverage(self):
+        pages = [
+            {"url":"https://x/","title":"洗衣服務","headings":{"h2":["洗衣服務"]},"text":"咖啡污漬可查看相關指南。"},
+            {"url":"https://x/stain.html","title":"衣物去漬指南","headings":{"h2":["咖啡污漬怎麼處理"]},"text":"咖啡污漬依洗標與清潔劑標示處理。"},
+        ]
+        result = coverage.analyze(pages,[{"id":"coffee","question":"咖啡污漬怎麼洗？","required_terms":["咖啡","污漬"]}])
+        self.assertEqual(result["questions"][0]["coverage"],"COVERED")
+        self.assertEqual(result["questions"][0]["best_url"],"https://x/stain.html")
 
     def test_engine_preserves_jev_priority_and_uses_conservative_actions(self):
         coverage_result = {"summary": {"COVERED": 1, "PARTIAL": 0, "MISSING": 1}, "questions": [
@@ -80,6 +92,12 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual([x["decision"] for x in result["question_actions"]], ["KEEP", "CREATE"])
         self.assertEqual(result["technical_actions"][0]["priority"], "P1")
         self.assertEqual(result["technical_actions"][0]["decision"], "REVIEW")
+        self.assertIn("Discover", result["pipeline"])
+        yao = {"summary":{"pages":1,"findings":1},"pages":[{"url":"https://x/a","findings":[{"code":"TITLE","decision":"MODIFY"}]}]}
+        comparison = {"status":"SUCCESS","content_gaps":[{"topic":"regional","decision":"REVIEW","coverage":"MISSING","competitor_pages":["competitor"],"first_party_pages":[]}],"citation_gaps":[{"name":"guide","action":"MODIFY","url":"https://source.test/","linked_by":[]}]}
+        joined = action_engine.decisions(coverage_result, jev, yao, comparison)
+        self.assertEqual(joined["yao_page_actions"][0]["decision"], "MODIFY")
+        self.assertEqual([x["decision"] for x in joined["public_source_actions"]], ["REVIEW", "MODIFY"])
 
 
 class JevEvidenceTests(unittest.TestCase):

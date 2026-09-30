@@ -7,6 +7,7 @@ on:
       - "tools/seo-evidence/**"
       - ".github/workflows/seo-evidence.yml"
       - "PROJECT_STATUS.md"
+      - "**/*.html"
 
 permissions:
   contents: read
@@ -93,6 +94,16 @@ jobs:
             --manifest seo/crawler/raw/first-run/crawl_manifest.json
           PATH="$PWD/.venv-jevseo/bin:$PATH" .jev-seo-source/bin/jevseo render \
             "$PWD/seo/jev-seo-reports/first-run"
+          .venv-jevseo/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          audit = json.loads(Path("seo/jev-seo-reports/first-run/audit.json").read_text())
+          url = "https://www.chciworld.com.tw/product/sodium_percarbonate/"
+          status = audit["site"].get("external_status", {}).get(url)
+          if status != 200:
+              raise SystemExit(f"Updated sodium percarbonate citation returned {status}, expected HTTP 200")
+          print(f"Citation verification passed: {url} -> HTTP {status}")
+          PY
       - name: Combine GEO coverage and Jev ranked findings
         run: |
           tools/crawl4ai/.venv/bin/python tools/seo-evidence/action_engine.py \

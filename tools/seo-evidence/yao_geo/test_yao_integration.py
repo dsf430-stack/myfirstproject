@@ -23,6 +23,12 @@ class YaoIntegrationTests(unittest.TestCase):
         self.assertEqual(len(questions),len(set(questions)))
         self.assertTrue(any("洗鞋" in s["query"] for s in data["query_seeds"]))
         self.assertTrue(any("紅酒" in s["query"] for s in data["query_seeds"]))
+        by_id={q["seed_id"]:q["question"] for q in data["questions"] if q["id"].endswith("-Q")}
+        self.assertEqual(by_id["S25"],"襯衫清洗前要查看哪些洗標資訊？")
+        self.assertEqual(by_id["S33"],"不同布料可以用相同洗滌方式嗎？")
+        self.assertEqual(by_id["S37"],"洗衣精有哪些常見化學原料？")
+        footwear=[q for q in data["questions"] if q["seed_id"]=="S29"]
+        self.assertEqual({q["id"] for q in footwear if q["business_fact_review"]},{"S29-Q3"})
 
     def test_unconfirmed_service_questions_are_review_not_create(self):
         seed=next(s for s in universe.build()["query_seeds"] if s["id"]=="S03")

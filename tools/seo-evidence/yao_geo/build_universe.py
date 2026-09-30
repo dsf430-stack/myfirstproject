@@ -50,10 +50,21 @@ def base_question(seed):
     if topic == "stain":
         stain=q.replace("衣服", "").replace("衣物", "").replace("污漬", "").replace("怎麼處理", "").replace("怎麼洗", "").replace("清洗", "").strip()
         return f"衣物沾到{stain}時該怎麼處理？"
-    if topic == "fabric": return f"{q.replace('洗滌標示','洗標')}前要注意哪些事？"
+    if topic == "fabric":
+        if "襯衫" in q: return "襯衫清洗前要查看哪些洗標資訊？"
+        if "絲質羊毛" in q: return "絲與羊毛衣物的洗滌標示要怎麼看？"
+        if "皮革麂皮" in q: return "皮革與麂皮衣物清潔前要注意什麼？"
+        return f"{q.replace('洗滌標示','洗標')}前要注意哪些事？"
     if topic == "footwear": return "鞋類清潔前要怎麼確認材質和洗護方式？"
     if topic == "bedding": return "大量寢具送洗前要準備哪些資料？"
-    if topic == "washing": return f"{q}時要先注意哪些洗滌標示？"
+    if topic == "washing":
+        if "不同布料" in q: return q.rstrip("？?") + "？"
+        return "衣物清洗前如何依洗標選擇洗滌方式？"
+    if topic == "chemistry":
+        if "洗衣精" in q and "原料" in q: return "洗衣精有哪些常見化學原料？"
+        if "混用" in q: return q.rstrip("？?") + "？"
+        if "標示" in q: return "清潔劑標示要看哪些衣料安全資訊？"
+        return f"{q}各自有什麼用途和安全注意事項？"
     return f"{q}各自有什麼用途和安全注意事項？"
 
 def build():
@@ -64,7 +75,9 @@ def build():
             norm=re.sub(r"[\s，,？?、。]", "", question).lower()
             if norm in seen: continue
             seen.add(norm)
-            rows.append({"id":f"{seed['id']}-{suffix}","seed_id":seed["id"],"topic":seed["topic"],"query":seed["query"],"question":question,"intent":seed["intent"],"priority":base["priority"],"required_terms":base["required_terms"],"supporting_terms":base["supporting_terms"],"business_fact_review":seed.get("business_fact_review",False),"market":"Taiwan-local; Kaohsiung/Tainan before Baidu"})
+            fact_review=seed.get("business_fact_review",False)
+            if seed["topic"]=="footwear" and suffix!="Q3": fact_review=False
+            rows.append({"id":f"{seed['id']}-{suffix}","seed_id":seed["id"],"topic":seed["topic"],"query":seed["query"],"question":question,"intent":seed["intent"],"priority":base["priority"],"required_terms":base["required_terms"],"supporting_terms":base["supporting_terms"],"business_fact_review":fact_review,"market":"Taiwan-local; Kaohsiung/Tainan before Baidu"})
     return {"schema_version":"1.0","source_mode":raw["source_mode"],"count":len(rows),"query_seeds":raw["seeds"],"questions":rows,"metrics_policy":raw["metrics_policy"]}
 if __name__=="__main__":
     out=build(); target=ROOT/"query_question_universe.json"; target.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8"); print(json.dumps({"status":"SUCCESS","seed_count":len(out['query_seeds']),"question_count":out['count'],"out":str(target)},ensure_ascii=False))

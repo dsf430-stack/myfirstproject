@@ -57,6 +57,8 @@ jobs:
           assert home["links"]["internal"], "No internal links were extracted"
           md = (root / home["markdown"]).read_text()
           assert md.strip(), "Homepage Markdown is empty"
+          sensitive = {"set-cookie", "authorization", "proxy-authorization"}
+          assert all(not (sensitive & set(p["response_headers"])) for p in pages), "Sensitive response headers entered crawl evidence"
           urls = [p["url"] for p in pages]
           assert len(urls) == len(set(urls)), "Duplicate URLs in crawl output"
           assert all("?" not in u and "#" not in u for u in urls), "Query/fragment URL escaped deduplication"

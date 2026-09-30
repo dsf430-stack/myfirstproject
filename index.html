@@ -42,6 +42,9 @@
         --line: #dbe5ea;
         --soft: #f6f9fb;
         --white: #fff;
+        --accent: #0b7898;
+        --accent-soft: #dff3f7;
+        --shadow: 0 24px 70px rgba(23,50,74,.12);
       }
       * {
         box-sizing: border-box;
@@ -53,8 +56,9 @@
         margin: 0;
         font-family: Arial, "Noto Sans TC", sans-serif;
         color: var(--ink);
-        background: #fff;
+        background: #fbfdfe;
         line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
       }
       a {
         text-decoration: none;
@@ -68,8 +72,9 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        background: #fff;
-        border-bottom: 1px solid #edf2f5;
+        background: rgba(255,255,255,.88);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(219,229,234,.72);
       }
       .nav {
         max-width: 1180px;
@@ -109,7 +114,7 @@
         grid-template-columns: 1.05fr 0.95fr;
         gap: 42px;
         align-items: center;
-        padding: 72px 22px;
+        padding: 92px 22px 84px;
       }
       .eyebrow {
         font-size: 14px;
@@ -118,8 +123,9 @@
         color: #517286;
       }
       .hero h1 {
-        font-size: 56px;
-        line-height: 1.13;
+        font-size: clamp(44px, 5.4vw, 72px);
+        line-height: 1.04;
+        letter-spacing: -.045em;
         margin: 12px 0 22px;
       }
       .hero p {
@@ -160,7 +166,8 @@
         aspect-ratio: 556/425;
         border-radius: 28px;
         background: linear-gradient(145deg, #c7dce6, #f8fbfc);
-        box-shadow: 0 24px 55px #18384d24;
+        box-shadow: var(--shadow);
+        transform: rotate(1.2deg);
         overflow: hidden;
       }
       .visual img {
@@ -196,6 +203,12 @@
         background: #fff;
         overflow: hidden;
         box-shadow: 0 8px 28px #17324a0f;
+        transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      }
+       .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 50px rgba(23,50,74,.13);
+        border-color: #bfd5df;
       }
       .scene {
         height: 215px;
@@ -262,6 +275,14 @@
       .industry a {
         display: block;
       }
+       .industry {
+        transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      }
+      .industry:hover {
+        transform: translateY(-4px);
+        border-color: #bdd6e0;
+        box-shadow: 0 16px 38px rgba(23,50,74,.09);
+      }
       .industry a:hover h3,
       .more {
         color: #176b8d;
@@ -313,6 +334,11 @@
         color: #61798a;
         margin-top: 16px;
       }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; animation: none !important; }
+      }
+      :focus-visible { outline: 3px solid #1b87a8; outline-offset: 4px; }
       footer {
         background: #102536;
         color: #d5e0e5;
@@ -538,10 +564,10 @@
     <header class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">KAOHSIUNG · TAINAN COMMERCIAL LAUNDRY</div>
-          <h1>高雄・台南洗毛巾、洗衣服<br />床單床巾大量送洗</h1>
+          <div class="eyebrow">高雄・台南｜洗衣收送</div>
+          <h1>每天洗不完的毛巾、衣服，<br />交給意嘉行。</h1>
           <p>
-            毛巾洗不完、床單床巾需要固定清洗，或店裡有大量衣服要洗，都可以先找意嘉行詢問。主要服務高雄、台南的診所、醫美、長照、髮廊、SPA、復健及其他有固定大量洗衣需求的店家與機構。
+            高雄、台南洗毛巾、洗衣服、床單床巾大量送洗與收送。診所、醫美、護理之家、長照、髮廊、SPA、復健，以及每天都有大量衣物要處理的店家與機構，都可以直接詢問。
           </p>
           <div class="actions">
             <a class="btn" href="#contact">詢問洗衣需求</a

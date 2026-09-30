@@ -3,55 +3,50 @@
 - 更新時間：2026-09-30（台灣時間）
 - Source of Truth：GitHub `dsf430-stack/myfirstproject` 的 `main`
 - 網站：https://dsf430-stack.github.io/myfirstproject/
-- 最新成功網站部署 commit：`63b9bd0a4072de33b6e4664829daf9f52a54d224`（2026-09-30；此後只更新此 checkpoint）
-- 建立本檔時的基準 commit：`26c40ad362377036d483a3b6af9fb95b83d0f58c`
-- 目的：把 Crawl4AI 作為 Evidence Collector，接到既有 Jev SEO 與 SEO/GEO Action Engine，不建立第二套 SEO 系統。
+- 本次讀取的 main：`ab3a66397f1b834a1626fb902dfef61fe25928ff`
+- 最新成功網站部署 commit：`63b9bd0a4072de33b6e4664829daf9f52a54d224`
+- 目標：Crawl4AI 作為 Evidence Collector，接續既有 Jev SEO 與 SEO/GEO Action Engine；不建立第二套 SEO 系統。
 
 ## DONE
 
-- 找到網站 repo：`dsf430-stack/myfirstproject`，預設分支為 `main`。
-- 讀取 main 最新樹與首頁、robots.txt、sitemap.xml、Lighthouse workflow、README 和服務頁。main 有 10 個 sitemap URL、允許爬取的 robots.txt、canonical、首頁 JSON-LD/FAQ、服務頁與高雄/台南頁。
-- 已確認既有首頁視覺、GSC 驗證檔、canonical、JSON-LD、robots.txt 與 sitemap；沒有發現 `AGENTS.md`。本次加入圖片 dimensions、兩頁 Open Graph metadata，並同步 7 個修改頁面的 sitemap lastmod；GitHub Pages 部署成功。
-- 找到既有 Jev SEO 工作目錄：`/workspace/scratch/bf88c2814588`。Jev 原始碼副本為 `.jev-seo`，獨立 Python 3.12.14 venv 為 `.venv-jevseo`；上游 Jev repo 工作樹乾淨，HEAD `55a184a`。
-- Jev `doctor` 在將既有 venv 加入 PATH 後通過；依賴齊全。未配置 `TYPESAFE_API_KEY`、PageSpeed key、DataForSEO credentials；DataForSEO 未使用。Jev 文件指出沒有 Jev key 時仍可執行技術稽核，內容判讀會明確標為未評估。
-- Jev 版本 `0.1.1`、上游 HEAD `55a184a3b0d0`；安裝在 `/workspace/scratch/bf88c2814588/.venv-jevseo`，原始碼位於 `.jev-seo`，venv 未污染系統 Python。
-- Jev `doctor` 通過；38 個離線測試通過，0 失敗。
-- 最終免費 audit 使用 `--no-jev --no-psi`；未使用 DataForSEO，花費 $0。因缺少 `TYPESAFE_API_KEY` 和 PageSpeed key，Jev 內容判讀與 PageSpeed 未評估；整體分數是 partial。
-- 最終報告位於 `jev-seo-reports/final-2026-09-30/`：`audit.json`、`digest.md`、`report.md`、`report.pdf`、`report.xlsx`、`SEO_GEO_Action_Engine_Review.md`。PDF 共 14 頁，已抽查版面。
+- 網站 repo 為 `dsf430-stack/myfirstproject`，預設分支 `main`。本次整合程式先放在 `codex/crawl4ai-evidence-integration` 隔離分支，測試成功後才合入 main。
+- 先前已完成並部署的網站工作保留：圖片 dimensions、Open Graph metadata、sitemap lastmod、canonical、首頁 JSON-LD/FAQ、robots.txt、sitemap、GSC 驗證檔。這一輪沒有改網站 HTML/CSS/JS 或既有業務文案。
+- Jev SEO 仍使用獨立環境：`/workspace/scratch/bf88c2814588/.venv-jevseo`，Python 3.12.14；原始碼 `AgriciDaniel/jev-seo` commit `55a184a3b0d09565a4c84268f725a47784e62528`。Jev venv 未修改；先前 doctor 與 38 個離線測試已通過。
+- Crawl4AI 官方來源在 workflow runner clone 至 `tools/crawl4ai/source`，獨立 venv 為 `tools/crawl4ai/.venv`。此兩項目錄已加入 `.gitignore`，不會把 source clone 或 venv 放進網站 repo。使用者本機 runner 對外 proxy 連線逾時；GitHub Actions Ubuntu runner 可正常連線，已用作可重現安裝與 live verification 環境。
+- Crawl4AI 版本 `0.9.4`，官方 checkout commit `133e1d92e37885dfccc03ea2e3687d06c98b7ceb`。Runner：Ubuntu 24.04 x86_64、Python 3.12.14、Git 2.55.0。Playwright 1.63.0 / Chromium 153.0.8010.12 已安裝並啟動。
+- 成功指令：官方 clone `git clone --depth 1 --branch v0.9.4 https://github.com/unclecode/crawl4ai.git tools/crawl4ai/source`；獨立 `python -m venv tools/crawl4ai/.venv`；`pip install -e tools/crawl4ai/source`；`crawl4ai-setup`；`crawl4ai-doctor`。doctor 的官方 HTTPS 抓取測試通過。
+- 上游離線測試 `pytest tests/unit/ -q`：128 passed、6 skipped。專案自己的 7 個單元測試通過；Chromium + JavaScript fixture smoke test 通過，確認 rendered HTML 和 Markdown 都含 JS 注入內容。
+- 第一次 live crawl：`https://dsf430-stack.github.io/myfirstproject/`，11 個 URL、全部 HTTP 200、0 crawl errors；project-path `robots.txt` HTTP 200；project-path `sitemap.xml` HTTP 200 並列出 10 個 URL。查詢字串與 fragment 已移除。首頁 title、description、canonical、H1/H2/H3、Markdown、22 條內鏈均成功取得。
+- Evidence 輸出包含 raw HTML、乾淨 Markdown、structured JSON、`pages.json`、`crawl_manifest.json`、HTTP status、metadata/headings、internal/external links、images/alt、JSON-LD、fetch timestamp、content SHA-256。保留的 response headers 僅含非敏感欄位；cookie/auth headers 有測試排除。附件 artifact 留存 90 天。
+- 全站 11 個頁面都有 title、meta description、H1/H2/H3；11 組 JSON-LD、12 張圖片，圖片均有 alt。全站共擷取 121 條內鏈與 23 條外鏈。`index.html` 與首頁 canonical 相同，作為首頁別名保留。
+- GEO coverage 使用既有業務問題集，8/8 為 COVERED，0 PARTIAL、0 MISSING；Action Engine 產出 8 個 KEEP。這是可追溯的詞項/頁面 evidence，不代表搜尋排名或 AI 引用保證。
+- Jev 0.1.1 audit 使用既有 52-rule technical audit，停用 Jev LLM、PageSpeed 與 DataForSEO；Crawl4AI evidence 以附加欄位寫入既有 Jev `audit.json`，11 個 Jev 頁面附到 11 組 Crawl4AI evidence；Action Engine 同時取得 GEO coverage 與 Jev technical actions。Jev 原生 PDF/XLSX/Markdown 報告流程保留。
+- 最終通過 Actions run：`36723804064`。Artifacts：Crawl4AI raw evidence、Markdown/structured pages、GEO audit、Jev `audit.json`/PDF/XLSX/Markdown、Action Engine decisions；artifact 到期日 2026-12-29。連結：https://github.com/dsf430-stack/myfirstproject/actions/runs/36723804064
+- 兩次成功 crawl 的 11 個 URL 在 status、title、meta、canonical、headings、content hash 上完全一致；新增 0、移除 0、內容變更 0。這次沒有網站 source 修改，故不虛報網站改善；`main` 上已驗證的既有修正保持不變。
 
 ## FAILED / 已排除的方法
 
-- 目前執行工作目錄不是 Git repo；無法在該目錄直接 clone/pull 網站 repo。
-- 系統 DNS 對 GitHub Pages 主機無法解析；但 GitHub API、git clone 和 PyPI 可經環境代理使用。本次 live crawl 在單一 Jev 程序中，僅對精確主機 `dsf430-stack.github.io` 暫時使用 GitHub 官方 Pages 公開 IP 通過 SSRF DNS guard；實際 HTTP 仍經代理。未改系統 DNS 或 Jev 原始碼。
-- 曾把 Jev 的 bash launcher 當 Python 檔執行，得到 SyntaxError。根因是 launcher 使用 bash；有效方式是將既有 `.venv-jevseo/bin` 加到 PATH 後呼叫 launcher。Jev doctor 與單元測試已用有效方式通過。
-- Crawl4AI 與 Playwright 在此執行環境尚未安裝。不要宣稱已安裝、跑過 browser smoke test 或抓取網站。
+- 本機到 PyPI/目標站的代理連線逾時；改在 GitHub Actions runner 安裝與抓取，已成功完成，不再重試本機外網方法。
+- 初次 workflow 缺 pytest；之後官方 unit tests 又指出缺 `pytest-asyncio` 與 `pypdf`。三項已加在 Crawl4AI 專用 venv，128 個上游 unit tests 通過。
+- 完整 `pytest tests/` 會收集上游 script-style `tests/test_cloud_bugs_batch.py`，該檔在 import 階段自行執行並 `sys.exit(1)`；因此採官方 `tests/unit/` 子集，不再重跑整個 tests 根目錄。
+- 最初的 JS smoke HTML 太短，被 Crawl4AI anti-bot structural check 判為空頁；加上一般靜態正文後，Chromium/JavaScript/Markdown smoke test 通過。
+- Jev 以 trailing-slash 首頁 crawl 會正規化掉斜線、造成相對連結誤判；workflow 使用已驗證的 `/myfirstproject/index.html` 作 Jev URL。Jev 對 GitHub Pages 專案子路徑的根目錄 robots/sitemap、root 404、首頁別名仍有已知誤報，依 Crawl4AI 子路徑 evidence 標為 REVIEW，不改網站。
 
-## BLOCKED
+## BLOCKED / 限制
 
-- Crawl4AI 尚未安裝或測試；本次依使用者明確指定範圍完成 Jev SEO 安裝與 audit，Crawl4AI 保留為獨立後續階段。
-- 本次沒有 Jev 內容判讀、PageSpeed/Core Web Vitals 或 DataForSEO 排名資料；不可從此報告推論搜尋排名、自然流量或 GEO 引用改善。
-- SEO/GEO Action Engine 未發現獨立程式入口；已將 Jev 52-rule audit 作為 evidence source，並透過本次審核紀錄接入既有 Discover → Compare → Decide → Fix → Verify → Repeat 循環，不另造 audit。
-- Jev 0.1.1 對 GitHub Pages 專案子路徑有 base-path / 尾斜線誤報；本次已用 live path 檢查辨識並標記，不依原始假陽性修改 GSC 或 SEO 結構.
-
-## Audit evidence 注意事項
-
-- 最終 crawl 使用 `/myfirstproject/index.html` 讓內頁相對連結保留 project path；記錄 20 個 URL，其中 10 個網站正確子路徑頁面均為 HTTP 200。另有 9 個根網域 `.html` 404、主機根目錄 robots/sitemap 未找到及 canonical/首頁別名重複，均為 Jev 子路徑/斜線正規化誤報。
-- 以 live fetcher 獨立確認 `/myfirstproject/robots.txt` 與 `/myfirstproject/sitemap.xml` 為 HTTP 200；sitemap 有 10 個 URL。網站子路徑的 HTTP 首頁回傳 301 並轉到 HTTPS。
-- 初版有 6 張首頁/服務圖缺 intrinsic dimensions；補齊全站 7 張未定尺寸圖片後，final audit 不再出現 `images_dimensions`。去漬指南與洗衣成分指南補 OG tags 後，final audit 不再出現 `og_missing`。
-- final audit：60 / C / partial、12 actions；缺 Jev judgments 與 PageSpeed。分數和以下指標都不作排名或流量預測。`slow_ttfb` 受代理測量延遲影響；中文「薄內容」以空白切詞不可靠；P1 根網域 404 不能代表專案路徑頁面故障。
-- GSC 驗證 HTML 檔、canonical 與主要 JSON-LD 未改；sitemap 日期已依 7 個修改頁面更新.
+- 沒有使用 DataForSEO、PageSpeed API 或任何付費/LLM API。Jev 內容判讀與 PSI 不執行；不得用這輪資料推論排名、流量、Core Web Vitals 或 AI citations。
+- Jev CLI 沒有外部 Crawl4AI evidence import 參數；目前以 adapter 把 evidence 附到 Jev 原有 `audit.json`，Action Engine 再合併 GEO coverage 與 Jev actions，未修改 Jev upstream 原始碼或重寫其 rules。
+- Jev 的 11 個 technical actions 全部保留 REVIEW。P1 根目錄 `.html` 404、root robots/sitemap、HTTP probe 和 `/index.html` canonical alias 已由既有狀態與本次 Crawl4AI path evidence 確認為 GitHub Pages 子路徑/正規化誤報；中文薄內容提示亦不能依空白切詞定論。沒有確認到需改網站的 P0/P1。
+- 確定的 business facts 及現有服務頁保持不變；不捏造價格、時程、資格或案例。本輪沒有競品 crawl，競品 comparison 是後續工作。
 
 ## NEXT
 
-1. 續接時先讀取本檔與 main；若仍在目前 workspace，沿用 `.venv-jevseo`，不要重裝 Jev。後續 audit 使用本次子路徑審核規則，DataForSEO 維持不用。
-2. 將 Crawl4AI 官方 repo 安裝於網站 repo 專用 `tools/crawl4ai/.venv` 或同等獨立目錄；不得複用或改動 Jev venv。先鎖定官方版本與 commit，再依官方 doctor / tests / smoke test 驗證。
-3. 建立受限深度、同網域、URL 去重、去 query/fragment 的 crawl；以 robots/sitemap/首頁發現頁面，保留原始結果和乾淨 Markdown/metadata/links/schema/images/hash。
-4. 先用 Crawl4AI 建立當前 live evidence，再處理 Jev 輸入銜接和現有 Action Engine 對接；保留 COVERED/PARTIAL/MISSING 與 KEEP/MODIFY/CREATE/MERGE/DELETE-NOINDEX/REVIEW 規則。
-5. 若新增 Jev path-aware 支援，先補離線回歸測試，再重跑 technical audit；GSC 和 sitemap 根目錄檢查仍須按 GitHub Pages 子路徑核對。
-6. 如使用者要求 Crawl4AI 階段，裝在獨立 venv，不修改 Jev venv；之後依 live evidence 接入 Action Engine。修改後 build/test/crawl/audit/verify 前後差異，更新本檔並只提交已驗證的變更。
+1. 將已驗證的隔離分支合入 main，並確認 GitHub Pages deploy 成功、SEO evidence workflow 在 main 再成功一次。
+2. 以同一 Crawl4AI collector 抓取使用者指定競品與 citation sources；只比較主題、結構、entity/question coverage、citations、schema 和內鏈，不複製文字。
+3. 後續每次網站 source 修改前保存 BEFORE evidence；修正後跑 build/test/crawl/Jev/Action Engine，產生可比的 AFTER status/title/meta/headings/schema/links/question coverage/hash。
+4. Jev path-aware 誤報維持 REVIEW；若未來改 Jev integration，先加 regression tests，再以 project-path robots/sitemap/live links 驗證。
 
 ## Reproducible environment facts
 
-- OS：Ubuntu 24.04 x86_64；Python：3.12.14；Git：2.51.1。
-- Crawl4AI official README currently identifies release v0.9.4 (2026-09-23); local installation status: **BLOCKED / NOT INSTALLED**.
-- Avoid DataForSEO and all unconfigured paid/LLM APIs for the first Crawl4AI phase.
+- Crawl4AI / Playwright 的獨立位置：`tools/crawl4ai/source`、`tools/crawl4ai/.venv`；`.gitignore` 排除兩者。
+- 執行成功 workflow：`.github/workflows/seo-evidence.yml`；輸出留在 90 天 workflow artifact，不把 raw crawl、cache、venv、credentials、cookies 或 tokens commit。

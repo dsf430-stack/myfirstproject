@@ -3,14 +3,15 @@
 - 更新時間：2026-09-30（台灣時間）
 - Source of Truth：GitHub `dsf430-stack/myfirstproject` 的 `main`
 - 網站：https://dsf430-stack.github.io/myfirstproject/
-- 基準 main commit：`26c40ad362377036d483a3b6af9fb95b83d0f58c`
+- 最新確認 main commit：`39fb920215b26d7c6940ec7173430accbe8b3727`（2026-09-30 21:05 台灣時間確認）
+- 建立本檔時的基準 commit：`26c40ad362377036d483a3b6af9fb95b83d0f58c`
 - 目的：把 Crawl4AI 作為 Evidence Collector，接到既有 Jev SEO 與 SEO/GEO Action Engine，不建立第二套 SEO 系統。
 
 ## DONE
 
 - 找到網站 repo：`dsf430-stack/myfirstproject`，預設分支為 `main`。
 - 讀取 main 最新樹與首頁、robots.txt、sitemap.xml、Lighthouse workflow、README 和服務頁。main 有 10 個 sitemap URL、允許爬取的 robots.txt、canonical、首頁 JSON-LD/FAQ、服務頁與高雄/台南頁。
-- 已確認 repo 最近 commit 更新首頁視覺與可及性；既有 SEO 結構仍在。沒有發現 `AGENTS.md` 或 `PROJECT_STATUS.md`；此檔首次建立為跨回合狀態紀錄。
+- 已確認 repo 最近 commit 更新首頁視覺與可及性；後續 main 又為診所與醫美頁的圖片補上固有尺寸。既有 SEO 結構仍在。沒有發現 `AGENTS.md`；此檔首次建立為跨回合狀態紀錄。
 - 找到既有 Jev SEO 工作目錄：`/workspace/scratch/bf88c2814588`。Jev 原始碼副本為 `.jev-seo`，獨立 Python 3.12.14 venv 為 `.venv-jevseo`；上游 Jev repo 工作樹乾淨，HEAD `55a184a`。
 - Jev `doctor` 在將既有 venv 加入 PATH 後通過；依賴齊全。未配置 `TYPESAFE_API_KEY`、PageSpeed key、DataForSEO credentials；DataForSEO 未使用。Jev 文件指出沒有 Jev key 時仍可執行技術稽核，內容判讀會明確標為未評估。
 - Jev 離線單元測試：38 passed，0 failed（2026-09-30）。

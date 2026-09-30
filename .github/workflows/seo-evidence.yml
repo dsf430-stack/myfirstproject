@@ -26,6 +26,7 @@ jobs:
           python -m venv tools/crawl4ai/.venv
           tools/crawl4ai/.venv/bin/python -m pip install --upgrade pip
           tools/crawl4ai/.venv/bin/python -m pip install -e tools/crawl4ai/source
+          tools/crawl4ai/.venv/bin/python -m pip install pytest
           tools/crawl4ai/.venv/bin/python -m pip install -r tools/seo-evidence/requirements.txt
           tools/crawl4ai/.venv/bin/crawl4ai-setup
           tools/crawl4ai/.venv/bin/crawl4ai-doctor

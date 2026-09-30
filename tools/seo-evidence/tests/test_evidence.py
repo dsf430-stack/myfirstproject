@@ -36,6 +36,10 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(fetch.call_args.args[0], "https://example.github.io/myproject/robots.txt")
         self.assertTrue(info["allowed"])
 
+    def test_response_headers_exclude_cookie_and_auth_material(self):
+        headers = collector.safe_response_headers({"Content-Type": "text/html", "Set-Cookie": "session=secret", "Authorization": "Bearer secret", "X-Robots-Tag": "index"})
+        self.assertEqual(headers, {"content-type": "text/html", "x-robots-tag": "index"})
+
     def test_extracts_canonical_headings_links_jsonld_images_and_main_text(self):
         html = '''<html lang="zh-Hant"><head><title>測試服務</title><meta name="description" content="說明"><link rel="canonical" href="/myproject/"><script type="application/ld+json">{"@type":"LocalBusiness"}</script></head><body><nav>垃圾導覽</nav><main><h1>服務標題</h1><h2>常見問題</h2><a href="/myproject/page.html#faq">頁面</a><a href="https://outside.example/">外站</a><img src="a.webp" alt="洗衣"><p>正文內容</p></main><footer>重複頁尾</footer></body></html>'''
         facts = collector.extract_page(html, "https://example.github.io/myproject/", "https://example.github.io", "/myproject")

@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "classification": "All required terms present = COVERED; any required or supporting term present = PARTIAL; no match = MISSING.",
+  "questions": [
+    {"id": "Q-SERVICE-01", "question": "意嘉行提供哪些洗衣服務？", "required_terms": ["洗毛巾", "洗衣服", "床單"], "supporting_terms": ["烘乾", "大量送洗"]},
+    {"id": "Q-REGION-01", "question": "高雄哪裡可以大量洗毛巾並安排收送？", "required_terms": ["高雄", "毛巾", "收送"], "supporting_terms": ["大量", "洗衣"]},
+    {"id": "Q-REGION-02", "question": "台南哪裡可以大量洗毛巾並安排收送？", "required_terms": ["台南", "毛巾", "收送"], "supporting_terms": ["大量", "洗衣"]},
+    {"id": "Q-QUOTE-01", "question": "詢價或安排收送前要提供什麼資料？", "required_terms": ["品項", "數量", "地區"], "supporting_terms": ["頻率", "材質", "詢問"]},
+    {"id": "Q-TURNAROUND-01", "question": "大量洗衣多久可以完成？", "required_terms": ["完成時間", "數量"], "supporting_terms": ["品項", "安排", "詢問"]},
+    {"id": "Q-INDUSTRY-01", "question": "診所、醫美、長照、髮廊、SPA、復健布品可以送洗嗎？", "required_terms": ["診所", "醫美", "長照", "髮廊", "SPA", "復健"], "supporting_terms": ["布品", "服務"]},
+    {"id": "Q-STAIN-01", "question": "醬油、口紅或血漬沾到衣物怎麼處理？", "required_terms": ["醬油", "口紅", "血"], "supporting_terms": ["污漬", "處理"]},
+    {"id": "Q-CHEM-01", "question": "洗衣化工原料或清潔成分各有什麼用途？", "required_terms": ["化工原料", "用途"], "supporting_terms": ["清潔", "洗衣", "成分"]}
+  ]
+}

@@ -1,0 +1,158 @@
+name: SEO evidence integration
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "tools/seo-evidence/**"
+      - ".github/workflows/seo-evidence.yml"
+      - "PROJECT_STATUS.md"
+      - "**/*.html"
+
+permissions:
+  contents: read
+
+jobs:
+  crawl-audit-decide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clone official Crawl4AI and install it in an isolated virtual environment
+        run: |
+          git clone --depth 1 --branch v0.9.4 https://github.com/unclecode/crawl4ai.git tools/crawl4ai/source
+          git -C tools/crawl4ai/source rev-parse HEAD
+          python -m venv tools/crawl4ai/.venv
+          tools/crawl4ai/.venv/bin/python -m pip install --upgrade pip
+          tools/crawl4ai/.venv/bin/python -m pip install -e tools/crawl4ai/source
+          tools/crawl4ai/.venv/bin/python -m pip install pytest pytest-asyncio pypdf
+          tools/crawl4ai/.venv/bin/python -m pip install -r tools/seo-evidence/requirements.txt
+          tools/crawl4ai/.venv/bin/crawl4ai-setup
+          tools/crawl4ai/.venv/bin/crawl4ai-doctor
+          tools/crawl4ai/.venv/bin/python -c "from importlib.metadata import version; import crawl4ai; print('Crawl4AI import OK:', version('Crawl4AI'))"
+      - name: Run Crawl4AI's upstream test suite
+        working-directory: tools/crawl4ai/source
+        run: ../.venv/bin/python -m pytest tests/unit/ -q
+      - name: Test URL policy, extraction and decision contracts
+        run: tools/crawl4ai/.venv/bin/python -m unittest discover -s tools/seo-evidence/tests -v
+      - name: Smoke test Chromium and JavaScript rendering
+        run: tools/crawl4ai/.venv/bin/python tools/seo-evidence/smoke_test.py
+      - name: Crawl live pages and create Markdown evidence
+        run: |
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/collector.py \
+            --url https://dsf430-stack.github.io/myfirstproject/ \
+            --out seo/crawler/raw/first-run \
+            --max-pages 60 --max-depth 5 --delay 0.5
+          tools/crawl4ai/.venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("seo/crawler/raw/first-run")
+          pages = json.loads((root / "pages.json").read_text())
+          manifest = json.loads((root / "crawl_manifest.json").read_text())
+          home = next((p for p in pages if p["url"].rstrip("/") == "https://dsf430-stack.github.io/myfirstproject"), None)
+          assert home and home["http_status"] == 200, "Crawl4AI homepage was not HTTP 200"
+          assert home["title"] and home["canonical"] and home["headings"]["h1"], "Homepage metadata/headings are missing"
+          assert home["links"]["internal"], "No internal links were extracted"
+          md = (root / home["markdown"]).read_text()
+          assert md.strip(), "Homepage Markdown is empty"
+          sensitive = {"set-cookie", "authorization", "proxy-authorization"}
+          assert all(not (sensitive & set(p["response_headers"])) for p in pages), "Sensitive response headers entered crawl evidence"
+          urls = [p["url"] for p in pages]
+          assert len(urls) == len(set(urls)), "Duplicate URLs in crawl output"
+          assert all("?" not in u and "#" not in u for u in urls), "Query/fragment URL escaped deduplication"
+          print(json.dumps({"pages": len(pages), "home_status": home["http_status"], "title": home["title"], "internal_links": len(home["links"]["internal"]), "markdown_chars": len(md), "errors": len(manifest["errors"])}, ensure_ascii=False))
+          PY
+      - name: Measure GEO question coverage
+        run: |
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/analyze_coverage.py \
+            --pages seo/crawler/raw/first-run/pages.json \
+            --out seo/crawler/reports/first-run/geo-audit.json
+      - name: Set up Jev SEO separately without paid API keys
+        run: |
+          git init .jev-seo-source
+          git -C .jev-seo-source remote add origin https://github.com/AgriciDaniel/jev-seo.git
+          git -C .jev-seo-source fetch --depth 1 origin 55a184a3b0d09565a4c84268f725a47784e62528
+          git -C .jev-seo-source checkout --detach FETCH_HEAD
+          sudo apt-get update
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
+          python -m venv .venv-jevseo
+          .venv-jevseo/bin/python -m pip install --upgrade pip
+          .venv-jevseo/bin/python -m pip install -r .jev-seo-source/requirements.txt
+      - name: Verify citation source URL in website source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html = Path("laundry-ingredients-guide.html").read_text()
+          old = "https://www.chciworld.com/product/sodium_percarbonate/"
+          new = "https://www.chciworld.com.tw/product/sodium_percarbonate/"
+          assert new in html and old not in html, "Citation URL source change is missing or the stale URL remains"
+          print("Citation source URL is updated in the website HTML")
+          PY
+      - name: Run Jev's existing technical audit and reports
+        run: |
+          mkdir -p seo/jev-seo-reports/first-run
+          PATH="$PWD/.venv-jevseo/bin:$PATH" .jev-seo-source/bin/jevseo audit \
+            https://dsf430-stack.github.io/myfirstproject/index.html \
+            --out "$PWD/seo/jev-seo-reports/first-run" \
+            --max-pages 60 --max-depth 5 --render never --no-jev --no-psi
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/attach_jev_evidence.py \
+            --audit seo/jev-seo-reports/first-run/audit.json \
+            --pages seo/crawler/raw/first-run/pages.json \
+            --manifest seo/crawler/raw/first-run/crawl_manifest.json
+          PATH="$PWD/.venv-jevseo/bin:$PATH" .jev-seo-source/bin/jevseo render \
+            "$PWD/seo/jev-seo-reports/first-run"
+          .venv-jevseo/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          import os
+          audit = json.loads(Path("seo/jev-seo-reports/first-run/audit.json").read_text())
+          url = "https://www.chciworld.com.tw/product/sodium_percarbonate"
+          crawled_links = {
+              link["href"].rstrip("/")
+              for page in json.loads(Path("seo/crawler/raw/first-run/pages.json").read_text())
+              for link in page["links"]["external"]
+          }
+          if url not in crawled_links and os.getenv("GITHUB_REF") != "refs/heads/main":
+              print("Live citation status check deferred until the updated GitHub Pages source is deployed")
+              raise SystemExit(0)
+          matches = [status for href, status in audit["site"].get("external_status", {}).items() if href.rstrip("/") == url]
+          status = matches[0] if matches else None
+          if status != 200:
+              raise SystemExit(f"Updated sodium percarbonate citation returned {status}, expected HTTP 200")
+          print(f"Citation verification passed: {url} -> HTTP {status}")
+          PY
+      - name: Combine GEO coverage and Jev ranked findings
+        run: |
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/action_engine.py \
+            --coverage seo/crawler/reports/first-run/geo-audit.json \
+            --jev-audit seo/jev-seo-reports/first-run/audit.json \
+            --out seo/action-engine/first-run.json
+          tools/crawl4ai/.venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          pages = json.loads(Path("seo/crawler/raw/first-run/pages.json").read_text())
+          audit = json.loads(Path("seo/jev-seo-reports/first-run/audit.json").read_text())
+          crawled = {p["url"] for p in pages}
+          jev_pages = {p["url"] for p in audit["pages"] if p.get("kind") == "page"}
+          overlap = crawled & jev_pages
+          if not overlap:
+              raise SystemExit("Crawl4AI and Jev evidence have no matching URLs")
+          bridge = audit.get("crawl4ai_evidence", {})
+          if bridge.get("matched_jev_pages", 0) < 1:
+              raise SystemExit("Crawl4AI evidence was not attached to Jev audit pages")
+          print(json.dumps({"matched_urls": len(overlap), "attached_jev_pages": bridge["matched_jev_pages"], "crawl4ai_pages": len(crawled), "jev_pages": len(jev_pages)}))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yijiahang-seo-evidence-${{ github.run_id }}
+          path: |
+            seo/crawler/raw/first-run/
+            seo/crawler/reports/first-run/
+            seo/jev-seo-reports/first-run/
+            seo/action-engine/first-run.json
+          if-no-files-found: warn
+          retention-days: 90

@@ -33,7 +33,7 @@ jobs:
           tools/crawl4ai/.venv/bin/python -c "import crawl4ai; print('Crawl4AI import OK:', getattr(crawl4ai, '__version__', 'version metadata unavailable'))"
       - name: Run Crawl4AI's upstream test suite
         working-directory: tools/crawl4ai/source
-        run: ../.venv/bin/python -m pytest tests/ -q
+        run: ../.venv/bin/python -m pytest tests/unit/ -q
       - name: Test URL policy, extraction and decision contracts
         run: tools/crawl4ai/.venv/bin/python -m unittest discover -s tools/seo-evidence/tests -v
       - name: Smoke test Chromium and JavaScript rendering

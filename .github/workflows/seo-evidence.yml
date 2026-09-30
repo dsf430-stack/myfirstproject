@@ -81,6 +81,16 @@ jobs:
           python -m venv .venv-jevseo
           .venv-jevseo/bin/python -m pip install --upgrade pip
           .venv-jevseo/bin/python -m pip install -r .jev-seo-source/requirements.txt
+      - name: Verify citation source URL in website source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html = Path("laundry-ingredients-guide.html").read_text()
+          old = "https://www.chciworld.com/product/sodium_percarbonate/"
+          new = "https://www.chciworld.com.tw/product/sodium_percarbonate/"
+          assert new in html and old not in html, "Citation URL source change is missing or the stale URL remains"
+          print("Citation source URL is updated in the website HTML")
+          PY
       - name: Run Jev's existing technical audit and reports
         run: |
           mkdir -p seo/jev-seo-reports/first-run
@@ -97,8 +107,17 @@ jobs:
           .venv-jevseo/bin/python - <<'PY'
           import json
           from pathlib import Path
+          import os
           audit = json.loads(Path("seo/jev-seo-reports/first-run/audit.json").read_text())
           url = "https://www.chciworld.com.tw/product/sodium_percarbonate"
+          crawled_links = {
+              link["href"].rstrip("/")
+              for page in json.loads(Path("seo/crawler/raw/first-run/pages.json").read_text())
+              for link in page["links"]["external"]
+          }
+          if url not in crawled_links and os.getenv("GITHUB_REF") != "refs/heads/main":
+              print("Live citation status check deferred until the updated GitHub Pages source is deployed")
+              raise SystemExit(0)
           matches = [status for href, status in audit["site"].get("external_status", {}).items() if href.rstrip("/") == url]
           status = matches[0] if matches else None
           if status != 200:

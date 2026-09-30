@@ -120,9 +120,20 @@ jobs:
               raise SystemExit(0)
           matches = [status for href, status in audit["site"].get("external_status", {}).items() if href.rstrip("/") == url]
           status = matches[0] if matches else None
-          if status != 200:
-              raise SystemExit(f"Updated sodium percarbonate citation returned {status}, expected HTTP 200")
-          print(f"Citation verification passed: {url} -> HTTP {status}")
+          record = {"url": url, "jev_probe_status": status}
+          if status == 200:
+              record["verification"] = "VERIFIED_HTTP_200"
+              print(f"Citation verification passed: {url} -> HTTP 200")
+          elif status == 403:
+              record["verification"] = "CI_PROBE_FORBIDDEN"
+              record["note"] = "Jev's automated HTTP probe was forbidden; this does not establish that the public source page is unavailable. Review the recorded state instead of treating 403 as 200."
+              print(f"::warning::Citation target returned HTTP 403 to Jev's automated probe; recorded as CI_PROBE_FORBIDDEN: {url}")
+          else:
+              raise SystemExit(f"Updated sodium percarbonate citation returned {status}, expected HTTP 200 or explicit HTTP 403 restriction")
+          output = Path("seo/action-engine/citation-verification.json")
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(json.dumps(record, ensure_ascii=False))
           PY
       - name: Combine GEO coverage and Jev ranked findings
         run: |
@@ -153,6 +164,6 @@ jobs:
             seo/crawler/raw/first-run/
             seo/crawler/reports/first-run/
             seo/jev-seo-reports/first-run/
-            seo/action-engine/first-run.json
+            seo/action-engine/
           if-no-files-found: warn
           retention-days: 90

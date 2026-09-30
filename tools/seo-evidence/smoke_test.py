@@ -11,7 +11,11 @@ from crawl4ai import AsyncWebCrawler, BrowserConfig, CacheMode, CrawlerRunConfig
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        body = b"""<!doctype html><html><head><title>Browser smoke test</title></head><body><main><h1>Static shell</h1><div id='result'></div><script>document.querySelector('#result').textContent='CRAWL4AI_JS_RENDER_OK';</script></main></body></html>"""
+        body = (
+            b"""<!doctype html><html><head><title>Browser smoke test</title></head><body><main><h1>Static shell</h1><div id='result'></div><p>"""
+            + b"This local fixture contains enough ordinary readable text to pass the crawler's structural content checks. " * 20
+            + b"""</p><script>document.querySelector('#result').textContent='CRAWL4AI_JS_RENDER_OK';</script></main></body></html>"""
+        )
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))

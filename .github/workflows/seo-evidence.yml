@@ -63,6 +63,10 @@ jobs:
             https://dsf430-stack.github.io/myfirstproject/ \
             --out "$PWD/seo/jev-seo-reports/first-run" \
             --max-pages 60 --max-depth 5 --render never --no-jev --no-psi
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/attach_jev_evidence.py \
+            --audit seo/jev-seo-reports/first-run/audit.json \
+            --pages seo/crawler/raw/first-run/pages.json \
+            --manifest seo/crawler/raw/first-run/crawl_manifest.json
           PATH="$PWD/.venv-jevseo/bin:$PATH" .jev-seo-source/bin/jevseo render \
             "$PWD/seo/jev-seo-reports/first-run"
       - name: Combine GEO coverage and Jev ranked findings

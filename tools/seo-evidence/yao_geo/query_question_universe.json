@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "source_mode": "public web search + first-party website crawl + Yao GEO Intent Miner frameworks; no paid keyword metrics",
-  "count": 120,
+  "count": 116,
   "query_seeds": [
     {
       "id": "S01",
@@ -1830,7 +1830,7 @@
       "seed_id": "S25",
       "topic": "fabric",
       "query": "襯衫洗滌方式",
-      "question": "襯衫洗滌方式前要注意哪些事？",
+      "question": "襯衫清洗前要查看哪些洗標資訊？",
       "intent": [
         "informational",
         "commercial"
@@ -1978,7 +1978,7 @@
       "seed_id": "S27",
       "topic": "fabric",
       "query": "絲質羊毛衣物洗滌標示",
-      "question": "絲質羊毛衣物洗標前要注意哪些事？",
+      "question": "絲與羊毛衣物的洗滌標示要怎麼看？",
       "intent": [
         "informational",
         "citation_worthy"
@@ -2058,7 +2058,7 @@
       "seed_id": "S28",
       "topic": "fabric",
       "query": "皮革麂皮衣物清潔",
-      "question": "皮革麂皮衣物清潔前要注意哪些事？",
+      "question": "皮革與麂皮衣物清潔前要注意什麼？",
       "intent": [
         "informational"
       ],
@@ -2145,7 +2145,7 @@
         "清洗"
       ],
       "supporting_terms": [],
-      "business_fact_review": true,
+      "business_fact_review": false,
       "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
     },
     {
@@ -2164,7 +2164,7 @@
         "清洗"
       ],
       "supporting_terms": [],
-      "business_fact_review": true,
+      "business_fact_review": false,
       "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
     },
     {
@@ -2183,7 +2183,7 @@
         "清洗"
       ],
       "supporting_terms": [],
-      "business_fact_review": true,
+      "business_fact_review": false,
       "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
     },
     {
@@ -2290,7 +2290,7 @@
       "seed_id": "S31",
       "topic": "washing",
       "query": "衣物洗滌方式",
-      "question": "衣物洗滌方式時要先注意哪些洗滌標示？",
+      "question": "衣物清洗前如何依洗標選擇洗滌方式？",
       "intent": [
         "informational"
       ],
@@ -2358,30 +2358,11 @@
       "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
     },
     {
-      "id": "S32-Q",
-      "seed_id": "S32",
-      "topic": "washing",
-      "query": "衣服洗完有污漬可以烘乾嗎",
-      "question": "衣服洗完有污漬可以烘乾嗎時要先注意哪些洗滌標示？",
-      "intent": [
-        "informational",
-        "citation_worthy"
-      ],
-      "priority": "P2",
-      "required_terms": [
-        "污漬",
-        "烘乾"
-      ],
-      "supporting_terms": [],
-      "business_fact_review": false,
-      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
-    },
-    {
       "id": "S33-Q",
       "seed_id": "S33",
       "topic": "washing",
       "query": "不同布料可以用相同洗滌方式嗎",
-      "question": "不同布料可以用相同洗滌方式嗎時要先注意哪些洗滌標示？",
+      "question": "不同布料可以用相同洗滌方式嗎？",
       "intent": [
         "informational"
       ],
@@ -2395,67 +2376,11 @@
       "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
     },
     {
-      "id": "S34-Q",
-      "seed_id": "S34",
-      "topic": "washing",
-      "query": "衣服洗標怎麼看",
-      "question": "衣服洗標怎麼看時要先注意哪些洗滌標示？",
-      "intent": [
-        "informational",
-        "citation_worthy"
-      ],
-      "priority": "P2",
-      "required_terms": [
-        "洗標"
-      ],
-      "supporting_terms": [],
-      "business_fact_review": false,
-      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
-    },
-    {
-      "id": "S35-Q",
-      "seed_id": "S35",
-      "topic": "washing",
-      "query": "洗衣前污漬要先處理嗎",
-      "question": "洗衣前污漬要先處理嗎時要先注意哪些洗滌標示？",
-      "intent": [
-        "informational"
-      ],
-      "priority": "P2",
-      "required_terms": [
-        "污漬",
-        "預處理"
-      ],
-      "supporting_terms": [],
-      "business_fact_review": false,
-      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
-    },
-    {
-      "id": "S36-Q",
-      "seed_id": "S36",
-      "topic": "washing",
-      "query": "毛巾床單固定洗滌頻率",
-      "question": "毛巾床單固定洗滌頻率時要先注意哪些洗滌標示？",
-      "intent": [
-        "commercial",
-        "informational"
-      ],
-      "priority": "P2",
-      "required_terms": [
-        "毛巾",
-        "床單",
-        "洗滌頻率"
-      ],
-      "supporting_terms": [],
-      "business_fact_review": false,
-      "market": "Taiwan-local; Kaohsiung/Tainan before Baidu"
-    },
-    {
       "id": "S37-Q",
       "seed_id": "S37",
       "topic": "chemistry",
       "query": "洗衣精化學原料有哪些",
-      "question": "洗衣精化學原料有哪些各自有什麼用途和安全注意事項？",
+      "question": "洗衣精有哪些常見化學原料？",
       "intent": [
         "informational",
         "citation_worthy"
@@ -2622,7 +2547,7 @@
       "seed_id": "S43",
       "topic": "chemistry",
       "query": "洗衣清潔劑可以混用嗎",
-      "question": "洗衣清潔劑可以混用嗎各自有什麼用途和安全注意事項？",
+      "question": "洗衣清潔劑可以混用嗎？",
       "intent": [
         "informational",
         "citation_worthy"
@@ -2641,7 +2566,7 @@
       "seed_id": "S44",
       "topic": "chemistry",
       "query": "清潔劑標示與衣料安全",
-      "question": "清潔劑標示與衣料安全各自有什麼用途和安全注意事項？",
+      "question": "清潔劑標示要看哪些衣料安全資訊？",
       "intent": [
         "informational"
       ],

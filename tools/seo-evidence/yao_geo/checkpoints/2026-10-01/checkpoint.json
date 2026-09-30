@@ -1,0 +1,99 @@
+{
+  "status": "SUCCESS",
+  "date": "2026-10-01",
+  "repository": "https://github.com/dsf430-stack/myfirstproject",
+  "website": "https://dsf430-stack.github.io/myfirstproject/",
+  "production_commit": "c9509f2d1c7129fce76979dd935c7db9c9cc5652",
+  "deployment_run": {
+    "id": 36789414029,
+    "status": "SUCCESS",
+    "url": "https://github.com/dsf430-stack/myfirstproject/actions/runs/36789414029"
+  },
+  "seo_integration_run": {
+    "id": 36789414271,
+    "status": "SUCCESS",
+    "url": "https://github.com/dsf430-stack/myfirstproject/actions/runs/36789414271"
+  },
+  "tool_versions": {
+    "crawl4ai": "0.9.4",
+    "crawl4ai_commit": "133e1d92e37885dfccc03ea2e3687d06c98b7ceb",
+    "jev_seo": "0.1.1",
+    "yao_geo_skills_commit": "0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f"
+  },
+  "isolated_environments": {
+    "crawl4ai": "tools/crawl4ai/.venv (CI runner; ignored by git)",
+    "jev_seo": "/workspace/scratch/bf88c2814588/.venv-jevseo (local) and workflow venv (CI); system Python untouched"
+  },
+  "tests": {
+    "crawl4ai_upstream": "SUCCESS",
+    "project_tests": "SUCCESS",
+    "yao_geo_validator_and_tests": "SUCCESS",
+    "chromium_javascript_smoke": "SUCCESS",
+    "site_build_pages": "SUCCESS"
+  },
+  "crawl": {
+    "status": "SUCCESS",
+    "first_party_pages": 11,
+    "http_200": 11,
+    "errors": 0,
+    "project_robots_http": 200,
+    "project_sitemap_http": 200,
+    "sitemap_urls": 10
+  },
+  "coverage": {
+    "question_count": 116,
+    "COVERED": 107,
+    "PARTIAL": 9,
+    "MISSING": 0,
+    "actions": {
+      "KEEP": 107,
+      "MODIFY": 0,
+      "CREATE": 0,
+      "REVIEW": 9
+    }
+  },
+  "yao_page_audit": {
+    "status": "SUCCESS",
+    "pages": 11,
+    "findings": 0
+  },
+  "public_source_comparison": {
+    "status": "SUCCESS",
+    "competitors": 3,
+    "citation_sources": 4,
+    "failed_crawls": 0
+  },
+  "jev_seo": {
+    "status": "SUCCESS",
+    "version": "0.1.1",
+    "score": 60,
+    "grade": "C",
+    "pages": 20,
+    "findings": 13,
+    "technical_actions": 11,
+    "decision": "All technical recommendations preserved as REVIEW due GitHub Pages project subpath/root-origin false positives and existing alias/canonical behavior; do not modify robots/sitemap/GSC based on root-origin Jev probes."
+  },
+  "paid_services": {
+    "dataforseo": "NOT_USED",
+    "pagespeed_api": "NOT_USED",
+    "typesafe_api": "NOT_USED"
+  },
+  "website_changes_in_pr3": [
+    "Improved Kaohsiung/Tainan service headings and metadata for confirmed doorstep pickup/delivery with route caveat",
+    "Expanded existing stain/ingredient content for verified informational query gaps",
+    "Deduplicated and refined Yao queries; direct dry-cleaning/shoe service facts remain REVIEW",
+    "No new pages; no unverified service claims added"
+  ],
+  "remaining_review": [
+    "Does Yijiahang offer dry cleaning?",
+    "Does Yijiahang directly offer shoe cleaning?",
+    "Which special garments are accepted (down jackets, suits, silk, wool, leather/suede)?",
+    "Does home laundry/bedding service apply, and to what customers?",
+    "Are curtains, uniforms, hotel/restaurant linens accepted? Confirm scope/areas/conditions before claims."
+  ],
+  "next": [
+    "Ask user to confirm the listed business service facts; keep unconfirmed items REVIEW.",
+    "If confirmed, update existing pages and FAQs/schema only where supported, then rerun existing workflow.",
+    "Use Search Console evidence in later cycles if accessible; do not infer ranking/traffic from deterministic coverage."
+  ]
+}

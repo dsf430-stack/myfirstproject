@@ -1,0 +1,267 @@
+{
+  "schema_version": "1.0",
+  "status": "SUCCESS",
+  "method": "Topical/entity comparison of public Crawl4AI page evidence; no competitor wording or business claims copied",
+  "competitors": [
+    {
+      "name": "高潔洗衣社",
+      "url": "https://www.superclean352.com.tw/about-us.html",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "title": "洗衣工廠、毛浴巾送洗、床單被套清洗、枕套床包、餐桌巾布巾、團體制服、廚師工作服、拆窗簾清洗 - 高潔洗衣社",
+      "headings": [
+        "高潔洗衣社",
+        "服務對象",
+        "專業洗滌設備",
+        "設備與技術",
+        "清洗品項",
+        "洗滌專家，",
+        "潔淨領航，",
+        "值得信賴！",
+        ""
+      ],
+      "observed_topics": [
+        "commercial_towel_laundry",
+        "pickup_delivery",
+        "bedding_linen",
+        "business_customer_types",
+        "pricing_and_turnaround",
+        "stain_and_care_evidence"
+      ],
+      "content_sha256": "e52d3fbd008a2893866a823c6189c0841f6ad5df43e0f1298cd455d17d007de1"
+    },
+    {
+      "name": "高雄四季毛巾專業洗滌",
+      "url": "https://4stw.com/services/",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "title": "高雄四季毛巾專業洗滌 - 服務項目",
+      "headings": [
+        "服 務 項 目",
+        "服務特色",
+        "到府收貨 專人運送",
+        "機台定期消毒清潔",
+        "品質衛生 安全可靠",
+        "平價實惠 優良服務",
+        "全年無休的服務"
+      ],
+      "observed_topics": [
+        "commercial_towel_laundry",
+        "pickup_delivery",
+        "business_customer_types",
+        "pricing_and_turnaround"
+      ],
+      "content_sha256": "415b109df36fbee4ca35dfd8aa954a7bff4efc1ae5b0825c7e6c17e68d6f8a81"
+    },
+    {
+      "name": "ACE洗衣",
+      "url": "https://acewash.com.tw/about/",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "title": "關於我們 - ACE洗衣-高雄高級衣物乾洗店|專業洗衣店",
+      "headings": [
+        "ACE是高雄專業深耕的洗衣店",
+        "配合工商洗衣"
+      ],
+      "observed_topics": [
+        "commercial_towel_laundry",
+        "pickup_delivery",
+        "bedding_linen",
+        "business_customer_types",
+        "special_garments_and_shoes"
+      ],
+      "content_sha256": "b6150ffd4c5c52f863280a7341e493712b3754c77cf09179826b7eeca34d9892"
+    }
+  ],
+  "competitor_crawl_failures": [],
+  "citation_source_crawl_failures": [],
+  "content_gaps": [
+    {
+      "topic": "commercial_towel_laundry",
+      "competitor_pages": [
+        "高潔洗衣社",
+        "高雄四季毛巾專業洗滌",
+        "ACE洗衣"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/",
+        "https://dsf430-stack.github.io/myfirstproject/clinic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/aesthetic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/longterm-care-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/salon-spa-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/rehab-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/kaohsiung-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/tainan-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/index.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    },
+    {
+      "topic": "pickup_delivery",
+      "competitor_pages": [
+        "高潔洗衣社",
+        "高雄四季毛巾專業洗滌",
+        "ACE洗衣"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/",
+        "https://dsf430-stack.github.io/myfirstproject/clinic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/aesthetic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/longterm-care-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/salon-spa-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/rehab-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/kaohsiung-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/tainan-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/index.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    },
+    {
+      "topic": "bedding_linen",
+      "competitor_pages": [
+        "高潔洗衣社",
+        "ACE洗衣"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/",
+        "https://dsf430-stack.github.io/myfirstproject/clinic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/aesthetic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/longterm-care-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/salon-spa-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/rehab-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/kaohsiung-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/tainan-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/index.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    },
+    {
+      "topic": "business_customer_types",
+      "competitor_pages": [
+        "高潔洗衣社",
+        "高雄四季毛巾專業洗滌",
+        "ACE洗衣"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/",
+        "https://dsf430-stack.github.io/myfirstproject/clinic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/aesthetic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/longterm-care-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/salon-spa-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/rehab-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/kaohsiung-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/tainan-commercial-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html",
+        "https://dsf430-stack.github.io/myfirstproject/index.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    },
+    {
+      "topic": "pricing_and_turnaround",
+      "competitor_pages": [
+        "高潔洗衣社",
+        "高雄四季毛巾專業洗滌"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/",
+        "https://dsf430-stack.github.io/myfirstproject/aesthetic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/index.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    },
+    {
+      "topic": "stain_and_care_evidence",
+      "competitor_pages": [
+        "高潔洗衣社"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/",
+        "https://dsf430-stack.github.io/myfirstproject/aesthetic-laundry.html",
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html",
+        "https://dsf430-stack.github.io/myfirstproject/laundry-ingredients-guide.html",
+        "https://dsf430-stack.github.io/myfirstproject/index.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    },
+    {
+      "topic": "special_garments_and_shoes",
+      "competitor_pages": [
+        "ACE洗衣"
+      ],
+      "first_party_pages": [
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html"
+      ],
+      "coverage": "COVERED",
+      "decision": "KEEP"
+    }
+  ],
+  "citation_gaps": [
+    {
+      "name": "American Cleaning Institute stain removal guide",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/clothes/stain-removal-guide",
+      "topics": [
+        "blood",
+        "grease/oil",
+        "beverage stains",
+        "care labels"
+      ],
+      "crawl_status": "SUCCESS",
+      "http_status": 200,
+      "linked_by": [
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html"
+      ],
+      "action": "KEEP"
+    },
+    {
+      "name": "American Cleaning Institute holiday stains",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/holiday-cleaning/holiday-stains",
+      "topics": [
+        "coffee",
+        "tea",
+        "wine",
+        "oil-based stains"
+      ],
+      "crawl_status": "SUCCESS",
+      "http_status": 200,
+      "linked_by": [
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html"
+      ],
+      "action": "KEEP"
+    },
+    {
+      "name": "American Cleaning Institute laundry basics",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/clothes/laundry-basics",
+      "topics": [
+        "care labels",
+        "pre-treatment",
+        "laundry basics"
+      ],
+      "crawl_status": "SUCCESS",
+      "http_status": 200,
+      "linked_by": [
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html"
+      ],
+      "action": "KEEP"
+    },
+    {
+      "name": "University of Georgia Cooperative Extension blood stain guide",
+      "url": "https://site.extension.uga.edu/textiles/care/stain-removal/remove-stains-from-blood/",
+      "topics": [
+        "blood stain care"
+      ],
+      "crawl_status": "SUCCESS",
+      "http_status": 200,
+      "linked_by": [
+        "https://dsf430-stack.github.io/myfirstproject/stain-removal-guide.html"
+      ],
+      "action": "KEEP"
+    }
+  ],
+  "policy": "Unverified business/service, pricing, turnaround, medical or special-garment claims remain REVIEW; missing market facts are never invented. Failed crawls remain explicit and are never replaced with assumed success."
+}

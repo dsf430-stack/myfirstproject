@@ -33,3 +33,10 @@ Crawl4AI remains the public evidence collector; Jev SEO remains the technical au
 The integration profile, 44 Taiwan-local seed queries, generated question universe, competitor/source references, business-fact review boundary, and deterministic adapters live in `tools/seo-evidence/yao_geo/`. The workflow pins Yao GEO Skills commit `0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f`, runs its repository validator, checks selected skill contracts, and attaches Yao page/content and public-source findings to the existing Jev/Crawl4AI decision output. Baidu is supplemental Chinese-language evidence only; missing keyword suggestions are recorded as uncertain and never converted to Taiwan demand estimates.
 
 No DataForSEO, PageSpeed, LLM, or paid API is required. Unverified prices, service claims, turnaround guarantees, certifications, medical/laundry process claims, and special-garment service scope remain `REVIEW`.
+
+
+## MarketingSkills 接力層
+
+已將 `coreyhaines31/marketingskills` 以固定版本接入現有 SEO/GEO pipeline，不建立第二套系統。上游固定 commit：`5b2c0007766c6a1cf1d53fd8fc73e979e0821022`。目前只啟用 `seo-audit`、`ai-seo`、`competitor-profiling`、`cro`、`analytics`、`marketing-loops` 六個 skill。
+
+接力順序：GSC / Google SERP → competitor-profiling → seo-audit → ai-seo → 既有 SEO/GEO Action Engine → cro → analytics → Publish / Verify → marketing-loop Repeat。Crawl4AI、Yao GEO、Jev SEO 角色不變，最終修改決策仍由既有 Action Engine 負責。

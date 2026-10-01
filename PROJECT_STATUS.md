@@ -39,3 +39,12 @@
 ## Checkpoint files
 
 `tools/seo-evidence/yao_geo/checkpoints/2026-10-01/` 保存 `checkpoint.json`、Question-to-URL coverage、Action Engine decisions、Crawl4AI manifest/pages、Yao page audit、公開來源比較、Jev summary 及原生報告格式。GitHub Actions artifact `11131755678`（run `36789414271`）另保存完整 raw crawl evidence，artifact 到期日 2026-12-29。
+
+
+## MarketingSkills integration
+
+- 已接入 `coreyhaines31/marketingskills`，固定上游 commit `5b2c0007766c6a1cf1d53fd8fc73e979e0821022`。
+- 啟用 6 個 skills：`seo-audit`、`ai-seo`、`competitor-profiling`、`cro`、`analytics`、`marketing-loops`。
+- 定位為既有 pipeline 的 advisory / orchestration layer；不建立第二套 SEO 系統，不取代 Crawl4AI、Yao GEO、Jev SEO 或 Action Engine。
+- CI 會 checkout 固定 commit 並驗證 6 個 `SKILL.md` contract 存在；本地 integration contract 另有 unittest。
+- 商業目標：2026-10-15 前至少產生 1 個有效詢價；優先市場為長照護家／護理之家／住宿式長照。

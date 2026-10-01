@@ -187,13 +187,19 @@ jobs:
           output.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
           print(json.dumps(record, ensure_ascii=False))
           PY
-      - name: Join Yao GEO, Jev findings, and public-source evidence in the existing Action Engine
+      - name: Normalize OpenSEO market-data evidence
+        run: |
+          tools/crawl4ai/.venv/bin/python tools/seo-evidence/open_seo_evidence.py \
+            --input tools/seo-evidence/openseo/input.json \
+            --out seo/openseo/first-run/market-data.json
+      - name: Join Yao GEO, Jev findings, public-source and OpenSEO evidence in the existing Action Engine
         run: |
           tools/crawl4ai/.venv/bin/python tools/seo-evidence/action_engine.py \
             --coverage seo/crawler/reports/first-run/geo-audit.json \
             --jev-audit seo/jev-seo-reports/first-run/audit.json \
             --yao-audit seo/yao-geo/first-run/page-content-audit.json \
             --source-comparison seo/yao-geo/first-run/public-source-comparison.json \
+            --openseo seo/openseo/first-run/market-data.json \
             --out seo/action-engine/first-run.json
           tools/crawl4ai/.venv/bin/python - <<'PY'
           import json
@@ -221,5 +227,6 @@ jobs:
             seo/yao-geo/first-run/
             seo/jev-seo-reports/first-run/
             seo/action-engine/
+            seo/openseo/
           if-no-files-found: warn
           retention-days: 90

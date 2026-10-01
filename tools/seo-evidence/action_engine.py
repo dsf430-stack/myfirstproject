@@ -55,7 +55,8 @@ def decisions(coverage: dict, jev_audit: dict, yao_audit: dict | None = None, so
         "decision_vocabulary": ["KEEP", "MODIFY", "CREATE", "MERGE", "DELETE-NOINDEX", "REVIEW"],
         "coverage_summary": coverage.get("summary", {}), "action_summary": coverage.get("action_summary", {}), "question_actions": questions,
         "technical_actions": technical, "yao_page_actions": page_actions, "page_audit_summary": (yao_audit or {}).get("summary", {}),
-        "public_source_actions": public_source_actions, "public_source_status": comparison.get("status", "NOT_RUN"),\n        "market_data": openseo or {"provider": "OpenSEO", "status": "NOT_CONFIGURED", "sections": {}},
+        "public_source_actions": public_source_actions, "public_source_status": comparison.get("status", "NOT_RUN"),
+        "market_data": openseo or {"provider": "OpenSEO", "status": "NOT_CONFIGURED", "sections": {}},
     }
 
 
@@ -64,14 +65,16 @@ def main() -> int:
     ap.add_argument("--coverage", type=Path, required=True)
     ap.add_argument("--jev-audit", type=Path, required=True)
     ap.add_argument("--yao-audit", type=Path)
-    ap.add_argument("--source-comparison", type=Path)\n    ap.add_argument("--openseo", type=Path)
+    ap.add_argument("--source-comparison", type=Path)
+    ap.add_argument("--openseo", type=Path)
     ap.add_argument("--out", type=Path, required=True)
     args = ap.parse_args()
     coverage = json.loads(args.coverage.read_text(encoding="utf-8"))
     audit = json.loads(args.jev_audit.read_text(encoding="utf-8"))
     yao_audit = json.loads(args.yao_audit.read_text(encoding="utf-8")) if args.yao_audit else None
     source_comparison = json.loads(args.source_comparison.read_text(encoding="utf-8")) if args.source_comparison else None
-    openseo = json.loads(args.openseo.read_text(encoding="utf-8")) if args.openseo else None\n    result = decisions(coverage, audit, yao_audit, source_comparison, openseo)
+    openseo = json.loads(args.openseo.read_text(encoding="utf-8")) if args.openseo else None
+    result = decisions(coverage, audit, yao_audit, source_comparison, openseo)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"status": "SUCCESS", "question_actions": len(result["question_actions"]), "technical_actions": len(result["technical_actions"]), "out": str(args.out)}, ensure_ascii=False))

@@ -54,6 +54,32 @@ jobs:
           if missing: raise SystemExit("Yao skill contract files missing: " + ", ".join(missing))
           print(json.dumps({"status":"SUCCESS","upstream_ref":"0ab6432d51b5052ef7dbcb388b0a8f1e46c95e6f","skills_validated":len(profile["selected_skills"])},ensure_ascii=False))
           PY
+      - name: Pin and validate selected MarketingSkills
+        run: |
+          git init .marketingskills-source
+          git -C .marketingskills-source remote add origin https://github.com/coreyhaines31/marketingskills.git
+          git -C .marketingskills-source fetch --depth 1 origin 5b2c0007766c6a1cf1d53fd8fc73e979e0821022
+          git -C .marketingskills-source checkout --detach FETCH_HEAD
+          test "$(git -C .marketingskills-source rev-parse HEAD)" = "5b2c0007766c6a1cf1d53fd8fc73e979e0821022"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          cfg = json.loads(Path("tools/seo-evidence/marketing_skills/integration.json").read_text())
+          repo = Path(".marketingskills-source")
+          missing = []
+          for item in cfg["selected_skills"]:
+              skill = repo / "skills" / item["id"] / "SKILL.md"
+              if not skill.is_file():
+                  missing.append(str(skill))
+          if missing:
+              raise SystemExit("MarketingSkills contract files missing: " + ", ".join(missing))
+          print(json.dumps({
+              "status": "SUCCESS",
+              "upstream_ref": cfg["pinned_commit"],
+              "skills_validated": len(cfg["selected_skills"]),
+              "skills": [x["id"] for x in cfg["selected_skills"]]
+          }, ensure_ascii=False))
+          PY
       - name: Run Crawl4AI's upstream test suite
         working-directory: tools/crawl4ai/source
         run: ../.venv/bin/python -m pytest tests/unit/ -q

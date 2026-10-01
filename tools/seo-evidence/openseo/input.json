@@ -1,0 +1,6 @@
+{
+  "status": "NOT_CONFIGURED",
+  "site": "https://dsf430-stack.github.io/myfirstproject/",
+  "source": "OpenSEO MCP / DataForSEO",
+  "note": "OpenSEO data layer is wired into the repository, but no OpenSEO OAuth/API key is stored in GitHub. Live keyword volume, rankings, backlinks, SERPs and GSC metrics must remain NOT_CONFIGURED until credentials/data are supplied."
+}

@@ -48,3 +48,12 @@
 - 定位為既有 pipeline 的 advisory / orchestration layer；不建立第二套 SEO 系統，不取代 Crawl4AI、Yao GEO、Jev SEO 或 Action Engine。
 - CI 會 checkout 固定 commit 並驗證 6 個 `SKILL.md` contract 存在；本地 integration contract 另有 unittest。
 - 商業目標：2026-10-15 前至少產生 1 個有效詢價；優先市場為長照護家／護理之家／住宿式長照。
+
+
+## UI/UX Pro Max integration（2026-10-01）
+
+- 已將 `nextlevelbuilder/ui-ux-pro-max-skill` 的 UI/UX 原則接入現有網站品質層，不建立第二套網站；參考上游 v2.x 的 accessibility、responsive、interaction、typography 與 pre-delivery anti-pattern checks。
+- 首頁已完成第一輪 UI/UX 改善：44px+ 可點擊區、鍵盤 skip link / focus-visible、CTA hover feedback、手機固定「查看服務／LINE 詢價」、手機 safe-area、Hero 服務重點 chips、FAQ 卡片化、連結辨識、版面與字級響應式優化、reduced-motion 保留。
+- 未修改既有 SEO title/meta/canonical/schema 內容、服務事實、URL 架構、Crawl4AI/Yao GEO/Jev/Action Engine；乾洗、洗鞋等未確認服務仍維持 REVIEW。
+- UI commits：`a0d731c0b9348f7b48d07ff27809f09bebd0aea4`、`1d5d43d0013956d9a07a02059e920759b37a360c`。
+- NEXT：等待 GitHub Pages 部署後做 live desktop/mobile smoke；若 CI 或 live render 有問題，僅修 UI 層，不回退已驗證 SEO/GEO。

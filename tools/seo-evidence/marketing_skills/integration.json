@@ -1,0 +1,55 @@
+{
+  "name": "marketingskills-integration",
+  "source": "https://github.com/coreyhaines31/marketingskills",
+  "pinned_commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+  "mode": "advisory-skill-layer",
+  "selected_skills": [
+    {"id":"seo-audit","stage":"technical_and_onpage_audit"},
+    {"id":"ai-seo","stage":"geo_aeo_and_ai_citation"},
+    {"id":"competitor-profiling","stage":"competitor_research"},
+    {"id":"cro","stage":"conversion_optimization"},
+    {"id":"analytics","stage":"measurement_and_conversion_tracking"},
+    {"id":"marketing-loops","stage":"recurring_orchestration"}
+  ],
+  "existing_pipeline": [
+    "GSC",
+    "Google SERP",
+    "Crawl4AI",
+    "Yao GEO",
+    "Jev SEO",
+    "SEO/GEO Action Engine"
+  ],
+  "orchestration": [
+    "restore_project_state",
+    "collect_gsc_and_serp_evidence",
+    "profile_competitors",
+    "run_seo_audit",
+    "run_ai_seo_review",
+    "decide_changes_in_existing_action_engine",
+    "apply_cro_improvements",
+    "verify_analytics_and_conversion_path",
+    "publish_and_verify",
+    "save_checkpoint",
+    "repeat"
+  ],
+  "business_goal": "At least one valid customer quotation inquiry by 2026-10-15",
+  "priority_market": [
+    "長照護家",
+    "護理之家",
+    "住宿式長照",
+    "養護中心",
+    "高雄",
+    "台南",
+    "床單被褥",
+    "毛巾",
+    "衣物",
+    "固定收送"
+  ],
+  "guardrails": {
+    "no_second_seo_system": true,
+    "no_unverified_service_claims": true,
+    "no_paid_api_required": true,
+    "source_of_truth": "GitHub main + PROJECT_STATUS.md",
+    "final_decision_owner": "existing SEO/GEO Action Engine"
+  }
+}

@@ -85,3 +85,13 @@
 - Existing homepage industry card already linked to long-term-care. Found an earlier high-priority audience block stating 長照護家／護理之家 are the priority audience but it was plain text. Added one descriptive first-party link from that priority block to the existing long-term-care canonical URL; no new page and no new service claim. Commit `40ccc782b85c816d30f374acae0dc49a9f44f845`.
 - New runs: Pages `36979553647`; SEO evidence `36979554233`. Verify before further on-page changes.
 - NEXT: after successful deploy/evidence, re-inspect long-term-care URL. Do not add more internal links unless crawl/index evidence still fails after Google has had time to process the deployed discovery signal.
+
+## SEO Command Center integration — zero-spend mode (2026-10-02)
+
+- Added `testedmedia/seo-command-center` as an optional quantitative intelligence layer, pinned to upstream commit `41b9603968588d9a6175248c653107b82173391a` (MIT).
+- Integration contract: `tools/seo-evidence/seo_command_center/integration.json`.
+- Mode is explicitly `zero-spend`: `enabled=false`, `paid_api_calls_allowed=false`. No DataForSEO credentials are stored and no DataForSEO API/setup balance call was executed.
+- Position in the existing system only: SEO Command Center/DataForSEO → Crawl4AI → Yao GEO → Jev SEO → SEO/GEO Action Engine. It does not create a second SEO system and does not replace GSC/public evidence.
+- Intended future capabilities if paid access is explicitly enabled later: rank tracking, keyword research, competitor gap, AI Overview visibility, site health, link gap, local map grid, Site Explorer.
+- Integration commit: `5d619571ed99cecfb39e594cd4ed953bf53e26f5`.
+- COST STATE: USD 0 incurred by this integration. Do not enable paid DataForSEO calls without an explicit future user instruction.

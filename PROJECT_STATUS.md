@@ -122,3 +122,65 @@
 - Found one freshness mismatch caused by the immediately prior homepage title update: homepage sitemap `lastmod` was still 2026-09-30. Updated only homepage `lastmod` to 2026-10-02 in commit `a086b768f24b79c7ceb9a56103e2f49bc87a8da1`.
 - Do not resubmit sitemap merely for this lastmod correction; let the already-pending submission process it.
 - NEXT: verify current-head Pages/SEO evidence. Do not alter homepage title until post-change GSC data matures; do not alter long-term-care until first-crawl/index evidence changes.
+
+
+## PERMANENT HANDOFF CHECKPOINT — 2026-10-02
+
+This checkpoint is the authoritative handoff point for continuing the 意嘉行 SEO/GEO project after the current ChatGPT conversation is deleted. Always restore from latest GitHub `main` plus this `PROJECT_STATUS.md`; do not depend on chat history.
+
+### DONE
+
+- Existing execution chain remains one system: SEO Command Center (optional external intelligence, zero-spend) → Crawl4AI → Yao GEO → Jev SEO → SEO/GEO Action Engine, with MarketingSkills advisory/orchestration. Do not create a second SEO system.
+- MarketingSkills pinned upstream: `coreyhaines31/marketingskills@5b2c0007766c6a1cf1d53fd8fc73e979e0821022`; enabled contracts: seo-audit, ai-seo, competitor-profiling, cro, analytics, marketing-loops.
+- SEO Command Center pinned upstream: `testedmedia/seo-command-center@41b9603968588d9a6175248c653107b82173391a`. Integration contract: `tools/seo-evidence/seo_command_center/integration.json`.
+- SEO Command Center is ZERO-SPEND: `enabled=false`, `paid_api_calls_allowed=false`; no DataForSEO credentials stored and no paid DataForSEO calls are permitted without explicit future user approval.
+- Confirmed business facts allowed in copy: pickup/delivery in Kaohsiung and Tainan; recurring/high-volume laundry for confirmed business/institution audiences and confirmed washable items already represented in the site. Do not invent prices, certifications, disinfection, guarantees, or unconfirmed service categories.
+- Long-term-care CRO improvement commit: `c21cd7ffbcdf1845c4be0043c62bb5c799743cc2`.
+- Long-term-care sitemap freshness commit: `96b5cce6084256d93c12ecb5d5e412ec16adcce5`.
+- Homepage long-term-care discovery-link commit: `40ccc782b85c816d30f374acae0dc49a9f44f845`.
+- SEO Command Center zero-spend integration commit: `5d619571ed99cecfb39e594cd4ed953bf53e26f5`.
+- Homepage CTR/search-intent title test commit: `c8f40edca523f5c2bc96ee71d04385caceffe897`. Current title: `高雄台南洗衣到府收送｜毛巾、衣物、床單床巾｜意嘉行`. Do not change again until post-change GSC data matures.
+- Sitemap audit found exactly 10 intended indexable pages; no indexable page is missing. `404.html` and Google verification HTML are intentionally excluded.
+- Homepage sitemap lastmod updated to 2026-10-02 in commit `a086b768f24b79c7ceb9a56103e2f49bc87a8da1`.
+- Conversion instrumentation audit found no existing gtag/GTM/dataLayer/conversion event code. Do not claim LINE clicks or valid inquiries from SEO without a verified external source/analytics integration.
+
+### VERIFIED STATE AT HANDOFF
+
+- Current pre-handoff checkpoint commit: `cd2076a35492ed09f7fc3c2491ee5a5fc996587b`.
+- Pages run `36986599893` for `cd2076a3`: SUCCESS.
+- SEO evidence run `36986600224` for `cd2076a3`: IN_PROGRESS at handoff time; recheck it first on resume. In-progress is not a failure.
+- SEO evidence runs `36986461127`, `36986447411`, `36986369225`, `36985132959`, and `36985117407`: SUCCESS.
+- Cancelled Pages runs immediately superseded by later checkpoint commits are not site failures; latest successful Pages deployment is authoritative.
+
+### GSC STATE AT HANDOFF
+
+- Last verified settled-through date: 2026-09-29.
+- Query dimension: 0 rows, including the established 15+ / 10+ long-tail rule; do not fabricate query conclusions.
+- Page performance: homepage 28 impressions / 0 clicks / avg position 3.79; clinic 8 / 0 / 2.50; Kaohsiung commercial 7 / 0 / 2.43.
+- Long-term-care URL inspection: `URL is unknown to Google`; last crawl null. This remains the primary crawl/index blocker.
+- Sitemap submission: pending, 0 warnings, 0 errors. Do not resubmit unless evidence changes.
+- Because discovery/internal-link/sitemap signals were changed on 2026-10-02, do not keep adding links/content while Google has not processed them.
+
+### BLOCKED / WAITING ON EXTERNAL SIGNAL
+
+- Google has not first-crawled the long-term-care URL.
+- GSC data has not matured beyond 2026-09-29.
+- Valid customer inquiry has NOT been verified yet.
+- No analytics measurement ID/property is available in the repository, so privacy-safe LINE CTA event measurement cannot be wired into an existing analytics system yet.
+- DataForSEO remains intentionally disabled to keep cost at USD 0.
+
+### NEXT — RESUME WITHOUT CHAT HISTORY
+
+1. Fetch latest GitHub `main` and `PROJECT_STATUS.md` first; newer commits/checkpoints override this snapshot.
+2. Recheck SEO evidence run `36986600224` and latest Pages run. If failed, inspect root cause, minimally fix, rerun, verify; do not redo successful work.
+3. Check GSC settled-through date, query rows, page performance, sitemap state, and long-term-care URL inspection.
+4. If long-term-care is still unknown/no crawl and sitemap is still pending with no errors, WAIT for a changed Google signal; do not add duplicate internal links, resubmit sitemap, create doorway pages, or rewrite the page again.
+5. If GSC query data appears, apply the existing rule: first regex `^.{15,}$`, then `^.{10,}$` if sparse; prioritize queries with average position 10–20 and meaningful impressions.
+6. Do not judge or modify the new homepage title until post-2026-10-02 settled GSC data is available.
+7. If a verified existing analytics property/measurement ID becomes available, add privacy-safe LINE CTA click measurement into the current site; do not create a parallel analytics stack. A click is not automatically a valid inquiry.
+8. Commercial goal remains: at least 1 VERIFIED valid customer inquiry by 2026-10-15. When verified, record GOAL ACHIEVED and stop unnecessary changes.
+9. Only stop/ask the user for login, 2FA, CAPTCHA, required permission, high-risk irreversible action, explicit paid-API approval, or a genuine external blocker.
+
+### ONE-LINE NEW-CHAT RESUME COMMAND
+
+`繼續意嘉行：讀取 dsf430-stack/myfirstproject 最新 main + PROJECT_STATUS.md 的 PERMANENT HANDOFF CHECKPOINT，直接從 NEXT 接手，不重做 DONE，不重試條件未變的已知失敗。`

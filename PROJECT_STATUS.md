@@ -195,3 +195,13 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - No SEO/GEO workflow was rebuilt. Existing Crawl4AI, Yao GEO, Jev SEO, public-source evidence, and Action Engine continue to run without OpenSEO credentials. OpenSEO normalization accepts explicit states and supplied snapshots; it does not fetch live metrics itself.
 - Minimal next step for live market data: authorize OpenSEO/provider access and supply a real source-backed snapshot to the existing adapter. For automated fetching, add the credential as a GitHub Actions secret and wire a fetch step; never commit credentials or fabricate missing values.
 - No paid provider call or website content change was made in this continuation.
+
+
+### 2026-10-02 daily optimization — metadata consistency
+
+- GSC settled through 2026-09-29: 15+ 字 query = 0；10+ 字 query = 0。Page data remains homepage 28 impressions / 0 clicks / avg position 3.79; clinic 8 / 0 / 2.50; Kaohsiung commercial 7 / 0 / 2.43.
+- Long-term-care URL Inspection remains NEUTRAL / `URL is unknown to Google`, last crawl null.
+- Public SERP/competitor evidence continues to show commercial intent around 固定收送、大量清洗需求、床單／被套／毛巾與機構合作；official Tainan sources confirm the target market vocabulary includes 一般護理之家.
+- Audited `longterm-care-laundry.html`: HTML title had already been upgraded to 護家／護理之家 intent, but Open Graph title/description and Schema `WebPage.name` still used older generic wording. Fixed only this metadata/schema consistency gap; no new page, no unverified service claim, no sitemap resubmission.
+- Commit: `1e329af3fbca5c53c87067537c09bc1d36a0a5d5`.
+- NEXT: verify Pages + SEO evidence for this commit, then continue monitoring first Google crawl/indexing before further on-page edits.

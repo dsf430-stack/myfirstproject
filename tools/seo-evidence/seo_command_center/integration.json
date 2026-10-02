@@ -1,0 +1,31 @@
+{
+  "name": "SEO Command Center",
+  "role": "optional quantitative SEO intelligence layer",
+  "upstream": {
+    "repository": "testedmedia/seo-command-center",
+    "commit": "41b9603968588d9a6175248c653107b82173391a",
+    "license": "MIT"
+  },
+  "mode": "zero-spend",
+  "enabled": false,
+  "paid_api_calls_allowed": false,
+  "dataforseo_credentials_required": false,
+  "integration_position": "SEO Command Center/DataForSEO -> Crawl4AI -> Yao GEO -> Jev SEO -> SEO/GEO Action Engine",
+  "policy": [
+    "Do not call DataForSEO while enabled=false.",
+    "Do not run upstream setup credential or balance validation in zero-spend mode.",
+    "Do not store DataForSEO credentials in this repository.",
+    "Existing GSC and public evidence remain the active data sources until explicit paid API activation.",
+    "Enabling paid API usage requires an explicit future user instruction."
+  ],
+  "intended_capabilities": [
+    "rank tracking",
+    "keyword research",
+    "competitor gap",
+    "AI Overview visibility",
+    "site health",
+    "link gap",
+    "local map grid",
+    "site explorer"
+  ]
+}

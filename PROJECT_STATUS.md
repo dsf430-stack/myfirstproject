@@ -113,3 +113,12 @@
 - Changed homepage title only from `意嘉行｜高雄・台南洗毛巾、洗衣服、床單床巾送洗` to `高雄台南洗衣到府收送｜毛巾、衣物、床單床巾｜意嘉行`. Commit `c8f40edca523f5c2bc96ee71d04385caceffe897`.
 - This is a CTR/search-intent alignment change, not a new service claim. Do not change it again until post-change GSC data matures enough to compare impressions/CTR.
 - NEXT: verify Pages + SEO evidence for `c8f40ed`; then wait for settled post-change GSC data before judging title performance. Continue long-term-care crawl/index monitoring separately.
+
+### 2026-10-02 continuation — sitemap coverage/freshness verification
+
+- Checkpoint `80b72fb` Pages run `36986460270` completed SUCCESS. SEO evidence `36986461127` was still in progress at the start of this round; do not treat in-progress as failure.
+- GSC remains settled through 2026-09-29; long-term-care remains unknown to Google with no crawl; sitemap remains pending with 0 warnings / 0 errors. No long-term-care content/link changes and no sitemap resubmission were made.
+- Audited repository HTML vs sitemap: 12 HTML files exist; excluding `404.html` and the Google verification file leaves exactly 10 intended indexable pages, all 10 already present in sitemap. No missing-page discoverability defect found.
+- Found one freshness mismatch caused by the immediately prior homepage title update: homepage sitemap `lastmod` was still 2026-09-30. Updated only homepage `lastmod` to 2026-10-02 in commit `a086b768f24b79c7ceb9a56103e2f49bc87a8da1`.
+- Do not resubmit sitemap merely for this lastmod correction; let the already-pending submission process it.
+- NEXT: verify current-head Pages/SEO evidence. Do not alter homepage title until post-change GSC data matures; do not alter long-term-care until first-crawl/index evidence changes.

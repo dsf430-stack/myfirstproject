@@ -205,3 +205,12 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - Audited `longterm-care-laundry.html`: HTML title had already been upgraded to 護家／護理之家 intent, but Open Graph title/description and Schema `WebPage.name` still used older generic wording. Fixed only this metadata/schema consistency gap; no new page, no unverified service claim, no sitemap resubmission.
 - Commit: `1e329af3fbca5c53c87067537c09bc1d36a0a5d5`.
 - NEXT: verify Pages + SEO evidence for this commit, then continue monitoring first Google crawl/indexing before further on-page edits.
+
+### 2026-10-02 continuation — GSC and competitor evidence refresh
+
+- Latest main at review: `b2ca29b33293311c4756287602999f1973dff338`. Its SEO evidence run `36987461097` and Pages run `36987461003` both completed SUCCESS.
+- Connected GSC property is readable and owner-authorized. Latest settled Search Console date remains `2026-09-29`; first incomplete date is `2026-09-30`.
+- Query report returned 0 rows. In the settled 28-day window, homepage had 28 impressions / 0 clicks / avg position 3.79; clinic page 8 / 0 / 2.50; Kaohsiung commercial page 7 / 0 / 2.43. The long-term-care page had no impressions in its page report.
+- Fresh URL Inspection for `longterm-care-laundry.html`: verdict `NEUTRAL`, coverage `URL is unknown to Google`, `lastCrawlTime=null`, no referring URLs returned by the inspection API. Sitemap remains pending with 0 warnings and 0 errors. Do not resubmit it or add repeated links/content while Google has not processed the deployed discovery/metadata updates.
+- Fresh public SERP samples found a care-specific commercial laundry landing page at https://daweiwash.com/industries/elderly-care/ (claims about daily collection, tracking, and audit documentation belong to that competitor only); a Tainan-area commercial laundry at https://www.superclean352.com.tw/about-us.html; and a Kaohsiung commercial laundry describing hotel/restaurant textile service at https://acewash.com.tw/about/. These are market-language/competitor references only, not evidence that 意嘉行 offers the same services, certifications, processes, or guarantees.
+- No new site content, service claim, sitemap submission, or paid API call was made in this check. Hold further on-page edits until first crawl/indexing or new settled GSC query evidence appears; then continue in the existing SEO/GEO Action Engine.

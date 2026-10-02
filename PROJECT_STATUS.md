@@ -77,3 +77,11 @@
 - Public SERP research confirms the target market vocabulary includes 一般護理之家、住宿式長照機構、老人福利機構; official/public sources also show bed/linen storage and laundry-room context. Treat these as market/evidence vocabulary, not as claims that 意嘉行 provides any unconfirmed process or compliance service.
 - Do not create extra doorway pages from these terms. Keep the existing long-term-care page as the primary target until Google first crawls/indexes it.
 - NEXT: verify Pages deployment for `96b5cce`; after deploy, continue GSC inspection tracking. Do not resubmit sitemap unless evidence changes.
+
+### 2026-10-02 continuation — homepage discovery path
+
+- Latest prior Pages run `36979367475` for checkpoint `9b412b0`: SUCCESS. SEO evidence `36979368366` was still running when this continuation began.
+- GSC recheck: long-term-care URL remains `URL is unknown to Google`, last crawl null. Settled through 2026-09-29; query rows remain 0; page rows remain homepage 28 impressions, clinic 8, Kaohsiung commercial 7, all 0 clicks.
+- Existing homepage industry card already linked to long-term-care. Found an earlier high-priority audience block stating 長照護家／護理之家 are the priority audience but it was plain text. Added one descriptive first-party link from that priority block to the existing long-term-care canonical URL; no new page and no new service claim. Commit `40ccc782b85c816d30f374acae0dc49a9f44f845`.
+- New runs: Pages `36979553647`; SEO evidence `36979554233`. Verify before further on-page changes.
+- NEXT: after successful deploy/evidence, re-inspect long-term-care URL. Do not add more internal links unless crawl/index evidence still fails after Google has had time to process the deployed discovery signal.

@@ -57,3 +57,15 @@
 - 未修改既有 SEO title/meta/canonical/schema 內容、服務事實、URL 架構、Crawl4AI/Yao GEO/Jev/Action Engine；乾洗、洗鞋等未確認服務仍維持 REVIEW。
 - UI commits：`a0d731c0b9348f7b48d07ff27809f09bebd0aea4`、`1d5d43d0013956d9a07a02059e920759b37a360c`。
 - NEXT：等待 GitHub Pages 部署後做 live desktop/mobile smoke；若 CI 或 live render 有問題，僅修 UI 層，不回退已驗證 SEO/GEO。
+
+## 2026-10-02 當日執行 checkpoint
+
+- 商業目標不變：2026-10-15 前至少 1 個有效客戶詢價；尚未確認達標。
+- GSC settled through：2026-09-29。15+ 字 query = 0；10+ 字 query = 0，因此依既定規則改優先處理收錄、曝光、頁面可發現性與 CRO。
+- GSC page performance（近 28 settled days）：首頁 28 impressions / 0 clicks / avg position 3.79；clinic 8 / 0 / 2.50；kaohsiung-commercial 7 / 0 / 2.43。
+- 長照頁 URL Inspection：NEUTRAL；coverage = URL is unknown to Google；last crawl = null。這是目前長照頁主要 SEO 阻塞，非 robots/noindex 或 CI build failure。
+- sitemap 已於 2026-10-02 重新提交，0 warnings / 0 errors；本輪不重複提交。
+- CRO 修改 commit：`c21cd7ffbcdf1845c4be0043c62bb5c799743cc2`。長照頁首屏新增直接 LINE 詢價入口與「地區＋主要布品＋大約數量＋每天/每週頻率」最小詢價格式；未新增未確認服務、價格、認證、消毒或效果承諾。
+- Pages deployment run `36963259202`：SUCCESS。
+- SEO evidence run `36963259864`：SUCCESS。
+- NEXT：不要重複改長照頁文案或重送 sitemap；優先提升長照 URL 的站內發現訊號與追蹤 GSC 首次 crawl/indexing，待 query 出現後再依 15+ / 10+ 長尾與 position 10–20 規則做下一輪 on-page 修改。

@@ -184,3 +184,14 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 ### ONE-LINE NEW-CHAT RESUME COMMAND
 
 `繼續意嘉行：讀取 dsf430-stack/myfirstproject 最新 main + PROJECT_STATUS.md 的 PERMANENT HANDOFF CHECKPOINT，直接從 NEXT 接手，不重做 DONE，不重試條件未變的已知失敗。`
+
+### 2026-10-02 continuation — OpenSEO integration verification
+
+- Latest main: `c60c85c3e9e8a102f215d28b5d38e5e4983df677`.
+- PR #4 (OpenSEO market-data evidence layer) is merged at `3a2675094c1fb2c4205397893d3d39845d34df30`.
+- OpenSEO remains `NOT_CONFIGURED`: `tools/seo-evidence/openseo/input.json` is an explicit placeholder; the repository records that no OpenSEO OAuth/API key is stored in GitHub. Do not infer or fabricate keyword volume, rankings, backlinks, SERP competitor metrics, or OpenSEO GSC metrics.
+- Adapter tests are included in `tools/seo-evidence/tests/test_open_seo_evidence.py` and are run through the existing `unittest discover -s tools/seo-evidence/tests` workflow step. That step passed on the latest main run.
+- PR merge Actions run `36807101502`: SUCCESS. Latest main SEO evidence run `36986849204`: SUCCESS, including OpenSEO normalization and joining its status into the existing Action Engine. Latest main Pages build `36986848204`: SUCCESS.
+- No SEO/GEO workflow was rebuilt. Existing Crawl4AI, Yao GEO, Jev SEO, public-source evidence, and Action Engine continue to run without OpenSEO credentials. OpenSEO normalization accepts explicit states and supplied snapshots; it does not fetch live metrics itself.
+- Minimal next step for live market data: authorize OpenSEO/provider access and supply a real source-backed snapshot to the existing adapter. For automated fetching, add the credential as a GitHub Actions secret and wire a fetch step; never commit credentials or fabricate missing values.
+- No paid provider call or website content change was made in this continuation.

@@ -95,3 +95,12 @@
 - Intended future capabilities if paid access is explicitly enabled later: rank tracking, keyword research, competitor gap, AI Overview visibility, site health, link gap, local map grid, Site Explorer.
 - Integration commit: `5d619571ed99cecfb39e594cd4ed953bf53e26f5`.
 - COST STATE: USD 0 incurred by this integration. Do not enable paid DataForSEO calls without an explicit future user instruction.
+
+### 2026-10-02 continuation — validation and conversion measurement audit
+
+- Latest zero-spend integration verification completed: Pages run `36985132566` SUCCESS; SEO evidence run `36985132959` SUCCESS. Earlier SEO evidence runs `36979554233` and `36979368366` also SUCCESS. Cancelled Pages runs were superseded by later commits, not build failures.
+- GSC recheck remains settled through 2026-09-29: homepage 28 impressions / 0 clicks / avg position 3.79; clinic 8 / 0 / 2.50; Kaohsiung commercial 7 / 0 / 2.43; query rows 0.
+- Long-term-care inspection remains `URL is unknown to Google`, last crawl null. Sitemap remains pending with 0 warnings / 0 errors. Because the 2026-10-02 discovery changes have not yet been processed, do not add more links/content or resubmit the sitemap this round.
+- Conversion measurement audit found no repository code for gtag, Google Tag Manager, dataLayer, analytics, or conversion events. Therefore the site currently has no verified first-party event instrumentation for LINE CTA clicks. Do not claim LINE clicks or valid inquiries from SEO without an external verified source.
+- No paid SEO API calls were made; SEO Command Center remains zero-spend and disabled for DataForSEO.
+- NEXT: wait for new GSC maturity / first crawl signal before further long-term-care on-page changes. Separately, if an existing analytics property/measurement ID becomes available, add privacy-safe LINE CTA click measurement into the existing site rather than creating a second analytics system.

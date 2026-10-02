@@ -69,3 +69,11 @@
 - Pages deployment run `36963259202`：SUCCESS。
 - SEO evidence run `36963259864`：SUCCESS。
 - NEXT：不要重複改長照頁文案或重送 sitemap；優先提升長照 URL 的站內發現訊號與追蹤 GSC 首次 crawl/indexing，待 query 出現後再依 15+ / 10+ 長尾與 position 10–20 規則做下一輪 on-page 修改。
+
+### 2026-10-02 continuation — discovery signal
+
+- Confirmed long-term-care URL already has internal links from homepage, Kaohsiung, Tainan and clinic pages; no missing-link fix was needed.
+- Found sitemap freshness mismatch: long-term-care page changed on 2026-10-02 while sitemap lastmod still said 2026-09-30. Fixed only this evidence-backed mismatch in commit `96b5cce6084256d93c12ecb5d5e412ec16adcce5`.
+- Public SERP research confirms the target market vocabulary includes 一般護理之家、住宿式長照機構、老人福利機構; official/public sources also show bed/linen storage and laundry-room context. Treat these as market/evidence vocabulary, not as claims that 意嘉行 provides any unconfirmed process or compliance service.
+- Do not create extra doorway pages from these terms. Keep the existing long-term-care page as the primary target until Google first crawls/indexes it.
+- NEXT: verify Pages deployment for `96b5cce`; after deploy, continue GSC inspection tracking. Do not resubmit sitemap unless evidence changes.

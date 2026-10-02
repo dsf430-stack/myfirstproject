@@ -104,3 +104,12 @@
 - Conversion measurement audit found no repository code for gtag, Google Tag Manager, dataLayer, analytics, or conversion events. Therefore the site currently has no verified first-party event instrumentation for LINE CTA clicks. Do not claim LINE clicks or valid inquiries from SEO without an external verified source.
 - No paid SEO API calls were made; SEO Command Center remains zero-spend and disabled for DataForSEO.
 - NEXT: wait for new GSC maturity / first crawl signal before further long-term-care on-page changes. Separately, if an existing analytics property/measurement ID becomes available, add privacy-safe LINE CTA click measurement into the existing site rather than creating a second analytics system.
+
+### 2026-10-02 continuation — homepage CTR intent alignment
+
+- Checkpoint `e0118b42` triggered Pages run `36986368637` and SEO evidence run `36986369225`; both were still in progress at the start of this round.
+- GSC remains settled through 2026-09-29 with no query rows and no first crawl for long-term-care. No further long-term-care edits or sitemap resubmission were made.
+- CTR audit of the three pages with impressions found titles/descriptions already specific. Public SERP evidence repeatedly uses 到府收送 as a core Kaohsiung/Tainan laundry intent, and 意嘉行's Kaohsiung/Tainan pickup/delivery is already a confirmed business fact present in the homepage description.
+- Changed homepage title only from `意嘉行｜高雄・台南洗毛巾、洗衣服、床單床巾送洗` to `高雄台南洗衣到府收送｜毛巾、衣物、床單床巾｜意嘉行`. Commit `c8f40edca523f5c2bc96ee71d04385caceffe897`.
+- This is a CTR/search-intent alignment change, not a new service claim. Do not change it again until post-change GSC data matures enough to compare impressions/CTR.
+- NEXT: verify Pages + SEO evidence for `c8f40ed`; then wait for settled post-change GSC data before judging title performance. Continue long-term-care crawl/index monitoring separately.

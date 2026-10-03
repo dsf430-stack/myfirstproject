@@ -214,3 +214,13 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - Fresh URL Inspection for `longterm-care-laundry.html`: verdict `NEUTRAL`, coverage `URL is unknown to Google`, `lastCrawlTime=null`, no referring URLs returned by the inspection API. Sitemap remains pending with 0 warnings and 0 errors. Do not resubmit it or add repeated links/content while Google has not processed the deployed discovery/metadata updates.
 - Fresh public SERP samples found a care-specific commercial laundry landing page at https://daweiwash.com/industries/elderly-care/ (claims about daily collection, tracking, and audit documentation belong to that competitor only); a Tainan-area commercial laundry at https://www.superclean352.com.tw/about-us.html; and a Kaohsiung commercial laundry describing hotel/restaurant textile service at https://acewash.com.tw/about/. These are market-language/competitor references only, not evidence that 意嘉行 offers the same services, certifications, processes, or guarantees.
 - No new site content, service claim, sitemap submission, or paid API call was made in this check. Hold further on-page edits until first crawl/indexing or new settled GSC query evidence appears; then continue in the existing SEO/GEO Action Engine.
+
+
+### 2026-10-03 continuation — resumed GSC verification
+
+- Latest main at resume: `2d75a073aa498cd99810f5a8f908a75576911bbc`. SEO evidence run `36988066118` and Pages run `36988065245` both completed **SUCCESS**; the previously in-progress SEO evidence run `36986600224` is **SUCCESS**.
+- Fresh GSC query/page reports are unchanged: settled through `2026-09-29`, first incomplete date `2026-09-30`; query dimension returned 0 rows. Homepage: 28 impressions / 0 clicks / avg position 3.79; clinic: 8 / 0 / 2.50; Kaohsiung commercial: 7 / 0 / 2.43.
+- Long-term-care URL tracker already had a fresh check on 2026-10-03: `not_indexed`, coverage `URL is unknown to Google`, `lastCrawlTime=null`. No redundant URL inspection was requested in this resume.
+- Sitemap remains pending with 0 warnings and 0 errors. No site content, title, internal links, sitemap submission, or paid API setting was changed. Keep waiting for first crawl/indexing or new settled GSC evidence before another on-page change.
+- GA4 Wizard reports no connected Google Analytics scope/property for this connection. This does not establish whether an Analytics property exists elsewhere; LINE CTA event measurement remains unverified until the existing GA4 connection/measurement is available.
+- NEXT: continue from the same wait condition; do not repeat the completed long-term-care page, sitemap, homepage-title, or zero-spend SEO Command Center work. Preserve zero-spend mode.

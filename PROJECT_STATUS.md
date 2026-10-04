@@ -239,3 +239,9 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - The owner confirmed: no qualifying long-term-care / nursing-home / commercial-laundry inquiry has been received as of 2026-10-04. The 2026-10-15 target is therefore **not yet met**, and remains in progress because the deadline has not passed.
 - This direct confirmation supersedes the prior evidence-only uncertainty for current inquiry count. Continue to count a conversion only when an actual inbound LINE/phone inquiry is received and the relevant business need is confirmed; impressions, clicks, and CTA presence do not count.
 - NEXT: on the first real inquiry, log an anonymized date, organization type, region, linen/service need, approximate quantity/frequency, and follow-up status. GA4 click measurement remains a separate instrumentation gap until the existing property is connected to an accessible Analytics scope; no new website edits are needed for the current CTA copy.
+
+### 2026-10-04 continuation — short-term prospect research
+
+- Because the owner confirmed zero qualifying inquiries so far and the 2026-10-15 target is near, researched a small, publicly listed nursing-home prospect set from current Kaohsiung and Tainan government directories. Candidate names and public switchboard numbers are provided in the conversation; directory presence/bed capacity is only a prioritization clue and does not establish outsourced-laundry demand.
+- No institution was contacted and no service fit, purchasing need, or inquiry was assumed. The existing site and SEO/GEO pipeline were not changed.
+- NEXT: use the shortlist to verify whether each facility outsources washable linens and whether its area/items/volume/frequency fit the confirmed pickup and delivery arrangements. Count only a real request for service or quotation as an inquiry; store only anonymized lead details in project records.

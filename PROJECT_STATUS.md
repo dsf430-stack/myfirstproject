@@ -281,3 +281,10 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - A public third-party directory record presents different business location/contact details from the owner-confirmed website address. Treat it as a citation-consistency lead, not a verified correction: do not edit third-party listings or add a public phone to site/schema without owner confirmation.
 - No qualifying inquiry has been verified as of the owner's 2026-10-04 confirmation; the 2026-10-15 goal remains in progress. No prospect was contacted; no outward message or paid API action was made.
 - NEXT: preserve the corrected metadata; get fresh GSC evidence only after GSC access is restored (do not pay/subscribe without explicit instruction). In the meantime, continue free public discovery checks and existing evidence pipeline. For local SEO, first confirm which public phone/location should be canonical, then correct inconsistent directory citations with owner access; do not infer outreach authorization from the website-growth request.
+
+
+### 2026-10-06 continuation — scheduled SEO follow-up resumed
+
+- User requested continued follow-up. Resumed the existing 6-hour automation `意嘉行 SEO 持續執行` (ID `6abb3ed149148191884f4bbc59068064`); cadence unchanged, no duplicate schedule created.
+- Updated the existing prompt to preserve current source-of-truth and no-repeat rules, treat GSC `payment_required` as a blocker without paying/retrying, continue with free public and GitHub evidence, avoid unconfirmed business claims, and prohibit contacting prospects without explicit authorization.
+- Verified via private automation lookup: `is_enabled=true`; last recorded run remains `2026-09-30T04:14:05Z`. The automation service returned `next_run_time=null`, so do not claim a specific next execution time; verify future run activity on the next handoff.

@@ -245,3 +245,27 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - Because the owner confirmed zero qualifying inquiries so far and the 2026-10-15 target is near, researched a small, publicly listed nursing-home prospect set from current Kaohsiung and Tainan government directories. Candidate names and public switchboard numbers are provided in the conversation; directory presence/bed capacity is only a prioritization clue and does not establish outsourced-laundry demand.
 - No institution was contacted and no service fit, purchasing need, or inquiry was assumed. The existing site and SEO/GEO pipeline were not changed.
 - NEXT: use the shortlist to verify whether each facility outsources washable linens and whether its area/items/volume/frequency fit the confirmed pickup and delivery arrangements. Count only a real request for service or quotation as an inquiry; store only anonymized lead details in project records.
+
+
+### 2026-10-06 continuation — prospect verification shortlist
+
+- Latest main before this checkpoint: `d38143273a31b80633ed4f6874a04866aecfdc93`. No newer GitHub project record was present at resume. Two targeted Google Drive searches for inquiry/prospect records modified after 2026-10-04 returned no matching files; this does not rule out unrecorded LINE/phone inquiries.
+- Recovered the previously researched public shortlist and rechecked institution names and public phone contacts against the current official city lists: Tainan Health Bureau list updated 2026-08-18; Kaohsiung Health Bureau list updated 2026-09-16 (page updated 2026-09-23).
+- Candidate list below is for asking whether external laundry is used. **No candidate has been contacted; outsourced-laundry demand, items, volumes, frequency, purchasing timing, and service fit are all UNCONFIRMED.** Directory listing, bed capacity, or public contact details do not imply laundry demand or an inquiry.
+
+| Region | Facility | Type | Public contact | Evidence / status |
+|---|---|---|---|---|
+| Tainan, Guanmiao | 吉安醫療社團法人附設護理之家 | Residential nursing home | 06-602-5556; no facility email confirmed | Tainan official list; need/volume/frequency unconfirmed; not contacted |
+| Tainan, Guanmiao | 一粒麥子基金會附設臺南市私立關廟社區長照機構 | Community day-care / long-term-care facility; not a residential nursing home | 06-595-5633; vip@wheat.org.tw (foundation shared inbox) | Foundation official page; need unconfirmed; not contacted |
+| Tainan, Guiren | 均安護理之家 | Residential nursing home | 06-239-2669; smallnew83@yahoo.com.tw (third-party directory; verify by phone) | Tainan official list for facility/phone; email is from 中華黃頁; need unconfirmed; not contacted |
+| Tainan, Rende | 臺南市私立聖祐護理之家 | Residential nursing home | 06-266-8705; tugu0606@gmail.com (third-party business listing; verify by phone) | Tainan official list for facility/phone; email is from 1111; need unconfirmed; not contacted |
+| Tainan, North District | 聖公護理之家 | Residential nursing home | 06-259-1081 | Tainan official list; need unconfirmed; not contacted |
+| Tainan, South District | 天慈護理之家 | Residential nursing home | 06-292-1088 | Tainan official list; need unconfirmed; not contacted |
+| Tainan, East District | 美佑護理之家 | Residential nursing home | 06-260-3355 | Tainan official list; need unconfirmed; not contacted |
+| Kaohsiung, Sanmin | 護祐護理之家 | Residential nursing home | 07-381-2808; no facility-specific email confirmed | Kaohsiung official list; a group-level contact is not treated as this facility's verified email; need unconfirmed; not contacted |
+| Kaohsiung, Sanmin | 永健護理之家 | Residential nursing home | 07-396-2958; lnh3962958@yahoo.com.tw (facility website) | Kaohsiung official list and facility contact page; need unconfirmed; not contacted |
+| Kaohsiung, Sanmin | 文雄醫院附設護理之家 | Hospital-attached residential nursing home | 07-316-5978 ext. 720; no facility-specific email confirmed | Kaohsiung official list; do not substitute a hospital management email; need unconfirmed; not contacted |
+
+- Primary directories: [Tainan City Health Bureau — nursing-home register, updated 2026-08-18](https://health.tainan.gov.tw/download.asp?orcaid=C4C869F8-920A-4626-B8BC-029A2233CEEC); [Kaohsiung City Health Bureau — nursing-home register, updated 2026-09-16](https://health.kcg.gov.tw/News_Content.aspx?n=40BF8A0AB5BCED61&s=68DC12BFB96CC231&sms=5AA08E21D3DF62E7). Specific email sources: [Wheat Foundation official page](https://www.wheat.org.tw/OnePage.aspx?id=165&tid=161), [Yongjian official contact page](https://www.lnhcare.com/%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91), [Chunghwa Yellow Pages listing for 均安](https://www.iyp.com.tw/ltc/A31400092), and [1111 listing for 聖祐](https://trade.1111.com.tw/web/company/zang-iou/).
+- Minimum verification questions, to be asked only after reaching the organization's appropriate administrative/purchasing contact: (1) Are linens/towels currently self-washed or outsourced? (2) If outsourced, which items and approximate amount per week? (3) Pickup/delivery frequency and service address? (4) Is the organization reviewing vendors or requesting a quotation now? Record only the date, organization type/region, requested items and rough volume/frequency, and follow-up status; count a conversion only for an actual request for service/quotation.
+- Next: use the Guanmiao/Guiren/Rende cluster first because it matches the previously requested locality; then the existing Tainan city and Kaohsiung Sanmin candidates. No outreach has been sent or made from this checkpoint. Keep existing site/SEO/GEO, Pages, sitemap, and CTA unchanged.

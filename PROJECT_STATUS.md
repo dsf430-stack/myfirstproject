@@ -249,7 +249,8 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 
 ### 2026-10-06 continuation — prospect verification shortlist
 
-- Latest main before this checkpoint: `d38143273a31b80633ed4f6874a04866aecfdc93`. No newer GitHub project record was present at resume. Two targeted Google Drive searches for inquiry/prospect records modified after 2026-10-04 returned no matching files; this does not rule out unrecorded LINE/phone inquiries.
+- 初次恢復查核時 main 為 `d38143273a31b80633ed4f6874a04866aecfdc93`；研究期間 main 新增 `2a44e7152424ddb4e1de38cfd94c9da621388f37`（同步首頁 Open Graph／WebPage schema 標題），之後本 shortlist 提交為 `160cc8071c2aedff9efcbc8b5b7ff4b862955e28`。 Two targeted Google Drive searches for inquiry/prospect records modified after 2026-10-04 returned no matching files; this does not rule out unrecorded LINE/phone inquiries.
+- Workflow verification on 2026-10-06: target SEO evidence run `36986600224` completed **SUCCESS** (it was still in progress at the 2026-10-02 handoff); the newer `2a44e71` Pages run `37451671544` and SEO evidence run `37451672086` both completed **SUCCESS**. For this shortlist commit, Pages run `37451838662` is **SUCCESS** and SEO evidence job `crawl-audit-decide` in run `37451839221` completed **SUCCESS** (run summary endpoint had not yet refreshed when checked).
 - Recovered the previously researched public shortlist and rechecked institution names and public phone contacts against the current official city lists: Tainan Health Bureau list updated 2026-08-18; Kaohsiung Health Bureau list updated 2026-09-16 (page updated 2026-09-23).
 - Candidate list below is for asking whether external laundry is used. **No candidate has been contacted; outsourced-laundry demand, items, volumes, frequency, purchasing timing, and service fit are all UNCONFIRMED.** Directory listing, bed capacity, or public contact details do not imply laundry demand or an inquiry.
 

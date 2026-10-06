@@ -322,3 +322,15 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - GSC Wizard remains BLOCKED by the previously recorded `payment_required` condition; no paid retry was made. Preserve the last verified GSC values/date as historical evidence only.
 - CHANGE DECISION: no website content/schema change this round. Reason: the safe entity fields already exist; adding duplicate keywords/schema or unverified third-party contact data would not be evidence-backed and could create NAP inconsistency.
 - NEXT: keep first-party indexing/entity discovery as the priority. On the next changed signal, verify Pages/SEO Actions and public SERP again; only add `sameAs`/telephone or reconcile NAP after the exact owner-confirmed public business profile/phone is verified. Do not create doorway pages or resubmit sitemap without changed evidence.
+
+
+## 2026-10-07 06:00 continuation — verified entity identifier added
+
+- Resume source: latest main `24de05674038261f61a63eb0e550e3d2e2424782`; its Pages run `37532825986` and SEO evidence run `37532826810` were both **SUCCESS**. No successful site work was rebuilt.
+- Fresh public search on 2026-10-07 still did not surface the first-party GitHub Pages site for exact domain/brand samples. It did surface independent registry-derived records that consistently associate `意嘉行`, `高雄市三民區鼎金後路13號`, the laundry category, and business/tax identifier `36916858`. The separate directory presentation of a 仁武 address and phone remains unconfirmed and was not copied.
+- Schema.org currently defines `taxID` as an Organization identifier and `legalName` as the official organization name; `LocalBusiness` inherits these Organization properties. This provides a standards-based way to connect the first-party entity to the consistent public registration identifier without inventing services or contact details.
+- Website change commit: `99ae163e000482ef8efba6bd053ddf62f66d8aa0`. Added visible footer text `統一編號 36916858` and added `legalName: 意嘉行` plus `taxID: 36916858` to the existing homepage `LocalBusiness` JSON-LD. No title, description, keyword body copy, service scope, telephone, price, certification, process, address, or URL changed.
+- Verification: Pages run `37537399363` **SUCCESS**; SEO evidence integration run `37537400154` **SUCCESS**. The full existing Crawl4AI → Yao GEO → Jev SEO → Action Engine pipeline passed after the change.
+- GSC remains **BLOCKED** by the previously recorded `payment_required` condition; it was not retried and no paid action was taken. Preserve the last verified GSC metrics and dates as historical only.
+- Conversion status: no new verified service/quotation request was available; the 2026-10-15 inquiry target remains **IN PROGRESS**. No prospect was contacted and no external message was sent.
+- NEXT: allow the identifier change to be crawled; do not add duplicate entity schema or repeatedly edit metadata. Continue current-head Actions and free public discovery checks. Add telephone, `sameAs`, or reconcile the conflicting directory contact/location only after the owner confirms the canonical public phone/profile and access required to edit it.

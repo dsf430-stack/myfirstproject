@@ -334,3 +334,12 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - GSC remains **BLOCKED** by the previously recorded `payment_required` condition; it was not retried and no paid action was taken. Preserve the last verified GSC metrics and dates as historical only.
 - Conversion status: no new verified service/quotation request was available; the 2026-10-15 inquiry target remains **IN PROGRESS**. No prospect was contacted and no external message was sent.
 - NEXT: allow the identifier change to be crawled; do not add duplicate entity schema or repeatedly edit metadata. Continue current-head Actions and free public discovery checks. Add telephone, `sameAs`, or reconcile the conflicting directory contact/location only after the owner confirms the canonical public phone/profile and access required to edit it.
+
+
+### 2026-10-07 — first-party search remains absent
+
+- Public web search for the site/domain and brand surfaced third-party directory/company records; no first-party GitHub Pages result was returned in this check. This is a search-result observation only, not a current GSC coverage verdict.
+- Source audit: homepage remains `index,follow`, canonical points to the project URL, `robots.txt` allows all crawlers and references the project sitemap, and sitemap lists 10 intended URLs. No robots/canonical exclusion was found.
+- The latest homepage content change (commit `99ae163e000482ef8efba6bd053ddf62f66d8aa0`) added verified business identifier `36916858`; sitemap homepage `lastmod` had remained `2026-10-02`. Corrected it to `2026-10-07` in commit `eaeed6b5bacedd41e263b0da624d27328b35ef46`. This metadata correction does not prove Google has crawled or indexed the page.
+- GSC Wizard remains blocked by the recorded `payment_required` condition. No paid retry was made. Last verified GSC coverage remains historical only; current first-party index state and exclusion reason are **UNCONFIRMED**.
+- NEXT: obtain a fresh URL Inspection and sitemap status from Search Console when the existing free property access is available. Until then, do not present third-party listings, public query samples, or the `lastmod` correction as first-party index progress; avoid further metadata edits without new evidence.

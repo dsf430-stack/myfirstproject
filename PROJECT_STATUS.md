@@ -364,3 +364,13 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - GSC access remains **BLOCKED** by the unchanged recorded `payment_required` condition. No retry, purchase, or subscription action was performed; last verified GSC values remain historical only.
 - Conversion status remains unchanged: no verifiable service/quotation request identifying institution, region, items, and basic demand was available. No prospect was contacted and no external message was sent.
 - NEXT trigger remains one of: first-party public result appears; free GSC access returns; a current-head Action fails; or the owner confirms the canonical phone/business profile. Until then, preserve the deployed signals and do not generate unmeasured site changes.
+
+
+### 2026-10-08 00:00 continuation — first-party visibility still absent
+
+- Resume source: latest main `92a1ee758ef5beaed9c6d0282265a5e71bbb489f`. Current-head Pages run `37604396617` and SEO evidence integration run `37604397281` both completed **SUCCESS**; no current workflow failure requires intervention.
+- Fresh public search samples on 2026-10-08 for the exact project domain, brand plus tax identifier, and homepage title still returned the third-party business directory and competing laundry sites, not the first-party GitHub Pages site. This is a limited public-result observation only and does not establish the Google coverage reason.
+- **NO SITE MODIFICATION**: canonical, robots, sitemap, entity identifier, homepage lastmod, and the full evidence pipeline remain healthy. No new defect or trustworthy keyword/conversion evidence appeared. Re-editing metadata, adding duplicate schema, copying competitor service claims/prices, or creating extra landing pages would be unsupported and would reset the observation window.
+- GSC remains **BLOCKED** by the unchanged `payment_required` condition. No paid retry was made; the most recent verified GSC figures remain historical only.
+- Conversion status remains **NOT VERIFIED**: no actual request for service/quotation identifying institution, region, items, and basic demand was available. No prospect was contacted and no external message was sent.
+- NEXT: keep the deployed first-party entity/sitemap signals stable. Act only when a first-party result appears, free GSC URL Inspection/sitemap access returns, a current-head Action fails, or the owner confirms the canonical public telephone/business profile needed for citation reconciliation.

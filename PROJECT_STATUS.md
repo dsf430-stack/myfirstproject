@@ -343,3 +343,14 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - The latest homepage content change (commit `99ae163e000482ef8efba6bd053ddf62f66d8aa0`) added verified business identifier `36916858`; sitemap homepage `lastmod` had remained `2026-10-02`. Corrected it to `2026-10-07` in commit `eaeed6b5bacedd41e263b0da624d27328b35ef46`. This metadata correction does not prove Google has crawled or indexed the page.
 - GSC Wizard remains blocked by the recorded `payment_required` condition. No paid retry was made. Last verified GSC coverage remains historical only; current first-party index state and exclusion reason are **UNCONFIRMED**.
 - NEXT: obtain a fresh URL Inspection and sitemap status from Search Console when the existing free property access is available. Until then, do not present third-party listings, public query samples, or the `lastmod` correction as first-party index progress; avoid further metadata edits without new evidence.
+
+
+### 2026-10-07 12:00 continuation — crawl observation window
+
+- Resume source: latest main `cbde916ab2150f8ce7cdf4b6ff1d5bd6e0b51532`. Current-head Pages run `37553653848` and SEO evidence run `37553653696` both completed **SUCCESS**. The cancelled Pages run `37553555004` was superseded by the later successful head run and is not treated as a site failure.
+- Fresh public search samples on 2026-10-07 for the exact project domain, brand, and the new homepage title still returned third-party company records and competitors, not the first-party GitHub Pages site. This remains a limited public-result observation, not GSC coverage evidence.
+- No new technical exclusion was found after the verified entity-identifier change and sitemap lastmod correction. The latest evidence pipeline is healthy. Because those changes were deployed only hours ago, another title/schema/content/internal-link change now would prevent a clean crawl/index observation and would repeat completed work.
+- **NO SITE MODIFICATION** this round. Do not create an extra doorway/about page solely to force indexation, add unconfirmed phone/address, use competitor prices or claims, resubmit the unchanged sitemap, or add duplicate schema.
+- GSC remains **BLOCKED** by the previously recorded `payment_required` condition; no retry or paid action was made. Preserve historical GSC values only. The current Google exclusion/index reason remains **UNCONFIRMED** until free property access is restored.
+- Conversion status is unchanged: no verified request for service or quotation with institution, region, items, and basic demand was available. No prospect was contacted and no external message was sent.
+- NEXT trigger: a new first-party public result, restored free GSC URL Inspection/sitemap access, an Action failure, or an owner-confirmed canonical phone/business profile. Until one occurs, keep the deployed entity and sitemap signals stable and continue observation rather than generating more unmeasured changes.

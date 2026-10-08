@@ -404,3 +404,15 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - GSC remains **BLOCKED** by the unchanged recorded `payment_required` condition. No retry, purchase or subscription action was performed. Preserve the last verified GSC values/dates strictly as historical; current Google coverage reason remains unconfirmed.
 - Conversion status remains **NOT VERIFIED**: no actual request for service/quotation identifying institution, region, items and basic demand was available. No prospect was contacted, no external message was sent, and no third-party business record was edited.
 - NEXT trigger is unchanged: a first-party public result appears; free GSC URL Inspection/sitemap access returns; a current-head Action fails; or the owner confirms the canonical public telephone/business profile needed for citation reconciliation. Until then preserve the deployed signals and avoid unsupported changes.
+
+
+### 2026-10-09 00:00 continuation — four-trigger check unchanged
+
+- Resume source: latest main `3db4ba2fa6e06f8deecac98efe8c221f22c07733`. Current-head Pages run `37760628821` and SEO evidence integration run `37760629487` both completed **SUCCESS**; no current-head Action failure exists.
+- Trigger 1 — first-party result: fresh public searches on 2026-10-08/09 for the site-restricted brand, exact project URL + brand, and brand + high-intent commercial-laundry term still returned third-party company records and competitors, not the first-party GitHub Pages site. **UNCHANGED**. This is a public search sample, not GSC coverage evidence.
+- Trigger 2 — free GSC access: the last recorded connector condition remains `payment_required`; no evidence of restored free URL Inspection/sitemap access was present. Per checkpoint rule, GSC was not retried and no payment/subscription action was taken. **BLOCKED / UNCHANGED**. Preserve the last verified figures and dates as historical only.
+- Trigger 3 — current-head Action failure: neither Pages nor SEO evidence failed. **UNCHANGED / HEALTHY**.
+- Trigger 4 — owner-confirmed public telephone/business profile: no new owner-confirmed phone or editable canonical business-profile evidence was added to main or PROJECT_STATUS.md. The third-party 仁武 phone/address presentation remains unconfirmed and was not copied or edited. **UNCHANGED**.
+- **NO SITE MODIFICATION**: none of the four authorized triggers changed. Repeating metadata, schema, sitemap, content or internal-link edits would be unsupported and would disturb the ongoing index observation window.
+- Conversion status remains **NOT VERIFIED**: no actual request for service/quotation identifying institution, region, items and basic demand was available. No prospect was contacted and no external message was sent.
+- NEXT: continue checking only these four triggers. Apply the smallest safe fix only when one changes; otherwise preserve the deployed site and evidence pipeline.

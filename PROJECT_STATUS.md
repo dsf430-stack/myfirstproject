@@ -428,3 +428,16 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - **NO SITE MODIFICATION**: none of the four authorized triggers changed. Repeating metadata, schema, content, internal-link or sitemap edits would be unsupported and would disturb the index observation window.
 - Conversion remains **NOT VERIFIED**: no actual service/quotation request identifying institution, region, items and basic demand was available. No prospect was contacted and no external message was sent.
 - NEXT: continue checking only the four triggers; apply the smallest safe fix when one changes, otherwise preserve the deployed site and evidence pipeline.
+
+
+### 2026-10-09 12:00 continuation — triggers unchanged; brand SERP watch item
+
+- Resume source: latest main `89807e08d1cdfe7c29b782b154377e8b77b3ce85`. Current-head Pages run `37850201775` and SEO evidence integration run `37850202752` both completed **SUCCESS**; no current-head Action failure exists.
+- Trigger 1 — first-party result: fresh public searches on 2026-10-09 still did not return the first-party GitHub Pages site for the site-restricted brand, exact project URL + brand, or brand + commercial-laundry sample. **UNCHANGED**.
+- New brand-SERP watch item: the public search sample surfaced an official National Fire Agency incident page naming “意嘉行洗衣店” and a 仁武區倉庫 fire, with the snippet stating the fire was extinguished and no injuries occurred. The page could not be opened during this run because the public fetch timed out, so its event/publication date and whether it refers to the same registered business remain **UNCONFIRMED**. Do not add, rebut, suppress, or republish this incident on the site without verified identity/date and owner direction. It does not establish a service defect, current operating status, inquiry, or NAP correction.
+- Trigger 2 — free GSC access: recorded state remains `payment_required`; no evidence of restored free URL Inspection/sitemap access. No retry or paid action was made. **BLOCKED / UNCHANGED**.
+- Trigger 3 — current-head Actions: both required workflows passed. **HEALTHY / UNCHANGED**.
+- Trigger 4 — owner-confirmed telephone/business profile: no new owner-confirmed phone or canonical editable profile evidence appears in main or PROJECT_STATUS.md. Third-party 仁武 contact data remains unconfirmed and was not copied or edited. **UNCHANGED**.
+- **NO SITE MODIFICATION**: none of the four authorized triggers changed, and the newly surfaced incident snippet is insufficient evidence for a factual or reputation-content change. Repeating SEO, schema, sitemap, internal-link or copy edits remains unsupported.
+- Conversion remains **NOT VERIFIED**: no actual service/quotation request with institution, region, items and basic demand was available. No prospect was contacted and no external message was sent.
+- NEXT: keep the four-trigger watch. Separately recheck the official incident page only through free public access to confirm event date/entity match; treat it as a SERP reputation observation, not a reason to alter business facts.

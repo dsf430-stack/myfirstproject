@@ -1,0 +1,19 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Local/editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build and test artifacts
+node_modules/
+dist/
+build/
+coverage/
+.pytest_cache/
+__pycache__/
+*.py[cod]

@@ -473,3 +473,14 @@ This checkpoint is the authoritative handoff point for continuing the 意嘉行 
 - Public web fetch of the GitHub Pages URL and its sitemap was unavailable in this review environment; therefore live rendering/HTTP status was **NOT VERIFIED** in this session. The GitHub source files were readable. Do not confuse source readability with live deployment verification.
 - **Decision: HOLD SITE CODE.** None of the four authorized triggers changed. Do not repeat SEO/GEO/page/sitemap edits or create new doorway pages. No external customer was contacted and no inquiry/conversion is claimed.
 - **NEXT:** continue only when a trigger changes: first-party result appears; GSC access is restored; a current-head Actions failure is evidenced; or the owner confirms the canonical public phone/business profile. At that point inspect the exact evidence and make the smallest supported correction. For business growth work that does not depend on site-code changes, maintain the separate weekly Kaohsiung/Tainan long-term-care market lead watch; do not send outreach without authorization.
+
+
+## 2026-11-25 continuation — Long-term-care prospect research
+
+- Re-read current GitHub `main` `README.md`, `AGENTS.md`, and `PROJECT_STATUS.md` before continuing.
+- Added `business-development/2026-11-25-long-term-care-leads.md` with source-linked prospect candidates from the latest available official Kaohsiung and Tainan facility lists, plus announced future capacity projects.
+- Current shortlist includes Kaohsiung facilities with published open-bed counts and public contact windows (including Liu Jiaxiu 187, Bozheng 154, St. Joseph 153, Chongyou 128) and Tainan facilities (Yifu 145, Shangri-La 127, Jingtai 85). These are prospecting candidates only; open-bed counts do not prove laundry outsourcing, current occupancy, actual wash volume, or purchase intent.
+- Future opportunities recorded: Chianan Psychiatric Center Anding 200-bed project (target completion end of 2027), Sinying Hospital Liuying 100-bed project (reported 2027 opening), and Sambo Genki complex long-term-care project in Tainan South District (target 2028 opening). These are longer-term monitoring targets, not immediate leads.
+- Official source evidence: Kaohsiung Health Bureau list updated 2026-11-05 with data through 2026-09-30; Tainan Health Bureau roster updated 2026-09-17; MOHW / Tainan City Government / news reports linked in the prospect file.
+- No outreach, calls, emails, LINE messages, paid services, website code changes, or claims of conversion were made.
+- **NEXT:** qualify the shortlist against actual collection routes and minimum viable wash volume; confirm whether each institution self-washes or outsources, then obtain authorization before any contact. Continue to keep GSC/indexing evidence blocked until a free/authorized GSC inspection path is available. No SEO/GEO rebuild or new doorway pages.

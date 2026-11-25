@@ -1,9 +1,9 @@
 # 意嘉行 SEO/GEO 專案狀態
 
-- 更新時間：2026-10-01（台灣時間）
+- 更新時間：2026-11-25（台灣時間）
 - Source of Truth：GitHub `dsf430-stack/myfirstproject` 的 `main` + 本檔
 - 網站：https://dsf430-stack.github.io/myfirstproject/
-- 最新網站 commit：`c9509f2d1c7129fce76979dd935c7db9c9cc5652`（PR #3）
+- 最新已驗證網站程式 commit：`201377a5d0a72a632a085d0dc9510be2f1238193`；其後 main 的提交為接力規則與 checkpoint 文件更新。
 - Pages 部署：run `36789414029` **SUCCESS**
 - SEO evidence integration：run `36789414271` **SUCCESS**；不是失敗。Crawl4AI 初始安裝時間較長，但安裝、上游測試、live crawl、Jev 與 Action Engine 都完成。
 - 永久 checkpoint：`tools/seo-evidence/yao_geo/checkpoints/2026-10-01/`
